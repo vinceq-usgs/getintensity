@@ -2,43 +2,52 @@
 
 # stdlib imports
 import argparse
-from urllib.parse import urlparse
 import os.path
 import sys
-import re
 
 # local imports
 from shakemap.utils.config import get_config_paths
-from shakemap.coremods.dyfi import _get_dyfi_dataframe
 from impactutils.io.table import dataframe_to_xml
+from shakemap.coremods import dyfi
+import getintensity.tools as gi
 
-DETAIL_TEMPLATE = 'https://earthquake.usgs.gov/fdsnws/event/1/query?' \
+# Put this in getintensity module instead
+COMCAT_TEMPLATE = 'https://earthquake.usgs.gov/fdsnws/event/1/query?' \
                   'eventid=[EID]&format=geojson'
-
-URL_REGEX = re.compile(
-    r'^(?:http|ftp)s?://'  # http:// or https://
-    r'(?:(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)+(?:[A-Z]{2,6}\.?|'
-    '[A-Z0-9-]{2,}\.?)|'  # domain...
-    r'localhost|'  # localhost...
-    r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})'  # ...or ip
-    r'(?::\d+)?'  # optional port
-    r'(?:/?|[/?]\S+)$', re.IGNORECASE)
+GA_TEMPLATE = 'https://cdn.gagempa.net/skip/events/' \
+                    '[EXTID]/[GEOJSONFILE]'
 
 
 def get_parser():
     description = '''
-    Download DYFI data from a file NEIC Comcat into a local data directory.
+    Download DYFI data from Comcat or an external source into a local data
+    directory.
 
-    Where url_or_id is a ComCat event page URL or event ID.
-    For example, the url for the 2014 South Napa event is:
-    https://earthquake.usgs.gov/earthquakes/eventpage/nc72282711
-    and the event ID is nc72282711.
+    getintensity EVENTID [--extid  EXTERNALID] [--network NETWORK]
+
+    For example,
+
+    getintensity us70004jxe                 # will read from Comcat
+    getintensity us70004jxe --network ga    # will attempt to find GA ID
+    getintensity us70004jxe --network emsc  # will attempt to find EMSC ID
+    getintensity us70004jxe --extid ga2019nsodfc --network ga
+    getintensity us70004jxe --inputfile felt_reports_1km.geojson --network ga
+
+    Supported networks:
+        neic    National Earthquake Information Center (USA)
+        ga      Geosciences Australia
+        emsc    European-Mediterranean Seismic Center
+
     '''
     parser = argparse.ArgumentParser(description=description)
-    parser.add_argument('url_or_id',
-                        help='ComCat URL/ID of the event to process')
+    parser.add_argument('eventid',
+                        help='ComCat ID of the event to process')
     parser.add_argument('--inputfile',
                         help='Use file instead of loading from ComCat')
+    parser.add_argument('--extid',
+                        help='Event ID from other network (OPTIONAL)')
+    parser.add_argument('--network',
+                        help='Network abbreviation')
     parser.add_argument('--file',
                         help='Download to Excel file specified')
     return parser
@@ -50,29 +59,33 @@ def main(args):
         print('%s is not a valid directory.' % data_path)
         sys.exit(1)
 
-    # is this an event ID or a url?
-    is_url = re.match(URL_REGEX, args.url_or_id) is not None
-    if is_url:
-        if args.inputfile:
-            print('Cannot use inputfile with ComCat URL')
-            sys.exit(0)
+    eventid = args.eventid
+    inputfile = args.inputfile
+    extid = args.extid
+    network = args.network
+    dataframe = None
 
-        dataframe, msg = _get_dyfi_dataframe(args.url_or_id)
+    # is there an input file?
+    if inputfile:
+        # If network is blank, this will attempt to figure out the network
+        # from the data format before parsing
+        dataframe, msg = gi.get_dyfi_dataframe_from_file(
+            eventid, inputfile, network)
 
-        # get the eventid from the url
-        parts = urlparse(args.url_or_id)
-        eventid = parts.path.split('/')[-1]
+    elif (not network and not extid) or (network == 'neic'):
+        # are we requesting Comcat data only?
+        extid = extid or eventid
+        dataframe, msg = gi.get_dyfi_dataframe_from_comcat(extid)
 
-    # if not, check if inputfile provided
-    elif args.inputfile:
-        eventid = args.url_or_id
-        dataframe, msg = _get_dyfi_dataframe(None,args.inputfile)
+    elif network:
+        extid = gi.get_extid_from_network(eventid, network)
+        dataframe, msg = gi.get_dyfi_dataframe_from_network(
+            eventid, extid, network)
 
-    # if not, load URL
-    else:
-        eventid = args.url_or_id
-        detail_url = DETAIL_TEMPLATE.replace('[EID]', eventid)
-        dataframe, msg = _get_dyfi_dataframe(detail_url)
+    elif extid:
+        network = gi.get_network_from_id(extid)
+        dataframe, msg = gi.get_dyfi_dataframe_from_network(
+            eventid, extid, network)
 
     if dataframe is None:
         print(msg)

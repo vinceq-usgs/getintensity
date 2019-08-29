@@ -4,14 +4,9 @@ unamestr=`uname`
 if [ "$unamestr" == 'Linux' ]; then
     prof=~/.bashrc
     mini_conda_url=https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-    matplotlibdir=~/.config/matplotlib
-    CC=gcc_linux-64
 elif [ "$unamestr" == 'FreeBSD' ] || [ "$unamestr" == 'Darwin' ]; then
     prof=~/.bash_profile
     mini_conda_url=https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
-    matplotlibdir=~/.matplotlib
-    #    CC=clangxx_osx-64
-    CC=gcc
 else
     echo "Unsupported environment. Exiting."
     exit
@@ -21,7 +16,7 @@ fi
 source $prof
 
 # Name of virtual environment
-VENV=shakemap
+VENV=getint
 
 developer=0
 py_ver=3.6
@@ -38,32 +33,6 @@ while getopts p:d FLAG; do
 done
 
 echo "Using python version $py_ver"
-
-# create a matplotlibrc file with the non-interactive backend "Agg" in it.
-if [ ! -d "$matplotlibdir" ]; then
-    mkdir -p $matplotlibdir
-    # if mkdir fails, bow out gracefully
-    if [ $? -ne 0 ];then
-        echo "Failed to create matplotlib configuration file. Exiting."
-        exit 1
-    fi
-fi
-matplotlibrc=$matplotlibdir/matplotlibrc
-if [ ! -e "$matplotlibrc" ]; then
-    echo "backend : Agg" > "$matplotlibrc"
-    echo "NOTE: A non-interactive matplotlib backend (Agg) has been set for this user."
-elif grep -Fxq "backend : Agg" $matplotlibrc ; then
-    :
-elif [ ! grep -Fxq "backend" $matplotlibrc ]; then
-    echo "backend : Agg" >> $matplotlibrc
-    echo "NOTE: A non-interactive matplotlib backend (Agg) has been set for this user."
-else
-    sed -i '' 's/backend.*/backend : Agg/' $matplotlibrc
-    echo "###############"
-    echo "NOTE: $matplotlibrc has been changed to set 'backend : Agg'"
-    echo "###############"
-fi
-
 
 # Is conda installed?
 conda --version
@@ -128,24 +97,14 @@ dev_list=(
 # Package list:
 package_list=(
       "python=$py_ver"
-      "cartopy"
-      "cython"
       "defusedxml"
-      "descartes"
       "docutils"
       "configobj"
-      "fiona"
-      "$CC"
-      "gdal"
-      "h5py"
       "impactutils=0.8.15"
       "libcomcat=1.2.13"
-      "lockfile"
       "mapio=0.7.21"
-      "matplotlib<=2.3"
       "numpy"
       "obspy"
-      "openquake.engine"
       "pandas"
       "ps2ff"
       "psutil"
@@ -157,7 +116,6 @@ package_list=(
       "pytest-azurepipelines"
       "scikit-image"
       "scipy"
-      "shapely"
       "simplekml"
       "strec=2.1.4"
       "versioneer"
