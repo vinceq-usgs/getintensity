@@ -4,6 +4,7 @@ import tempfile
 import os.path
 import vcr
 import numpy as np
+from shutil import rmtree
 
 import getintensity.tools as gi
 from libcomcat.search import get_event_by_id
@@ -24,7 +25,6 @@ def test_comcat_data():
     # example Comcat event datastreams.
 
     datadir = get_datadir()
-    tempdir = tempfile.mkdtemp(prefix='tmp.', dir=datadir)
 
     # This event has both geo_1km and geo_10km
     eventid = 'ci14607652'
@@ -35,14 +35,17 @@ def test_comcat_data():
         df, msg = gi.get_dyfi_dataframe_from_comcat(detail)
 
     np.testing.assert_almost_equal(df['INTENSITY'].sum(), 4510.1)
+
     reference = 'USGS Did You Feel It? System'
+    tempdir = tempfile.mkdtemp(prefix='tmp.', dir=datadir)
     outfile = os.path.join(tempdir, 'dyfi_dat.xml')
     dataframe_to_xml(df, outfile, reference)
-    dataframe_to_xml(df, datadir + '/tmp.keepthis.xml', reference)
+    # dataframe_to_xml(df, datadir + '/tmp.keepthis.xml', reference)
 
     outfilesize = os.path.getsize(outfile)
     # Longer size is for file with nresp field
     assert outfilesize == 183953 or outfilesize == 172852
+    rmtree(tempdir)
 
     # This event has only text data
     eventid = 'ci14745580'
@@ -58,10 +61,9 @@ def test_comcat_data():
 def test_comcat_file():
     eventid = 'nc72282711'
     datadir = get_datadir()
-    tempdir = tempfile.mkdtemp(prefix='tmp.', dir=datadir)
 
     # Test reading a comcat file
-    testfile = os.path.join(datadir, 'dyfi_geo_10km.geojson')
+    testfile = os.path.join(datadir, 'nc72282711_dyfi_geo_10km.geojson')
     networ, df, msg = gi.get_dyfi_dataframe_from_file(eventid, testfile)
 
     assert len(df) == 203
@@ -73,26 +75,22 @@ def test_comcat_file():
         np.testing.assert_almost_equal(df['INTENSITY_STDDEV'].sum(), 39.548)
 
         reference = 'TEST'
+        tempdir = tempfile.mkdtemp(prefix='tmp.', dir=datadir)
         outfile = os.path.join(tempdir, 'dyfi_dat.xml')
-        dataframe_to_xml(df, outfile, reference)
-        dataframe_to_xml(df, datadir + '/tmp.withstddev.xml', reference)
 
         # Make sure output file includes stddev
+        dataframe_to_xml(df, outfile, reference)
+        # dataframe_to_xml(df, datadir + '/tmp.withstddev.xml', reference)
         with open(outfile, 'r') as f:
             textdata = f.read()
             assert 'stddev' in textdata
+            rmtree(tempdir)
 
     except AssertionError:
         msg = 'A newer version of impactutils is required to process \
 intensity parameters. If you do not work with intensity data, \
 you can safely ignore this warning.'
         print(msg)
-        import sys
-        print(sys.path)
-
-        import impactutils.io.table
-        print(impactutils.io.table.__file__)
-        raise
 
 
 if __name__ == '__main__':
