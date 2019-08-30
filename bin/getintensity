@@ -8,7 +8,6 @@ import sys
 # local imports
 from shakemap.utils.config import get_config_paths
 from impactutils.io.table import dataframe_to_xml
-from shakemap.coremods import dyfi
 import getintensity.tools as gi
 
 # Put this in getintensity module instead
@@ -68,8 +67,8 @@ def main(args):
     # is there an input file?
     if inputfile:
         # If network is blank, this will attempt to figure out the network
-        # from the data format before parsing
-        dataframe, msg = gi.get_dyfi_dataframe_from_file(
+        # from the file during parsing
+        network, dataframe, msg = gi.get_dyfi_dataframe_from_file(
             eventid, inputfile, network)
 
     elif (not network and not extid) or (network == 'neic'):
