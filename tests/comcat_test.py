@@ -8,9 +8,7 @@ from shutil import rmtree
 
 import getintensity.tools as gi
 from libcomcat.search import get_event_by_id
-
 from impactutils.io.table import dataframe_to_xml
-
 
 
 def get_datadir():
@@ -53,7 +51,7 @@ def test_comcat_data():
 
     with vcr.use_cassette(tape_file2):
         detail = get_event_by_id(eventid)
-        df, msg = df, msg = gi.get_dyfi_dataframe_from_comcat(detail)
+        df, msg = gi.get_dyfi_dataframe_from_comcat(detail)
 
     np.testing.assert_almost_equal(df['INTENSITY'].sum(), 800.4)
 
@@ -64,7 +62,7 @@ def test_comcat_file():
 
     # Test reading a comcat file
     testfile = os.path.join(datadir, 'nc72282711_dyfi_geo_10km.geojson')
-    networ, df, msg = gi.get_dyfi_dataframe_from_file(eventid, testfile)
+    df, msg, network = gi.get_dyfi_dataframe_from_file(eventid, testfile)
 
     assert len(df) == 203
     np.testing.assert_equal(df['INTENSITY'].sum(), 705.3)

@@ -4,11 +4,19 @@ import pandas as pd
 import numpy as np
 import json
 from io import StringIO
+import re
+import urllib.request as request
+import urllib.error as urlerror
 
 from libcomcat.classes import DetailEvent
 
 COMCAT_TEMPLATE = 'https://earthquake.usgs.gov/fdsnws/event/1/query?' \
                   'eventid=[EID]&format=geojson'
+
+# This is GA's test domain. When live, use 'cdn.eatws.net' instead
+GA_TEMPLATE = 'https://cdn.gagempa.net/skip/events/[EID]/[FILE]'
+TIMEOUT = 60
+
 
 # For legacy DYFI events only (cdi_geo.txt files)
 DYFI_COLUMNS_REPLACE = {
@@ -29,7 +37,6 @@ OLD_DYFI_COLUMNS_REPLACE = {
     'Epicentral distance': 'distance'
 }
 
-
 MIN_RESPONSES = 3  # minimum number of DYFI responses per grid
 
 
@@ -43,7 +50,7 @@ def get_dyfi_dataframe_from_file(eventid, inputfile, network=None):
             # Looks like EMSC ZIP file
             msg = 'This looks like an EMSC ZIP file. Please unzip \
                 this and rerun this program on the unzipped (.txt) file.'
-            return None, None, msg
+            return None, msg, None
         elif '.csv' in inputfile:
             network = 'emsc'
         elif '.geojson' in inputfile and 'felt_reports' in inputfile:
@@ -59,7 +66,7 @@ def get_dyfi_dataframe_from_file(eventid, inputfile, network=None):
         parser = _parse_geocoded_csv
     else:
         msg = 'Unknown file type for %s' % inputfile
-        return None, None, msg
+        return None, msg, None
 
     with open(inputfile, 'rb') as f:
         rawdata = f.read()
@@ -67,9 +74,9 @@ def get_dyfi_dataframe_from_file(eventid, inputfile, network=None):
 
     if df is None:
         msg = 'Could not read file %s' % inputfile
-        return None, None, msg
+        return None, msg, None
 
-    return network, postprocess(df), ''
+    return postprocess(df, network), '', network
 
 
 def get_dyfi_dataframe_from_comcat(extid):
@@ -94,30 +101,115 @@ def get_dyfi_dataframe_from_comcat(extid):
     return postprocess(df), None
 
 
-def get_dyfi_dataframe_from_network():
+def get_dyfi_dataframe_from_network(eventid, extid, network):
     df = None
     msg = ''
-    return postprocess(df)
+
+    if network == 'neic':
+        return get_dyfi_dataframe_from_comcat(extid)
+        # This will run postprocess, so return at this point
+    elif network == 'ga':
+        df, msg = get_dyfi_dataframe_from_ga(extid)
+    elif network == 'emsc':
+        df, msg = get_dyfi_dataframe_from_emsc(extid)
+    else:
+        msg = 'Unknown network %s' % network
+
+    if msg:
+        return None, msg
+
+    processed = postprocess(df, network)
+    return processed, ''
+
+
+def get_dyfi_dataframe_from_ga(extid):
+    df_by_geotype = {}
+
+    print('Attempting to find GA ID with',extid)
+    for geotype in ('10km', '1km'):
+        filename = 'felt_reports_%s_filtered.geojson' % geotype
+        url = GA_TEMPLATE
+        url = url.replace('[EID]', extid)
+        url = url.replace('[FILE]', filename)
+        print(url)
+        try:
+            fh = request.urlopen(url, timeout=TIMEOUT)
+            data = fh.read()
+            fh.close()
+            print('Retrieved %s from GA' % filename)
+
+
+        except urlerror.HTTPError:
+            raise
+            print('Could not get data for %s from GA' % filename)
+            continue
+
+        df = _parse_geocoded_json(data)
+        print('File %s has %i stations.' % (filename, len(df)))
+        df_by_geotype[geotype] = df
+
+    if len(df_by_geotype) < 1:
+        msg = 'Could not get geojson data from GA'
+        return None, msg
+
+    # Choose the most number of stations
+    sortedlist = sorted(df_by_geotype.values(), key=len)
+    df = sortedlist[-1]
+
+    return df, ''
 
 
 def get_network_from_id(extid):
+    if extid[0:2] == 'ga':
+        return 'ga'
+    elif re.match('\d{8}_\d{7}.txt', extid):
+        return 'emsc'
+
     network = None
     return network
 
 
-def get_extid_from_network(network):
-    extid = None
-    return extid
+def get_extid_from_network(eventid, network):
+    if network == 'neic':
+        return eventid
+    elif network == 'ga':
+        extid_retriever = get_extid_from_ga
+    elif network == 'emsc':
+        extid_retriever = get_extid_from_emsc
+
+    return extid_retriever(eventid)
 
 
-def postprocess(df):
+def getextid_from_ga(eventid):
 
-    df['netid'] = 'DYFI'
-    df['source'] = "USGS (Did You Feel It?)"
+    raise
+
+
+def postprocess(df, network=None):
+
+    netid = 'DYFI'
+    source = 'USGS (Did You Feel It?)'
+
+    if network == 'ga':
+        netid = 'GA'
+        source = 'Geoscience Australia (Felt report)'
+        df['station'] = df['location']
+        df = df.drop(columns=['location'])
+
+        print(df.columns)
+
+    elif network == 'emsc':
+        netid = 'EMSC'
+        source = 'European-Mediterranean Seismic Center'
+
+    df['netid'] = netid
+    df['source'] = source
     df.columns = df.columns.str.upper()
 
     return df
 
+
+# Functions below this point are for NEIC and derived from Shakemap
 
 def _parse_dyfi_detail(detail):
 

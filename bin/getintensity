@@ -10,12 +10,6 @@ from shakemap.utils.config import get_config_paths
 from impactutils.io.table import dataframe_to_xml
 import getintensity.tools as gi
 
-# Put this in getintensity module instead
-COMCAT_TEMPLATE = 'https://earthquake.usgs.gov/fdsnws/event/1/query?' \
-                  'eventid=[EID]&format=geojson'
-GA_TEMPLATE = 'https://cdn.gagempa.net/skip/events/' \
-                    '[EXTID]/[GEOJSONFILE]'
-
 
 def get_parser():
     description = '''
@@ -72,17 +66,26 @@ def main(args):
             eventid, inputfile, network)
 
     elif (not network and not extid) or (network == 'neic'):
-        # are we requesting Comcat data only?
+        # Requesting Comcat data only
+        network = 'neic'
         extid = extid or eventid
         dataframe, msg = gi.get_dyfi_dataframe_from_comcat(extid)
 
     elif network:
-        extid = gi.get_extid_from_network(eventid, network)
+        extid = extid or gi.get_extid_from_network(eventid, network)
+        if not extid:
+            print('Could not find external ID %s in %s.' % (eventid, network))
+            sys.exit(0)
+
         dataframe, msg = gi.get_dyfi_dataframe_from_network(
             eventid, extid, network)
 
     elif extid:
-        network = gi.get_network_from_id(extid)
+        network = network or gi.get_network_from_id(extid)
+        if not network:
+            print('Could not determine network for ID', extid)
+            sys.exit(0)
+        print('Determined this network to be', network)
         dataframe, msg = gi.get_dyfi_dataframe_from_network(
             eventid, extid, network)
 
@@ -104,8 +107,17 @@ def main(args):
         print(fmt % (eventid, eventid))
         sys.exit(1)
 
-    reference = 'USGS Did You Feel It? System'
-    outfile = os.path.join(event_dir, 'dyfi_dat.xml')
+    if network == 'ga':
+        reference = 'Geoscience Australia'
+        outfile = 'ga_ii_dat.xml'
+    elif network == 'emsc':
+        reference = 'EMSC (aggregated by USGS)'
+        outfile = 'emsc_ii_dat.xml'
+    else:
+        reference = 'USGS Did You Feel It? System'
+        outfile = 'dyfi_dat.xml'
+
+    outfile = os.path.join(event_dir, outfile)
     dataframe_to_xml(dataframe, outfile, reference)
     print('Saved DYFI data to %s.' % outfile)
     sys.exit(0)
