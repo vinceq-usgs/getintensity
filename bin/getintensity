@@ -36,6 +36,8 @@ def get_parser():
         ga      Geosciences Australia
         emsc    European-Mediterranean Seismic Center
 
+    If --network is missing, this will attempt to guess it from extid or inputfile.
+
     '''
     parser = argparse.ArgumentParser(description=description)
     parser.add_argument('eventid',

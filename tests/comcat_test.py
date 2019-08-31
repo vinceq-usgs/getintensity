@@ -7,6 +7,8 @@ import numpy as np
 from shutil import rmtree
 
 import getintensity.tools as gi
+import getintensity.comcat as comcat
+
 from libcomcat.search import get_event_by_id
 from impactutils.io.table import dataframe_to_xml
 
@@ -30,7 +32,8 @@ def test_comcat_data():
 
     with vcr.use_cassette(tape_file1):
         detail = get_event_by_id(eventid)
-        df, msg = gi.get_dyfi_dataframe_from_comcat(detail)
+        df, msg = comcat.get_dyfi_dataframe_from_comcat(detail)
+        df = gi.postprocess(df, 'neic')
 
     np.testing.assert_almost_equal(df['INTENSITY'].sum(), 4510.1)
 
@@ -51,7 +54,8 @@ def test_comcat_data():
 
     with vcr.use_cassette(tape_file2):
         detail = get_event_by_id(eventid)
-        df, msg = gi.get_dyfi_dataframe_from_comcat(detail)
+        df, msg = comcat.get_dyfi_dataframe_from_comcat(detail)
+        df = gi.postprocess(df, 'neic')
 
     np.testing.assert_almost_equal(df['INTENSITY'].sum(), 800.4)
 
