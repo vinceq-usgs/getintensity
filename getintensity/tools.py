@@ -51,19 +51,21 @@ def get_dyfi_dataframe_from_file(eventid, inputfile, network=None):
             msg = 'This looks like an EMSC ZIP file. Please unzip \
                 this and rerun this program on the unzipped (.txt) file.'
             return None, msg, None
-        elif '.csv' in inputfile:
-            network = 'emsc'
-        elif '.geojson' in inputfile and 'felt_reports' in inputfile:
+        elif re.search('felt_reports_', inputfile):
             network = 'ga'
-        elif '.geojson' in inputfile and 'dyfi_' in inputfile:
+        elif re.search('dyfi_geo_', inputfile):
             network = 'neic'
         elif 'cdi_geo.txt' in inputfile:
-            network = 'neic'
+            network = 'emsc'
+        elif re.search('\d{8}_\d{7}.txt', inputfile):
+            network = 'emsc'
 
     if '.geojson' in inputfile:
-        parser = _parse_geocoded_json
-    elif 'csv' in inputfile or 'txt' in inputfile:
-        parser = _parse_geocoded_csv
+        parser = _parse_dyfi_geocoded_json
+    elif network == 'emsc' and ('.csv' in inputfile or '.txt' in inputfile):
+        parser = _parse_emsc_geocoded_csv
+    elif network == 'neic' and ('.csv' in inputfile or '.txt' in inputfile):
+        parser = _parse_dyfi_geocoded_csv
     else:
         msg = 'Unknown file type for %s' % inputfile
         return None, msg, None
@@ -125,7 +127,7 @@ def get_dyfi_dataframe_from_network(eventid, extid, network):
 def get_dyfi_dataframe_from_ga(extid):
     df_by_geotype = {}
 
-    print('Attempting to find GA ID with',extid)
+    print('Attempting to find GA ID with', extid)
     for geotype in ('10km', '1km'):
         filename = 'felt_reports_%s_filtered.geojson' % geotype
         url = GA_TEMPLATE
@@ -137,14 +139,12 @@ def get_dyfi_dataframe_from_ga(extid):
             data = fh.read()
             fh.close()
             print('Retrieved %s from GA' % filename)
+        except urlerror.HTTPError as e:
+            print('Could not get data for %s from GA. Stopping.' % filename)
+            print('HTTPError: %s %s' % (e.code, e.reason))
+            exit()
 
-
-        except urlerror.HTTPError:
-            raise
-            print('Could not get data for %s from GA' % filename)
-            continue
-
-        df = _parse_geocoded_json(data)
+        df = _parse_dyfi_geocoded_json(data)
         print('File %s has %i stations.' % (filename, len(df)))
         df_by_geotype[geotype] = df
 
@@ -160,12 +160,20 @@ def get_dyfi_dataframe_from_ga(extid):
 
 
 def get_network_from_id(extid):
-    if extid[0:2] == 'ga':
-        return 'ga'
-    elif re.match('\d{8}_\d{7}.txt', extid):
-        return 'emsc'
-
     network = None
+    if extid[0:2] == 'ga':
+        network = 'ga'
+    elif re.match('\d{6}', extid):
+        network = 'emsc'
+    elif re.match('[^ 0-9]{2}', extid):
+        network = 'neic'
+
+    if network:
+        print('Guessing %s to be an %s network ID.' % (extid, network))
+    else:
+        print('Cannot guess network from id. Stopping.', extid)
+        exit()
+
     return network
 
 
@@ -193,11 +201,12 @@ def postprocess(df, network=None):
     if network == 'ga':
         netid = 'GA'
         source = 'Geoscience Australia (Felt report)'
-        df['station'] = df['location']
+
+        if 'UTM' in df['location'][0]:
+            df['station'] = df['location']
+        else:
+            df['station'] = 'UTM:(' + df['location'] + ')'
         df = df.drop(columns=['location'])
-
-        print(df.columns)
-
     elif network == 'emsc':
         netid = 'EMSC'
         source = 'European-Mediterranean Seismic Center'
@@ -230,14 +239,14 @@ def _parse_dyfi_detail(detail):
     # get 10km data set, if exists
     if len(dyfi.getContentsMatching('dyfi_geo_10km.geojson')):
         bytes_10k, _ = dyfi.getContentBytes('dyfi_geo_10km.geojson')
-        df_10k = _parse_geocoded_json(bytes_10k)
+        df_10k = _parse_dyfi_geocoded_json(bytes_10k)
         print('Found dyfi_geo_10km.geojson with', len(df_10k), 'stations.')
 
     # get 1km data set, if exists
     if len(dyfi.getContentsMatching('dyfi_geo_1km.geojson')):
         print('Found dyfi_geo_1km.geojson')
         bytes_1k, _ = dyfi.getContentBytes('dyfi_geo_1km.geojson')
-        df_1k = _parse_geocoded_json(bytes_1k)
+        df_1k = _parse_dyfi_geocoded_json(bytes_1k)
         print('Found dyfi_geo_1km.geojson with', len(df_1k), 'stations.')
 
     if len(df_1k) >= len(df_10k):
@@ -251,12 +260,12 @@ def _parse_dyfi_detail(detail):
             return (None, 'No geocoded datasets are available for this event.')
 
         bytes_geo, _ = dyfi.getContentBytes('cdi_geo.txt')
-        df = _parse_geocoded_csv(bytes_geo)
+        df = _parse_dyfi_geocoded_csv(bytes_geo)
 
     return df, ''
 
 
-def _parse_geocoded_csv(bytes_data):
+def _parse_dyfi_geocoded_csv(bytes_data):
     # the dataframe we want has columns:
     # 'intensity', 'distance', 'lat', 'lon', 'station', 'nresp'
     # the cdi geo file has:
@@ -282,7 +291,7 @@ def _parse_geocoded_csv(bytes_data):
     return df
 
 
-def _parse_geocoded_json(bytes_data):
+def _parse_dyfi_geocoded_json(bytes_data):
 
     text_data = bytes_data.decode('utf-8')
     jdict = json.loads(text_data)

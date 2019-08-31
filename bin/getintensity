@@ -5,11 +5,16 @@ import argparse
 import os.path
 import sys
 
+
+# This code ensures that this uses impactutils from this directory
+# and not the pip-installed one
+import os
+sys.path.insert(0, os.getcwd())
+
 # local imports
 from shakemap.utils.config import get_config_paths
 from impactutils.io.table import dataframe_to_xml
 import getintensity.tools as gi
-
 
 def get_parser():
     description = '''
