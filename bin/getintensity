@@ -2,6 +2,7 @@
 
 # stdlib imports
 import argparse
+import configparser
 import os.path
 import sys
 
@@ -10,11 +11,13 @@ import sys
 # and not the pip-installed one
 import os
 sys.path.insert(0, os.getcwd())
+from impactutils.io.table import dataframe_to_xml
+
+# ShakeMap installation is optional
+# from shakemap.utils.config import get_config_paths
 
 # local imports
-from shakemap.utils.config import get_config_paths
-from impactutils.io.table import dataframe_to_xml
-import getintensity.tools as gi
+from getintensity.tools import IntensityParser
 
 def get_parser():
     description = '''
@@ -50,11 +53,25 @@ def get_parser():
                         help='Network abbreviation')
     parser.add_argument('--file',
                         help='Download to Excel file specified')
+    parser.add_argument('--config',
+                        help='Config file',
+                        default='config.ini')
     return parser
 
 
 def main(args):
-    install_path, data_path = get_config_paths()
+    config = configparser.ConfigParser()
+    with open(args.config, 'r') as f:
+        config.read_file(f)
+
+    use_shakemap_path = (config['directories']['use_shakemap_path'] == 'yes')
+    if use_shakemap_path:
+        from shakemap.utils.config import get_config_paths
+        install_path, data_path = get_config_paths()
+
+    else:
+        data_path = config['directories']['default_data_path']
+
     if not os.path.isdir(data_path):
         print('%s is not a valid directory.' % data_path)
         sys.exit(1)
@@ -65,36 +82,36 @@ def main(args):
     network = args.network
     dataframe = None
 
+    iparser = IntensityParser(config = config, eventid = eventid,
+        extid = extid, network = network)
+
     # is there an input file?
     if inputfile:
         # If network is blank, this will attempt to figure out the network
         # from the file during parsing
-        network, dataframe, msg = gi.get_dyfi_dataframe_from_file(
-            eventid, inputfile, network)
+        network, dataframe, msg = iparser.get_dyfi_dataframe_from_file(inputfile)
 
     elif (not network and not extid) or (network == 'neic'):
         # Requesting Comcat data only
         network = 'neic'
         extid = extid or eventid
-        dataframe, msg = gi.get_dyfi_dataframe_from_comcat(extid)
+        dataframe, msg = iparser.get_dyfi_dataframe_from_network(extid, network=network)
 
     elif network:
-        extid = extid or gi.get_extid_from_network(eventid, network)
+        extid = extid or iparser.get_extid_from_network(eventid, network)
         if not extid:
             print('Could not find external ID %s in %s.' % (eventid, network))
             sys.exit(0)
 
-        dataframe, msg = gi.get_dyfi_dataframe_from_network(
-            eventid, extid, network)
+        dataframe, msg = iparser.get_dyfi_dataframe_from_network()
 
     elif extid:
-        network = network or gi.get_network_from_id(extid)
+        network = network or iparser.get_network_from_id(extid)
         if not network:
             print('Could not determine network for ID', extid)
             sys.exit(0)
         print('Determined this network to be', network)
-        dataframe, msg = gi.get_dyfi_dataframe_from_network(
-            eventid, extid, network)
+        dataframe, msg = iparser.get_dyfi_dataframe_from_network()
 
     if dataframe is None:
         print(msg)
@@ -107,12 +124,15 @@ def main(args):
         sys.exit(0)
 
     # check to see if the event directory exists
-    event_dir = os.path.join(data_path, eventid, 'current')
-    if not os.path.isdir(event_dir):
-        fmt = 'Event %s does not exist in this installation.  Run ' \
-              '"sm_create %s" first.'
-        print(fmt % (eventid, eventid))
-        sys.exit(1)
+    if use_shakemap_path:
+        event_dir = os.path.join(data_path, eventid, 'current')
+        if not os.path.isdir(event_dir):
+            fmt = 'Event %s does not exist in this installation.  Run ' \
+                '"sm_create %s" first.'
+            print(fmt % (eventid, eventid))
+            sys.exit(1)
+    else:
+        event_dir = data_path
 
     if network == 'ga':
         reference = 'Geoscience Australia'

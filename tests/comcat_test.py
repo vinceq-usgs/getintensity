@@ -3,10 +3,12 @@
 import tempfile
 import os.path
 import vcr
+import configparser
 import numpy as np
 from shutil import rmtree
+import warnings
 
-import getintensity.tools as gi
+from getintensity.tools import IntensityParser
 import getintensity.comcat as comcat
 
 from libcomcat.search import get_event_by_id
@@ -14,26 +16,44 @@ from impactutils.io.table import dataframe_to_xml
 
 
 def get_datadir():
-    # where is this script?
+    # this returns the test data directory
+
     homedir = os.path.dirname(os.path.abspath(__file__))
     datadir = os.path.join(homedir, 'data')
     return datadir
 
 
+def get_config():
+
+    homedir = os.path.dirname(os.path.abspath(__file__))
+    configfile = os.path.join(homedir, '..', 'config.ini')
+    config = configparser.ConfigParser()
+
+    with open(configfile,'r') as f:
+        config = config.read_file(f)
+
+    return config
+
+
 def test_comcat_data():
-    # test extraction from comcat event data. The VCR files are
-    # example Comcat event datastreams.
 
     datadir = get_datadir()
+    config = get_config()
+
+    # test extraction from comcat event data. The VCR files are
+    # example Comcat event datastreams.
+    eventid = 'ci14607652'
 
     # This event has both geo_1km and geo_10km
-    eventid = 'ci14607652'
     tape_file1 = os.path.join(datadir, 'vcr_comcat_geojson.yaml')
+
+    iparser = IntensityParser(eventid=eventid, config=config, network='neic')
 
     with vcr.use_cassette(tape_file1):
         detail = get_event_by_id(eventid)
-        df, msg = comcat.get_dyfi_dataframe_from_comcat(detail)
-        df = gi.postprocess(df, 'neic')
+
+    df, msg = comcat.get_dyfi_dataframe_from_comcat(iparser, detail)
+    df = iparser.postprocess(df, 'neic')
 
     np.testing.assert_almost_equal(df['INTENSITY'].sum(), 4510.1)
 
@@ -41,6 +61,8 @@ def test_comcat_data():
     tempdir = tempfile.mkdtemp(prefix='tmp.', dir=datadir)
     outfile = os.path.join(tempdir, 'dyfi_dat.xml')
     dataframe_to_xml(df, outfile, reference)
+
+    # For debugging save the output with this line:
     # dataframe_to_xml(df, datadir + '/tmp.keepthis.xml', reference)
 
     outfilesize = os.path.getsize(outfile)
@@ -54,8 +76,8 @@ def test_comcat_data():
 
     with vcr.use_cassette(tape_file2):
         detail = get_event_by_id(eventid)
-        df, msg = comcat.get_dyfi_dataframe_from_comcat(detail)
-        df = gi.postprocess(df, 'neic')
+        df, msg = comcat.get_dyfi_dataframe_from_comcat(iparser, detail)
+        df = iparser.postprocess(df, 'neic')
 
     np.testing.assert_almost_equal(df['INTENSITY'].sum(), 800.4)
 
@@ -63,10 +85,12 @@ def test_comcat_data():
 def test_comcat_file():
     eventid = 'nc72282711'
     datadir = get_datadir()
+    config = get_config()
+    iparser = IntensityParser(eventid=eventid, config=config, network='neic')
 
     # Test reading a comcat file
     testfile = os.path.join(datadir, 'nc72282711_dyfi_geo_10km.geojson')
-    df, msg, network = gi.get_dyfi_dataframe_from_file(eventid, testfile)
+    df, msg, network = iparser.get_dyfi_dataframe_from_file(testfile)
 
     assert len(df) == 203
     np.testing.assert_equal(df['INTENSITY'].sum(), 705.3)
@@ -92,8 +116,7 @@ def test_comcat_file():
         msg = 'A newer version of impactutils is required to process \
 intensity parameters. If you do not work with intensity data, \
 you can safely ignore this warning.'
-        print(msg)
-
+        warnings.warn(msg)
 
 if __name__ == '__main__':
     os.environ['CALLED_FROM_PYTEST'] = 'True'

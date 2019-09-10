@@ -4,15 +4,10 @@ import pandas as pd
 import numpy as np
 import json
 from io import StringIO
-import re
-import urllib.request as request
-import urllib.error as urlerror
 
 from libcomcat.classes import DetailEvent
 
 source = 'USGS (Did You Feel It?)'
-COMCAT_TEMPLATE = 'https://earthquake.usgs.gov/fdsnws/event/1/query?' \
-                  'eventid=[EID]&format=geojson'
 TIMEOUT = 60
 
 
@@ -38,14 +33,17 @@ OLD_DYFI_COLUMNS_REPLACE = {
 MIN_RESPONSES = 3  # minimum number of DYFI responses per grid
 
 
-def get_dyfi_dataframe_from_comcat(extid):
+def get_dyfi_dataframe_from_comcat(self, extid):
     df = None
     msg = ''
 
     if isinstance(extid, DetailEvent):
         detail = extid
+
     else:
-        url = COMCAT_TEMPLATE.replace('[EID]', extid)
+        config = self.config['neic']
+        template = config['template']
+        url = template.replace('[EID]', extid)
         print('Checking URL:', url)
         detail = DetailEvent(url)
     if detail is None:
@@ -59,8 +57,6 @@ def get_dyfi_dataframe_from_comcat(extid):
 
     return df, None
 
-
-# Functions below this point are for NEIC and derived from Shakemap
 
 def _parse_dyfi_detail(detail):
 
