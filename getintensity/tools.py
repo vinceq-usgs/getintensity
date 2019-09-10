@@ -50,7 +50,7 @@ class IntensityParser:
         elif network == 'neic' and ('.csv' in inputfile or '.txt' in inputfile):
             parser = comcat._parse_dyfi_geocoded_csv
         elif network == 'emsc' and ('.csv' in inputfile or '.txt' in inputfile):
-            parser = emsc._parse_emsc_geocoded_csv
+            parser = emsc._parse_and_geocode_emsc_csv
         else:
             msg = 'Unknown file type for %s' % inputfile
             return None, msg, None
