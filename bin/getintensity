@@ -110,8 +110,9 @@ def main(args):
         if not network:
             print('Could not determine network for ID', extid)
             sys.exit(0)
-        print('Determined this network to be', network)
-        dataframe, msg = iparser.get_dyfi_dataframe_from_network()
+        print('Determined this network to be:', network)
+        iparser.network = network
+        dataframe, msg = iparser.get_dyfi_dataframe_from_network(extid)
 
     if dataframe is None:
         print(msg)

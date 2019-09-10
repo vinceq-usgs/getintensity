@@ -82,7 +82,7 @@ class IntensityParser:
             msg = 'Unknown network %s' % network
 
         if getter:
-            df, msg = getter(extid)
+            df, msg = getter(self, extid)
         if msg:
             return None, msg
 

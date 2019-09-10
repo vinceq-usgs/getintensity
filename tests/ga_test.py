@@ -26,7 +26,7 @@ def get_config():
     configfile = os.path.join(homedir, '..', 'config.ini')
     config = configparser.ConfigParser()
 
-    with open(configfile,'r') as f:
+    with open(configfile, 'r') as f:
         config = config.read_file(f)
 
     return config
@@ -36,16 +36,23 @@ def test_ga_file():
     eventid = 'unknown'
     datadir = get_datadir()
     config = get_config()
+    iparser = IntensityParser(eventid=eventid, config=config, network='ga')
 
     # Test reading a comcat file
-    iparser = IntensityParser(eventid=eventid, config=config)
-    testfile = os.path.join(datadir, 'felt_reports_1km.geojson')
+    testfile = os.path.join(datadir, 'felt_reports_1km_filtered.geojson')
     df, msg, network = iparser.get_dyfi_dataframe_from_file(testfile)
+    assert len(df) == 126
+    np.testing.assert_almost_equal(df['INTENSITY'].sum(), 471.3)
+    np.testing.assert_equal(df['NRESP'].sum(), 1316)
 
-    assert len(df) == 113
-    assert df['SOURCE'][0] == 'Geoscience Australia (Felt report)'
-    np.testing.assert_almost_equal(df['INTENSITY'].sum(), 427.9)
-    np.testing.assert_equal(df['NRESP'].sum(), 1146)
+    # Test reading a comcat file
+    testfile = os.path.join(datadir, 'felt_reports_10km_filtered.geojson')
+    df, msg, network = iparser.get_dyfi_dataframe_from_file(testfile)
+    assert len(df) == 62
+    np.testing.assert_equal(df['INTENSITY'].sum(), 201.3)
+    np.testing.assert_equal(df['NRESP'].sum(), 1525)
+
+    return
 
 
 def test_ga_retrieve():

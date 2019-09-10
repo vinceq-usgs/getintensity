@@ -39,13 +39,13 @@ def get_dyfi_dataframe_from_comcat(self, extid):
 
     if isinstance(extid, DetailEvent):
         detail = extid
-
     else:
         config = self.config['neic']
         template = config['template']
         url = template.replace('[EID]', extid)
         print('Checking URL:', url)
         detail = DetailEvent(url)
+
     if detail is None:
         msg = 'Error getting data from Comcat'
         return None, msg
