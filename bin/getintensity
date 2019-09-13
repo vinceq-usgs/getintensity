@@ -19,6 +19,7 @@ from impactutils.io.table import dataframe_to_xml
 # local imports
 from getintensity.tools import IntensityParser
 
+
 def get_parser():
     description = '''
     Download DYFI data from Comcat or an external source into a local data
@@ -39,7 +40,8 @@ def get_parser():
         ga      Geosciences Australia
         emsc    European-Mediterranean Seismic Center
 
-    If --network is missing, this will attempt to guess it from extid or inputfile.
+    If --network is missing, this will attempt to guess it from extid or
+    inputfile.
 
     '''
     parser = argparse.ArgumentParser(description=description)
@@ -82,8 +84,8 @@ def main(args):
     network = args.network
     dataframe = None
 
-    iparser = IntensityParser(config = config, eventid = eventid,
-        extid = extid, network = network)
+    iparser = IntensityParser(config=config, eventid=eventid,
+                              extid=extid, network=network)
 
     # is there an input file?
     if inputfile:

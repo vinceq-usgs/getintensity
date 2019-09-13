@@ -50,7 +50,7 @@ class IntensityParser:
         elif network == 'neic' and ('.csv' in inputfile or '.txt' in inputfile):
             parser = comcat._parse_dyfi_geocoded_csv
         elif network == 'emsc' and ('.csv' in inputfile or '.txt' in inputfile):
-            parser = emsc._parse_and_geocode_emsc_csv
+            parser = emsc.process_emsc_csv
         else:
             msg = 'Unknown file type for %s' % inputfile
             return None, msg, None
@@ -63,7 +63,7 @@ class IntensityParser:
             msg = 'Could not read file %s' % inputfile
             return None, msg, None
 
-        return self.postprocess(df, network), '', network
+        return network, self.postprocess(df, network), ''
 
     def get_dyfi_dataframe_from_network(self, extid=None, network=None):
         df = None
