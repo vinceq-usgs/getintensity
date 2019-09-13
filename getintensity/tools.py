@@ -107,8 +107,7 @@ class IntensityParser:
 
         return network
 
-    @classmethod
-    def get_extid_from_network(cls, eventid, network):
+    def get_extid_from_network(self, eventid, network):
         if network == 'neic':
             return eventid
         elif network == 'ga':
@@ -116,7 +115,8 @@ class IntensityParser:
         elif network == 'emsc':
             extid_retriever = emsc.get_extid_from_emsc
 
-        return extid_retriever(eventid)
+        self.extid = extid_retriever(self, eventid)
+        return self.extid
 
     # TODO: Move this to network-specific modules
     @classmethod

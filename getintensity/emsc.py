@@ -5,6 +5,7 @@ import urllib.error as urlerror
 import pandas as pd
 import numpy as np
 import zipfile
+import json
 from io import BytesIO, StringIO
 
 from getintensity.aggregate import aggregate
@@ -43,10 +44,39 @@ def get_dyfi_dataframe_from_emsc(self, extid):
         return None, msg
 
     df = process_emsc_csv(csvdata)
-    if not df:
+    if df is None:
         msg = 'Could not decode EMSC data'
         return None, msg
     return df, None
+
+
+def get_extid_from_emsc(self, inputid):
+
+    config = self.config['emsc']
+    url = config['search_template']
+    url = url.replace('[EID]', inputid)
+
+    try:
+        print('Attempting URL:')
+        print(url)
+        fh = request.urlopen(url, timeout=TIMEOUT)
+        rawdata = fh.read()
+        fh.close()
+    except urlerror.HTTPError as e:
+        print('Error accessing EMSC Eventid server. Stopping.')
+        print('HTTPError: %s %s' % (e.code, e.reason))
+        return None
+
+    try:
+        rawdata = rawdata.decode('utf-8')
+        jsondata = json.loads(rawdata)
+        extid = jsondata[0]['id']
+    except:
+        print('Unable to unpack EMSC Eventid server.')
+        return
+
+    print('Retrieved', extid, 'from EMSC Eventid server.')
+    return extid
 
 
 def parse_zip(bufferstr):
@@ -116,9 +146,3 @@ def _compute_stddev(df):
     stddevs = np.ones_like(ii) * 0.49
     stddevs[ii >= 3.15] = 0.36
     return stddevs
-
-
-def get_extid_from_emsc(eventid):
-
-    print('Not yet implemented')
-    raise
