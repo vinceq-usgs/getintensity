@@ -86,16 +86,14 @@ def parse_zip(bufferstr):
 
     z = zipfile.ZipFile(BytesIO(bufferstr))
     filenames = z.namelist()
-
-    print('Got namelist:', filenames)
     if not filenames:
         print('No names found.')
-        with open('tmp.zip', 'wb') as f:
+        with open('tmp.badzipfile.zip', 'wb') as f:
             f.write(bufferstr)
         exit()
 
     if len(filenames) > 1:
-        print('WARNING: >1 files found, using only the first available.')
+        print('WARNING: >1 file found, using only the first available.')
 
     data = z.read(filenames[0])
     return data
@@ -140,8 +138,6 @@ def _parse_emsc_raw(emscdata):
 def _compute_stddev(df):
     # From Bossu et al, SRL 2016 88 (1): 72–81.
     # doi: https://doi.org/10.1785/0220160120
-    print(df)
-    print(df.columns)
     ii = df['INTENSITY']
     stddevs = np.ones_like(ii) * 0.49
     stddevs[ii >= 3.15] = 0.36

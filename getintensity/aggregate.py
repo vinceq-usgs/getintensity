@@ -53,22 +53,22 @@ def aggregate(df, producttype, minresps=0):
 
     # Loop through each entry, compute the bin it belongs to
 
-    npts = len(df.index)
-    print('Processing', npts, 'pts.')
-
-    # Get UTM for each location
     def _getutm(x):
+        # Get UTM for each location
         return getUtmFromCoordinates(x.LAT, x.LON, resolutionMeters)
     df['LOCATION'] = df.apply(_getutm, axis=1)
 
     # Drop rows with no location data
     df = df[~df['LOCATION'].isnull()]
-    print('Now with', len(df.index), 'entries.')
+    print('Geocoded %s got %i entries with valid locations.' %
+          (producttype, len(df.index)))
 
     by_locs = df.groupby('LOCATION')
     agg_df = by_locs.agg(INTENSITY=('INTENSITY', 'mean'),
                          NRESP=('INTENSITY', 'count'))
-    print('Aggregated to', len(agg_df.index), 'locations.')
+    agg_df = agg_df[agg_df['NRESP'] >= minresps]
+    print('Aggregated to %i locations with %i+ responses.' %
+          (len(agg_df.index), minresps))
 
     # Get center of each UTM location
     def _getCenter(row):
