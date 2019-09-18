@@ -29,7 +29,7 @@ def get_config():
     configfile = os.path.join(homedir, '..', 'config.ini')
     config = configparser.ConfigParser()
 
-    with open(configfile,'r') as f:
+    with open(configfile, 'r') as f:
         config = config.read_file(f)
 
     return config
@@ -90,7 +90,7 @@ def test_comcat_file():
 
     # Test reading a comcat file
     testfile = os.path.join(datadir, 'nc72282711_dyfi_geo_10km.geojson')
-    df, msg, network = iparser.get_dyfi_dataframe_from_file(testfile)
+    df, msg = iparser.get_dyfi_dataframe_from_file(testfile)
 
     assert len(df) == 203
     np.testing.assert_equal(df['INTENSITY'].sum(), 705.3)

@@ -5,11 +5,16 @@ import urllib.error as urlerror
 
 from getintensity.comcat import _parse_dyfi_geocoded_json
 
+netid = 'GA'
 source = 'Geoscience Australia (Felt report)'
+reference = 'Geoscience Australia'
+default_outfile = 'ga_ii_dat.xml'
+
 TIMEOUT = 60
 MIN_RESPONSES = 3  # minimum number of DYFI responses per grid
 
 
+# This should be called as a method of IntensityParser, hence the 'self'
 def get_dyfi_dataframe_from_ga(self, extid):
     df = None
     msg = ''
@@ -56,3 +61,12 @@ def getextid_from_ga(eventid):
 
     print('Not yet implemented')
     raise
+
+
+def postprocess(df):
+    if 'UTM' in df['location'][0]:
+        df['station'] = df['location']
+    else:
+        df['station'] = 'UTM:(' + df['location'] + ')'
+
+    df = df.drop(columns=['location'])

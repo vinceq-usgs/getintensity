@@ -7,8 +7,13 @@ from io import StringIO
 
 from libcomcat.classes import DetailEvent
 
+netid = 'DYFI'
 source = 'USGS (Did You Feel It?)'
+reference = 'USGS Did You Feel It? System'
+default_outfile = 'dyfi_dat.xml'
+
 TIMEOUT = 60
+MIN_RESPONSES = 3  # minimum number of DYFI responses per grid
 
 
 # For legacy DYFI events only (cdi_geo.txt files)
@@ -30,9 +35,8 @@ OLD_DYFI_COLUMNS_REPLACE = {
     'Epicentral distance': 'distance'
 }
 
-MIN_RESPONSES = 3  # minimum number of DYFI responses per grid
 
-
+# This should be called as a method of IntensityParser hence the 'self'
 def get_dyfi_dataframe_from_comcat(self, extid):
     df = None
     msg = ''

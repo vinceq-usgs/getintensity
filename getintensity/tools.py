@@ -20,6 +20,12 @@ class IntensityParser:
         self.extid = extid
         self.network = network
 
+        # These need to be filled out by postprocess()
+        self.netid = None
+        self.source = None
+        self.reference = None
+        self.default_outfile = None
+
         return
 
     def get_dyfi_dataframe_from_file(self, inputfile,
@@ -42,18 +48,21 @@ class IntensityParser:
                 network = 'neic'
             elif 'cdi_geo.txt' in inputfile:
                 network = 'emsc'
-            elif re.search('\d{8}_\d{7}.txt', inputfile):
+            elif re.search(r'\d{8}_\d{7}.txt', inputfile):
                 network = 'emsc'
 
+        self.network = self.network or network
+
+        is_csv = re.search(r'\.csv$|\.txt$', inputfile)
         if '.geojson' in inputfile:
             parser = comcat._parse_dyfi_geocoded_json
-        elif network == 'neic' and ('.csv' in inputfile or '.txt' in inputfile):
+        elif network == 'neic' and is_csv:
             parser = comcat._parse_dyfi_geocoded_csv
-        elif network == 'emsc' and ('.csv' in inputfile or '.txt' in inputfile):
+        elif network == 'emsc' and is_csv:
             parser = emsc.process_emsc_csv
         else:
             msg = 'Unknown file type for %s' % inputfile
-            return None, msg, None
+            return None, msg
 
         with open(inputfile, 'rb') as f:
             rawdata = f.read()
@@ -61,9 +70,9 @@ class IntensityParser:
 
         if df is None:
             msg = 'Could not read file %s' % inputfile
-            return None, msg, None
+            return None, msg
 
-        return network, self.postprocess(df, network), ''
+        return self.postprocess(df, self.network), ''
 
     def get_dyfi_dataframe_from_network(self, extid=None, network=None):
         df = None
@@ -94,9 +103,9 @@ class IntensityParser:
         network = None
         if extid[0:2] == 'ga':
             network = 'ga'
-        elif re.match('\d{6}', extid):
+        elif re.match(r'\d{6}', extid):
             network = 'emsc'
-        elif re.match('[^ 0-9]{2}', extid):
+        elif re.match(r'[^ 0-9]{2}', extid):
             network = 'neic'
 
         if network:
@@ -118,31 +127,37 @@ class IntensityParser:
         self.extid = extid_retriever(self, eventid)
         return self.extid
 
-    # TODO: Move this to network-specific modules
-    @classmethod
-    def postprocess(cls, df, network=None):
+    def postprocess(self, df, network=None):
+        # From the correct network module define:
+        # netid, source, reference, default_outfile
 
-        netid = 'DYFI'
-        source = comcat.source
-        if not network and hasattr(cls, 'network'):
-            network = cls.network
+        if not network and self.network:
+                network = self.network
 
-        if network == 'ga':
-            netid = 'GA'
-            source = ga.source
+        module_list = {'neic': comcat,
+                       'emsc': emsc,
+                       'ga': ga}
 
-            if 'UTM' in df['location'][0]:
-                df['station'] = df['location']
-            else:
-                df['station'] = 'UTM:(' + df['location'] + ')'
-            df = df.drop(columns=['location'])
+        if network in module_list:
+            module = module_list[network]
+        else:
+            print('Attempting to postprocess unknown network. Stopping.')
+            exit()
 
-        elif network == 'emsc':
-            netid = 'EMSC'
-            source = emsc.source
+        self.netid = getattr(module, 'netid')
+        self.source = getattr(module, 'source')
+        self.reference = getattr(module, 'reference')
+        self.default_outfile = getattr(module, 'default_outfile')
 
-        df['netid'] = netid
-        df['source'] = source
+        # Call network-specific postprocess, if it exists
+        try:
+            _postprocess_func = getattr(module, 'postprocess')
+            _postprocess_func(df)
+        except AttributeError:
+            pass
+
+        df['netid'] = self.netid
+        df['source'] = self.source
         df.columns = df.columns.str.upper()
 
         return df

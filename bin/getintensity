@@ -6,18 +6,15 @@ import configparser
 import os.path
 import sys
 
+# local imports
+from getintensity.tools import IntensityParser
 
 # This code ensures that this uses impactutils from this directory
-# and not the pip-installed one
+# and not the pip-installed one.  Right now, the pip version does not
+# yet have support for NRESPS and INTENSITY_STDDEV
 import os
 sys.path.insert(0, os.getcwd())
 from impactutils.io.table import dataframe_to_xml
-
-# ShakeMap installation is optional
-# from shakemap.utils.config import get_config_paths
-
-# local imports
-from getintensity.tools import IntensityParser
 
 
 def get_parser():
@@ -41,7 +38,7 @@ def get_parser():
         emsc    European-Mediterranean Seismic Center
 
     If --network is missing, this will attempt to guess it from extid or
-    inputfile.
+    input filename.
 
     '''
     parser = argparse.ArgumentParser(description=description)
@@ -82,7 +79,7 @@ def main(args):
     inputfile = args.inputfile
     extid = args.extid
     network = args.network
-    dataframe = None
+    df = None
 
     iparser = IntensityParser(config=config, eventid=eventid,
                               extid=extid, network=network)
@@ -91,13 +88,14 @@ def main(args):
     if inputfile:
         # If network is blank, this will attempt to figure out the network
         # from the file during parsing
-        network, dataframe, msg = iparser.get_dyfi_dataframe_from_file(inputfile)
+        df, msg = iparser.get_dyfi_dataframe_from_file(inputfile)
+        network = iparser.network
 
     elif (not network and not extid) or (network == 'neic'):
         # Requesting Comcat data only
         network = 'neic'
         extid = extid or eventid
-        dataframe, msg = iparser.get_dyfi_dataframe_from_network(extid, network=network)
+        df, msg = iparser.get_dyfi_dataframe_from_network(extid, network=network)
 
     elif network:
         extid = extid or iparser.get_extid_from_network(eventid, network)
@@ -105,7 +103,7 @@ def main(args):
             print('Could not find external ID %s in %s.' % (eventid, network))
             sys.exit(0)
 
-        dataframe, msg = iparser.get_dyfi_dataframe_from_network()
+        df, msg = iparser.get_dyfi_dataframe_from_network()
 
     elif extid:
         network = network or iparser.get_network_from_id(extid)
@@ -114,16 +112,16 @@ def main(args):
             sys.exit(0)
         print('Determined this network to be:', network)
         iparser.network = network
-        dataframe, msg = iparser.get_dyfi_dataframe_from_network(extid)
+        df, msg = iparser.get_dyfi_dataframe_from_network(extid)
 
-    if dataframe is None:
+    if df is None:
         print(msg)
         print('No DYFI data found, exiting.')
         sys.exit(0)
 
     if args.file:
-        dataframe.to_excel(args.file, index=False)
-        print('Saved %i records to %s. Exiting.' % (len(dataframe), args.file))
+        df.to_excel(args.file, index=False)
+        print('Saved %i records to %s. Exiting.' % (len(df), args.file))
         sys.exit(0)
 
     # check to see if the event directory exists
@@ -137,18 +135,11 @@ def main(args):
     else:
         event_dir = data_path
 
-    if network == 'ga':
-        reference = 'Geoscience Australia'
-        outfile = 'ga_ii_dat.xml'
-    elif network == 'emsc':
-        reference = 'EMSC (aggregated by USGS)'
-        outfile = 'emsc_ii_dat.xml'
-    else:
-        reference = 'USGS Did You Feel It? System'
-        outfile = 'dyfi_dat.xml'
+    reference = iparser.reference
+    outfile = iparser.default_outfile
 
     outfile = os.path.join(event_dir, outfile)
-    dataframe_to_xml(dataframe, outfile, reference)
+    dataframe_to_xml(df, outfile, reference)
     print('Saved DYFI data to %s.' % outfile)
     sys.exit(0)
 

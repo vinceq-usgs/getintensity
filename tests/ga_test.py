@@ -1,15 +1,10 @@
 #!/usr/bin/env python
 
-import tempfile
 import os.path
-import vcr
 import configparser
 import numpy as np
-from shutil import rmtree
-import warnings
 
 from getintensity.tools import IntensityParser
-import getintensity.ga as ga
 
 
 def get_datadir():
@@ -40,14 +35,14 @@ def test_ga_file():
 
     # Test reading a comcat file
     testfile = os.path.join(datadir, 'felt_reports_1km_filtered.geojson')
-    df, msg, network = iparser.get_dyfi_dataframe_from_file(testfile)
+    df, msg = iparser.get_dyfi_dataframe_from_file(testfile)
     assert len(df) == 126
     np.testing.assert_almost_equal(df['INTENSITY'].sum(), 471.3)
     np.testing.assert_equal(df['NRESP'].sum(), 1316)
 
     # Test reading a comcat file
     testfile = os.path.join(datadir, 'felt_reports_10km_filtered.geojson')
-    df, msg, network = iparser.get_dyfi_dataframe_from_file(testfile)
+    df, msg = iparser.get_dyfi_dataframe_from_file(testfile)
     assert len(df) == 62
     np.testing.assert_equal(df['INTENSITY'].sum(), 201.3)
     np.testing.assert_equal(df['NRESP'].sum(), 1525)
@@ -56,6 +51,5 @@ def test_ga_file():
 
 
 def test_ga_retrieve():
-
 
     return

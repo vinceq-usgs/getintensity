@@ -10,12 +10,17 @@ from io import BytesIO, StringIO
 
 from getintensity.aggregate import aggregate
 
+netid = 'EMSC'
 source = 'European-Mediterranean Seismic Center'
+reference = 'EMSC (aggregated)'
+default_outfile = 'emsc_ii_dat.xml'
+
 EMSC_COLUMNS = ['LON', 'LAT', 'INTENSITY_UNCORRECTED', 'INTENSITY']
 TIMEOUT = 60
 MIN_RESPONSES = 3  # minimum number of DYFI responses per grid
 
 
+# This should be called as a method of IntensityParser, hence the 'self'
 def get_dyfi_dataframe_from_emsc(self, extid):
     df = None
     msg = ''
@@ -50,6 +55,7 @@ def get_dyfi_dataframe_from_emsc(self, extid):
     return df, None
 
 
+# This should be called as a method of IntensityParser, hence the 'self'
 def get_extid_from_emsc(self, inputid):
 
     config = self.config['emsc']
