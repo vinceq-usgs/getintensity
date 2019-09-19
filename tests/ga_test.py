@@ -33,14 +33,14 @@ def test_ga_file():
     config = get_config()
     iparser = IntensityParser(eventid=eventid, config=config, network='ga')
 
-    # Test reading a comcat file
+    # Test reading a dyfi format file
     testfile = os.path.join(datadir, 'felt_reports_1km_filtered.geojson')
     df, msg = iparser.get_dyfi_dataframe_from_file(testfile)
     assert len(df) == 126
     np.testing.assert_almost_equal(df['INTENSITY'].sum(), 471.3)
     np.testing.assert_equal(df['NRESP'].sum(), 1316)
 
-    # Test reading a comcat file
+    # Test reading a dyfi format file
     testfile = os.path.join(datadir, 'felt_reports_10km_filtered.geojson')
     df, msg = iparser.get_dyfi_dataframe_from_file(testfile)
     assert len(df) == 62

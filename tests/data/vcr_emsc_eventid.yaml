@@ -1,0 +1,38 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Connection:
+      - close
+      Host:
+      - www.seismicportal.eu
+      User-Agent:
+      - Python-urllib/3.6
+    method: GET
+    uri: https://www.seismicportal.eu/eventid/api/convert?source_id=nc72282711&source_catalog=USGS&out_catalog=UNID&collect_dloc=1.5&collect_dtime=60&misfit_dloc=105&misfit_dtime=13&misfit_dmag=0.8&prefered_only=true
+  response:
+    body:
+      string: '[{"m2":3,"misfit":0.036907090879061,"catalog":"UNID","url":"http:\/\/www.seismicportal.eu\/fdsnws\/event\/1\/query?eventid=20140824_0000036&format=text","id":"20140824_0000036"}]
+
+'
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - close
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 19 Sep 2019 04:45:03 GMT
+      Server:
+      - nginx/1.13.3
+      Set-Cookie:
+      - BIGipServerpool-seismicportal=44083392.20480.0000; path=/; Httponly; Secure
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: OK
+version: 1
