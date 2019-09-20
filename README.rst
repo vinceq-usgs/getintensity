@@ -31,12 +31,29 @@ getintensity
 Documentation
 -------------
 
+Download DYFI data from Comcat or an external source and turn it into a
+ShakeMap intensity input file. This can automatically download from Comcat,
+Geosciences Australia (GA event ID required), and EMSC (automatic lookup from
+the USGS ID).
 
-Introduction
-------------
+  getintensity EVENTID [--extid  EXTERNALID] [--network NETWORK]
 
-Tool to download intensity data from outside sources and convert them into
-Shakemap input.
+  For example,
+
+  getintensity us70004jxe                 # will read from Comcat
+  getintensity us70004jxe --network ga    # will attempt to find GA ID
+  getintensity us70004jxe --network emsc  # will attempt to find EMSC ID
+  getintensity us70004jxe --extid ga2019nsodfc --network ga
+  getintensity us70004jxe --inputfile felt_reports_1km.geojson --network ga
+
+  Supported networks:
+      neic    National Earthquake Information Center (USA)
+      ga      Geosciences Australia
+      emsc    European-Mediterranean Seismic Center
+
+  If --network is missing, this will attempt to guess it from extid or
+  input filename.
+
 
 Installation and Dependencies
 -----------------------------
@@ -46,3 +63,17 @@ Installation and Dependencies
 - On OSX, Xcode and command line tools
 - The ``install.sh`` script installs this package and all other dependencies,
   including python 3.5 and the required python libraries.
+
+ShakeMap (https://github.com/usgs/shakemap) is supported
+but not required. Without it, output files will be written to the current
+directory.
+
+With ShakeMap, modify config.ini and set 'use_shakemap_path' to 'on'.
+getintensity will then write to the ShakeMap profile of the correct event.
+
+Impactutils is required. Note that the current conda 'impactutils' package
+(as of 2019/09/19) does not support output files with 'nresponses' and
+'intensity_stddev'; these columns will be missing from the output files.
+
+To support this functionality, install the latest 'impactutils' from the Github
+repository at http://github.com/usgs/impactutils.
