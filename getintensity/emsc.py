@@ -108,9 +108,6 @@ def parse_zip(bufferstr):
 def process_emsc_csv(rawdata):
 
     df = _parse_emsc_raw(rawdata)
-    if 'INTENSITY_STDDEV' not in df.columns:
-        df['INTENSITY_STDDEV'] = _compute_stddev(df)
-
     df_10km = aggregate(df, producttype='geo_10km', minresps=MIN_RESPONSES)
     df_1km = aggregate(df, producttype='geo_1km', minresps=MIN_RESPONSES)
 
@@ -141,9 +138,11 @@ def _parse_emsc_raw(emscdata):
     return df
 
 
-def _compute_stddev(df):
+def _compute_stddev_bossu(df):
     # From Bossu et al, SRL 2016 88 (1): 72–81.
     # doi: https://doi.org/10.1785/0220160120
+    # This is no longer used; instead, compute stddev via
+    # Worden et al. using nresps
     ii = df['INTENSITY']
     stddevs = np.ones_like(ii) * 0.49
     stddevs[ii >= 3.15] = 0.36

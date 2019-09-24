@@ -1,6 +1,7 @@
 # Copy some functionality from shakemap.coremods.dyfi_dat
 
 import re
+from numpy import exp
 
 import getintensity.comcat as comcat
 import getintensity.emsc as emsc
@@ -81,17 +82,17 @@ class IntensityParser:
         extid = extid or self.extid or self.eventid
         network = network or self.network
 
-        if network == 'neic':
-            getter = comcat.get_dyfi_dataframe_from_comcat
-        elif network == 'ga':
-            getter = ga.get_dyfi_dataframe_from_ga
-        elif network == 'emsc':
-            getter = emsc.get_dyfi_dataframe_from_emsc
-        else:
-            msg = 'Unknown network %s' % network
-
-        if getter:
+        getters = {
+            'neic': comcat.get_dyfi_dataframe_from_comcat,
+            'ga':   ga.get_dyfi_dataframe_from_ga,
+            'emsc': emsc.get_dyfi_dataframe_from_emsc
+        }
+        if network in getters:
+            getter = getters[network]
             df, msg = getter(self, extid)
+        else:
+            msg = 'No support for network: ' + network
+
         if msg:
             return None, msg
 
@@ -160,4 +161,15 @@ class IntensityParser:
         df['source'] = self.source
         df.columns = df.columns.str.upper()
 
+        if 'NRESP' in df.columns and 'INTENSITY_STDDEV' not in df.columns:
+            df['INTENSITY_STDDEV'] = self._compute_stddev(df)
+
         return df
+
+    @classmethod
+    def _compute_stddev(cls, df):
+        # Worden 2012  BSSA 102-1 Feb. 2012, doi: 10.1785/0120110156
+
+        nresps = df['NRESP']
+        stddevs = exp(nresps * (-1/24.02)) * 0.25 + 0.09
+        return stddevs

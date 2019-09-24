@@ -10,7 +10,7 @@ import sys
 from getintensity.tools import IntensityParser
 
 # This code ensures that this uses impactutils from this directory
-# and not the pip-installed one.  Right now, the pip version does not
+# and not the conda-installed one.  Right now, the conda version does not
 # yet have support for NRESPS and INTENSITY_STDDEV
 import os
 sys.path.insert(0, os.getcwd())
@@ -28,7 +28,7 @@ def get_parser():
 
     getintensity us70004jxe                 # will read from Comcat
     getintensity us70004jxe --network ga    # will attempt to find GA ID
-    getintensity us70004jxe --network emsc  # will attempt to find EMSC ID
+    getintensity nc72282711 --network emsc  # will attempt to find EMSC ID
     getintensity us70004jxe --extid ga2019nsodfc --network ga
     getintensity us70004jxe --inputfile felt_reports_1km.geojson --network ga
 
@@ -140,6 +140,12 @@ def main(args):
 
     outfile = os.path.join(event_dir, outfile)
     dataframe_to_xml(df, outfile, reference)
+    if 'INTENSITY_STDDEV' not in df.columns:
+        print('WARNING: Datafile has no column INTENSITY_STDDEV.')
+        print(df.columns)
+    if 'NRESP' not in df.columns:
+        print('WARNING: Datafile has no column NRESP.')
+
     print('Saved DYFI data to %s.' % outfile)
     sys.exit(0)
 

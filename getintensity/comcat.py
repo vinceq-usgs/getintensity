@@ -93,8 +93,10 @@ def _parse_dyfi_detail(detail):
 
     if len(df_1k) >= len(df_10k):
         df = df_1k
+        print('Selecting geo_1km file.')
     else:
         df = df_10k
+        print('Selecting geo_10km file.')
 
     if not len(df):
         # try to get the text file data set
