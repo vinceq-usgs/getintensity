@@ -53,7 +53,7 @@ def test_comcat_data():
         detail = get_event_by_id(eventid)
 
     df, msg = comcat.get_dyfi_dataframe_from_comcat(iparser, detail)
-    df = iparser.postprocess(df, 'neic')
+    df, msg = iparser.postprocess(df, 'neic')
 
     np.testing.assert_almost_equal(df['INTENSITY'].sum(), 4510.1)
 
@@ -77,7 +77,7 @@ def test_comcat_data():
     with vcr.use_cassette(tape_file2):
         detail = get_event_by_id(eventid)
         df, msg = comcat.get_dyfi_dataframe_from_comcat(iparser, detail)
-        df = iparser.postprocess(df, 'neic')
+        df, msg = iparser.postprocess(df, 'neic')
 
     np.testing.assert_almost_equal(df['INTENSITY'].sum(), 800.4)
 
@@ -106,7 +106,8 @@ def test_comcat_file():
 
         # Make sure output file includes stddev
         dataframe_to_xml(df, outfile, reference)
-        # dataframe_to_xml(df, datadir + '/tmp.withstddev.xml', reference)
+        # To save this file for testing:
+        # dataframe_to_xml(df, datadir + '/tmp.test_for_stddev.xml', reference)
         with open(outfile, 'r') as f:
             textdata = f.read()
             assert 'stddev' in textdata
@@ -116,6 +117,7 @@ def test_comcat_file():
         msg = 'A newer version of impactutils is required to process \
 intensity parameters. If you do not work with intensity data, \
 you can safely ignore this warning.'
+        rmtree(tempdir)
         warnings.warn(msg)
 
 if __name__ == '__main__':
