@@ -115,7 +115,7 @@ def test_comcat_file():
 
     except AssertionError:
         msg = 'A newer version of impactutils is required to process \
-intensity parameters. If you do not work with intensity data, \
+intensity parameters. If you do not work with stddev, \
 you can safely ignore this warning.'
         rmtree(tempdir)
         warnings.warn(msg)

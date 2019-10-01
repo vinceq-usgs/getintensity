@@ -103,7 +103,7 @@ def main(args):
             print('Could not find external ID %s in %s.' % (eventid, network))
             sys.exit(0)
 
-        df, msg = iparser.get_dyfi_dataframe_from_network()
+        df, msg = iparser.get_dyfi_dataframe_from_network(extid=extid)
 
     elif extid:
         network = network or iparser.get_network_from_id(extid)
@@ -112,7 +112,7 @@ def main(args):
             sys.exit(0)
         print('Determined this network to be:', network)
         iparser.network = network
-        df, msg = iparser.get_dyfi_dataframe_from_network(extid)
+        df, msg = iparser.get_dyfi_dataframe_from_network(extid=extid)
 
     if df is None:
         print(msg)

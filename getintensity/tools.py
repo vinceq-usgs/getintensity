@@ -68,9 +68,7 @@ class IntensityParser:
 
         return self.postprocess(df, self.network)
 
-    def get_dyfi_dataframe_from_network(self, extid=None, network=None):
-        if not extid:
-            return None, 'Cannot access external network without extid'
+    def get_dyfi_dataframe_from_network(self, extid, network=None):
         if not network:
             network = self.network
 
