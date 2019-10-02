@@ -36,23 +36,25 @@ ShakeMap intensity input file. This can automatically download from Comcat,
 Geosciences Australia (GA event ID required), and EMSC (automatic lookup from
 the USGS ID).
 
-  getintensity EVENTID [--extid  EXTERNALID] [--network NETWORK]
+  - getintensity EVENTID [--extid  EXTERNALID] [--network NETWORK]
+  - getintensity EVENTID [--inputfile FILENAME]
 
   For example,
 
-  getintensity us70004jxe                 # will read from Comcat
-  getintensity us70004jxe --network ga    # will attempt to find GA ID
-  getintensity us70004jxe --network emsc  # will attempt to find EMSC ID
-  getintensity us70004jxe --extid ga2019nsodfc --network ga
-  getintensity us70004jxe --inputfile felt_reports_1km.geojson --network ga
+  - getintensity us70004jxe                 # will read from Comcat
+  - getintensity us70004jxe --network ga    # will attempt to find GA ID
+  - getintensity us70004jxe --network emsc  # will attempt to find EMSC ID
+  - getintensity us70004jxe --extid ga2019nsodfc --network ga
+  - getintensity us70004jxe --inputfile felt_reports_1km.geojson --network ga
 
   Supported networks:
-      neic    National Earthquake Information Center (USA)
-      ga      Geosciences Australia
-      emsc    European-Mediterranean Seismic Center
+  
+  - neic    National Earthquake Information Center (USA) (default)
+  - ga      Geosciences Australia
+  - emsc    European-Mediterranean Seismic Center
 
   If --network is missing, this will attempt to guess it from extid or
-  input filename.
+  input filename. If neither is provided, 'neic' is assumed.
 
 
 Installation and Dependencies
