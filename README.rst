@@ -68,32 +68,42 @@ Installation and Dependencies
 - The ``install.sh`` script installs this package and all other dependencies,
   including python 3.5 and the required python libraries.
 
-1. Impactutils (https://github.com/hearne/shakemap) is automatically installed.
+Impactutils
+:::::::::::
 
-Note: The current conda 'impactutils' package (as of 2019/09/19) does not support
-output files with 'nresponses' and 'intensity_stddev'; these columns
-will be missing from the output files.
+Impactutils (https://github.com/hearne/shakemap) is automatically installed.
 
-To support this functionality (note that this section will be unnecessary once
-the conda impactutils installation is updated):
+.. warning:: 
+      The current conda 'impactutils' package (as of 2019/09/19) does not support
+      output files with 'nresponses' and 'intensity_stddev'; these columns
+      will be missing from the output files.
 
-- Install the latest 'impactutils' from the GitHub repository at:
+          To support this functionality:
 
-    http://github.com/usgs/impactutils.
+      - Install the latest 'impactutils' from the GitHub repository at:
 
-- Create a symlink to the impactutils directory from the repo home directory. e.g.::
+        http://github.com/usgs/impactutils.
 
-    cd repos/getintensity
-    ln -s /path/to/impactutils impactutils
+      - Create a symlink to the impactutils directory from the repo home directory. e.g.::
 
-- Check that the top of the directory has these lines::
+        cd repos/getintensity
+        ln -s /path/to/impactutils impactutils
 
-    import os
-    sys.path.insert(0, os.getcwd())
+      - Check that the top of the directory has these lines::
 
-2. ShakeMap (https://github.com/usgs/shakemap) support is optional.
+        import os
+        sys.path.insert(0, os.getcwd())
 
-- Without ShakeMap installed (default), output files will be written to the current directory.
-- With ShakeMap installed, modify config.ini and set 'use_shakemap_path' to 'on'. Then 
-  output files will be written to the ShakeMap profile of correct event.
+      This section will be unnecessary once the conda impactutils installation is updated.
+
+Shakemap
+::::::::
+
+ShakeMap (https://github.com/usgs/shakemap) support is optional. 
+
+**Without ShakeMap installed** (default),
+output files will be written to the current directory.
+
+**With ShakeMap installed,** open the getintensity config.ini file and set 'use_shakemap_path' to 'on'. Then 
+output files will be written to the ShakeMap profile of correct event.
 
