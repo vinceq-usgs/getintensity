@@ -73,12 +73,11 @@ Impactutils
 
 Impactutils (https://github.com/hearne/shakemap) is automatically installed.
 
-.. warning:: 
       The current conda 'impactutils' package (as of 2019/09/19) does not support
       output files with 'nresponses' and 'intensity_stddev'; these columns
       will be missing from the output files.
 
-          To support this functionality:
+      To support this functionality:
 
       - Install the latest 'impactutils' from the GitHub repository at:
 
