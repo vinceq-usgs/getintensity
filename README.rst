@@ -36,25 +36,27 @@ ShakeMap intensity input file. This can automatically download from Comcat,
 Geosciences Australia (GA event ID required), and EMSC (automatic lookup from
 the USGS ID).
 
-  - getintensity EVENTID [--extid  EXTERNALID] [--network NETWORK]
-  - getintensity EVENTID [--inputfile FILENAME]
+Usage::
 
-  For example,
+  getintensity EVENTID [--extid  EXTERNALID] [--network NETWORK]
+  getintensity EVENTID [--inputfile FILENAME]
 
-  - getintensity us70004jxe                 # will read from Comcat
-  - getintensity us70004jxe --network ga    # will attempt to find GA ID
-  - getintensity us70004jxe --network emsc  # will attempt to find EMSC ID
-  - getintensity us70004jxe --extid ga2019nsodfc --network ga
-  - getintensity us70004jxe --inputfile felt_reports_1km.geojson --network ga
+For example::
 
-  Supported networks:
+  getintensity us70004jxe                 # will read from Comcat
+  getintensity us70004jxe --network ga    # will attempt to find GA ID
+  getintensity us70004jxe --network emsc  # will attempt to find EMSC ID
+  getintensity us70004jxe --extid ga2019nsodfc --network ga
+  getintensity us70004jxe --inputfile felt_reports_1km.geojson --network ga
+
+Supported networks:
   
-  - neic    National Earthquake Information Center (USA) (default)
-  - ga      Geosciences Australia
-  - emsc    European-Mediterranean Seismic Center
+- neic    National Earthquake Information Center (USA) (default)
+- ga      Geosciences Australia
+- emsc    European-Mediterranean Seismic Center
 
-  If --network is missing, this will attempt to guess it from extid or
-  input filename. If neither is provided, 'neic' is assumed.
+If --network is missing, this will attempt to guess it from extid or 
+input filename. If neither is provided, 'neic' is assumed.
 
 
 Installation and Dependencies
@@ -66,32 +68,32 @@ Installation and Dependencies
 - The ``install.sh`` script installs this package and all other dependencies,
   including python 3.5 and the required python libraries.
 
-ShakeMap (https://github.com/usgs/shakemap) support is optional:
-
-- Without ShakeMap installed (default), output files will be written to the current
-directory.
-- With ShakeMap installed, modify config.ini and set 'use_shakemap_path' to 'on'.
-Then output files will be written to the ShakeMap profile of correct event.
-
-Impactutils (https://github.com/hearne/shakemap) is required and automatically
-installed.
+1. Impactutils (https://github.com/hearne/shakemap) is automatically installed.
 
 Note: The current conda 'impactutils' package (as of 2019/09/19) does not support
 output files with 'nresponses' and 'intensity_stddev'; these columns
 will be missing from the output files.
 
 To support this functionality (note that this section will be unnecessary once
-the conda impactutils installation is updated)
+the conda impactutils installation is updated):
 
-- Install the latest 'impactutils' from the GitHub repository at
-http://github.com/usgs/impactutils.
+- Install the latest 'impactutils' from the GitHub repository at:
 
-- Create a symlink to the impactutils directory from the repo home directory. e.g.
+    http://github.com/usgs/impactutils.
+
+- Create a symlink to the impactutils directory from the repo home directory. e.g.::
 
     cd repos/getintensity
     ln -s /path/to/impactutils impactutils
 
-- Check that the top of the directory has these lines:
+- Check that the top of the directory has these lines::
 
     import os
     sys.path.insert(0, os.getcwd())
+
+2. ShakeMap (https://github.com/usgs/shakemap) support is optional.
+
+- Without ShakeMap installed (default), output files will be written to the current directory.
+- With ShakeMap installed, modify config.ini and set 'use_shakemap_path' to 'on'. Then 
+  output files will be written to the ShakeMap profile of correct event.
+
