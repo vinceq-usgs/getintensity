@@ -44,7 +44,7 @@ jobs:
   - bash: |
       source activate getintensity
       export PYTHONPATH="."
-      py.test --cov=. --cov-report=xml
+      python -m pytest --cov=. --cov-report=xml
     failOnStderr: true
     displayName: Run tests
 
