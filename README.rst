@@ -13,12 +13,12 @@
     :target: https://travis-ci.org/vinceq-usgs/getintensity
     :alt: Travis Build Status
 
+.. |Codacy| image:: https://api.codacy.com/project/badge/Grade/589ee237b1b94ad99977dd82c643f1ac
+    :target: https://www.codacy.com/manual/vinceq-usgs/getintensity?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=vinceq-usgs/getintensity&amp;utm_campaign=Badge_Grade
+
 .. |CodeCov| image:: https://codecov.io/gh/vinceq-usgs/getintensity/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/vinceq-usgs/getintensity
     :alt: Code Coverage Status
-
-.. |Codacy| image:: https://api.codacy.com/project/badge/Grade/1f771008e85041b89b97b6d12d85298a
-    :target: https://www.codacy.com/app/vinceq-usgs/shakemap?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=vinceq-usgs/getintensity&amp;utm_campaign=Badge_Grade
 
 .. |Azure| image:: https://dev.azure.com/vinceq-usgs/getintensity/_apis/build/status/vinceq-usgs.getintensity?branchName=master
    :target: https://dev.azure.com/vinceq-usgs/getintensity/_build/latest?definitionId=2&branchName=master
