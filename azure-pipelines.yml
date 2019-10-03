@@ -42,9 +42,9 @@ jobs:
     displayName: Init conda for bash
 
   - bash: |
-      source activate getintensity
+      source activate getint
       export PYTHONPATH="."
-      python -m pytest --cov=. --cov-report=xml
+      py.test --cov=. --cov-report=xml
     failOnStderr: true
     displayName: Run tests
 
