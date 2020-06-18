@@ -22,7 +22,7 @@ def get_parser():
     Download DYFI data from Comcat or an external source into a local data
     directory.
 
-    getintensity EVENTID [--extid  EXTERNALID] [--network NETWORK]
+    getintensity EVENTID [--extid  EXTERNALID] [--network NETWORK] [--minresp 3]
 
     For example,
 
@@ -52,6 +52,8 @@ def get_parser():
                         help='Network abbreviation')
     parser.add_argument('--file',
                         help='Download to Excel file specified')
+    parser.add_argument('--minresp',default=3,
+                        help='Ignore stations will nresp less than this (default 3')
     parser.add_argument('--config',
                         help='Config file',
                         default='config.ini')
@@ -74,6 +76,8 @@ def main(args):
     if not os.path.isdir(data_path):
         print('%s is not a valid directory.' % data_path)
         sys.exit(1)
+
+    config['directories']['data_path'] = data_path
 
     eventid = args.eventid
     inputfile = args.inputfile
