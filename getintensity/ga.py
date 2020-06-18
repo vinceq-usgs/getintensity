@@ -1,5 +1,6 @@
 # Copy some functionality from shakemap.coremods.dyfi_dat
 
+import os
 import urllib.request as request
 import urllib.error as urlerror
 
@@ -19,6 +20,7 @@ def get_dyfi_dataframe_from_ga(self, extid):
     df = None
     msg = ''
 
+    data_path = self.config['directories']['data_path']
     config = self.config['ga']
     template = config['fetcher_template']
     template = template.replace('[EID]', extid)
@@ -46,6 +48,11 @@ def get_dyfi_dataframe_from_ga(self, extid):
         print('File %s has %i stations.' % (filename, len(df)))
         df_by_geotype[geotype] = df
 
+        raw_path = data_path + '/raw'
+        os.makedirs(raw_path, exist_ok=True)
+        with open(raw_path + '/' + filename, 'w') as f:
+            f.write(data.decode('utf-8'))
+
     if len(df_by_geotype) < 1:
         msg = 'Could not get geojson data from GA'
         return None, msg
@@ -59,8 +66,7 @@ def get_dyfi_dataframe_from_ga(self, extid):
 
 def getextid_from_ga(eventid):
 
-    print('Not yet implemented')
-    raise
+    raise NotImplementedError
 
 
 def postprocess(df):
