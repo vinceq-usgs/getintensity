@@ -7,7 +7,7 @@ import versioneer
 # compiler
 # os.environ['CC'] = 'gcc'
 
-setup(name='getdyfi',
+setup(name='getintensity',
       version=versioneer.get_version(),
       description='External intensity data fetcher for Shakemap',
       author='Vince Quitoriano',
