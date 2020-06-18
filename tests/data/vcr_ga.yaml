@@ -1,0 +1,1391 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Connection:
+      - close
+      Host:
+      - cdn.gagempa.net
+      User-Agent:
+      - Python-urllib/3.6
+    method: GET
+    uri: https://cdn.gagempa.net/skip/events/ga2019nsodfc/felt_reports_10km_filtered.geojson
+  response:
+    body:
+      string: '{"features": [{"geometry": {"coordinates": [[[115.834439, -32.080925],
+        [115.835581, -31.990726], [115.941421, -31.991654], [115.940383, -32.081856],
+        [115.834439, -32.080925]]], "type": "Polygon"}, "id": "390000 6450000 50 H",
+        "properties": {"center": {"coordinates": [115.887956, -32.036301], "type":
+        "Point"}, "intensity": 2.6, "intensityFine": 2.6423, "location": "390000 6450000
+        50 H", "nresp": 7}, "type": "Feature"}, {"geometry": {"coordinates": [[[117.096035,
+        -20.709494], [117.095978, -20.619134], [117.191956, -20.619054], [117.19207,
+        -20.709413], [117.096035, -20.709494]]], "type": "Polygon"}, "id": "510000
+        7710000 50 K", "properties": {"center": {"coordinates": [117.14401, -20.66428],
+        "type": "Point"}, "intensity": 4.0, "intensityFine": 4.0159, "location": "510000
+        7710000 50 K", "nresp": 38}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[122.149884, -17.996458], [122.150316, -17.906081], [122.244719, -17.906471],
+        [122.244335, -17.99685], [122.149884, -17.996458]]], "type": "Polygon"}, "id":
+        "410000 8010000 51 K", "properties": {"center": {"coordinates": [122.197313,
+        -17.951471], "type": "Point"}, "intensity": 4.9, "intensityFine": 4.9488,
+        "location": "410000 8010000 51 K", "nresp": 422}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[118.628522, -20.340485], [118.627578, -20.250157], [118.723286,
+        -20.249243], [118.724286, -20.339566], [118.628522, -20.340485]]], "type":
+        "Polygon"}, "id": "670000 7750000 50 K", "properties": {"center": {"coordinates":
+        [118.675918, -20.294869], "type": "Point"}, "intensity": 4.2, "intensityFine":
+        4.2088, "location": "670000 7750000 50 K", "nresp": 24}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[115.835581, -31.990726], [115.836718, -31.900526],
+        [115.942455, -31.90145], [115.941421, -31.991654], [115.835581, -31.990726]]],
+        "type": "Polygon"}, "id": "390000 6460000 50 J", "properties": {"center":
+        {"coordinates": [115.889044, -31.9461], "type": "Point"}, "intensity": 3.1,
+        "intensityFine": 3.0643, "location": "390000 6460000 50 J", "nresp": 99},
+        "type": "Feature"}, {"geometry": {"coordinates": [[[119.342144, -23.041189],
+        [119.340586, -22.95093], [119.438044, -22.949461], [119.439666, -23.039714],
+        [119.342144, -23.041189]]], "type": "Polygon"}, "id": "740000 7450000 50 K",
+        "properties": {"center": {"coordinates": [119.39011, -22.995331], "type":
+        "Point"}, "intensity": 3.3, "intensityFine": 3.3249, "location": "740000 7450000
+        50 K", "nresp": 22}, "type": "Feature"}, {"geometry": {"coordinates": [[[116.711896,
+        -20.709279], [116.712066, -20.61892], [116.808044, -20.619054], [116.80793,
+        -20.709413], [116.711896, -20.709279]]], "type": "Polygon"}, "id": "470000
+        7710000 50 K", "properties": {"center": {"coordinates": [116.759984, -20.664173],
+        "type": "Point"}, "intensity": 2.9, "intensityFine": 2.9304, "location": "470000
+        7710000 50 K", "nresp": 12}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[118.533646, -20.431681], [118.532753, -20.341351], [118.628522, -20.340485],
+        [118.629471, -20.430811], [118.533646, -20.431681]]], "type": "Polygon"},
+        "id": "660000 7740000 50 K", "properties": {"center": {"coordinates": [118.581098,
+        -20.386089], "type": "Point"}, "intensity": 3.9, "intensityFine": 3.8956,
+        "location": "660000 7740000 50 K", "nresp": 156}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[116.711725, -20.799637], [116.711896, -20.709279], [116.80793,
+        -20.709413], [116.807816, -20.799772], [116.711725, -20.799637]]], "type":
+        "Polygon"}, "id": "470000 7700000 50 K", "properties": {"center": {"coordinates":
+        [116.759842, -20.754532], "type": "Point"}, "intensity": 3.5, "intensityFine":
+        3.5092, "location": "470000 7700000 50 K", "nresp": 103}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[130.84025, -12.477051], [130.839614, -12.386667],
+        [130.931559, -12.386029], [130.932227, -12.476408], [130.84025, -12.477051]]],
+        "type": "Polygon"}, "id": "700000 8620000 52 L", "properties": {"center":
+        {"coordinates": [130.885912, -12.431543], "type": "Point"}, "intensity": 2.7,
+        "intensityFine": 2.6845, "location": "700000 8620000 52 L", "nresp": 18},
+        "type": "Feature"}, {"geometry": {"coordinates": [[[117.778874, -22.6953],
+        [117.778365, -22.60497], [117.875652, -22.604469], [117.876225, -22.694796],
+        [117.778874, -22.6953]]], "type": "Polygon"}, "id": "580000 7490000 50 K",
+        "properties": {"center": {"coordinates": [117.827279, -22.649891], "type":
+        "Point"}, "intensity": 3.5, "intensityFine": 3.4689, "location": "580000 7490000
+        50 K", "nresp": 43}, "type": "Feature"}, {"geometry": {"coordinates": [[[116.682715,
+        -31.905454], [116.683024, -31.815236], [116.788682, -31.815455], [116.788476,
+        -31.905674], [116.682715, -31.905454]]], "type": "Polygon"}, "id": "470000
+        6470000 50 J", "properties": {"center": {"coordinates": [116.735725, -31.860466],
+        "type": "Point"}, "intensity": 2.5, "intensityFine": 2.4718, "location": "470000
+        6470000 50 J", "nresp": 2}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[113.574608, -24.933066], [113.572737, -24.842845], [113.671605, -24.84111],
+        [113.673548, -24.931323], [113.574608, -24.933066]]], "type": "Polygon"},
+        "id": "760000 7240000 49 J", "properties": {"center": {"coordinates": [113.623125,
+        -24.887094], "type": "Point"}, "intensity": 2, "intensityFine": 2, "location":
+        "760000 7240000 49 J", "nresp": 5}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[116.807816, -20.799772], [116.80793, -20.709413], [116.903965, -20.709494],
+        [116.903908, -20.799852], [116.807816, -20.799772]]], "type": "Polygon"},
+        "id": "480000 7700000 50 K", "properties": {"center": {"coordinates": [116.855905,
+        -20.75464], "type": "Point"}, "intensity": 3.4, "intensityFine": 3.4357, "location":
+        "480000 7700000 50 K", "nresp": 115}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[130.839614, -12.386667], [130.838983, -12.296282], [130.930897, -12.295649],
+        [130.931559, -12.386029], [130.839614, -12.386667]]], "type": "Polygon"},
+        "id": "700000 8630000 52 L", "properties": {"center": {"coordinates": [130.885263,
+        -12.34116], "type": "Point"}, "intensity": 2.7, "intensityFine": 2.6532, "location":
+        "700000 8630000 52 L", "nresp": 9}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[118.532753, -20.341351], [118.531864, -20.25102], [118.627578, -20.250157],
+        [118.628522, -20.340485], [118.532753, -20.341351]]], "type": "Polygon"},
+        "id": "660000 7750000 50 K", "properties": {"center": {"coordinates": [118.580179,
+        -20.29576], "type": "Point"}, "intensity": 3.9, "intensityFine": 3.8829, "location":
+        "660000 7750000 50 K", "nresp": 49}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[130.748268, -12.477663], [130.747664, -12.387274], [130.839614, -12.386667],
+        [130.84025, -12.477051], [130.748268, -12.477663]]], "type": "Polygon"}, "id":
+        "690000 8620000 52 L", "properties": {"center": {"coordinates": [130.793949,
+        -12.432168], "type": "Point"}, "intensity": 2.3, "intensityFine": 2.3424,
+        "location": "690000 8620000 52 L", "nresp": 10}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[123.564777, -17.3648], [123.564501, -17.274412], [123.65858,
+        -17.274125], [123.658903, -17.364512], [123.564777, -17.3648]]], "type": "Polygon"},
+        "id": "560000 8080000 51 K", "properties": {"center": {"coordinates": [123.61169,
+        -17.319468], "type": "Point"}, "intensity": 3.7, "intensityFine": 3.69, "location":
+        "560000 8080000 51 K", "nresp": 19}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[116.615863, -20.709092], [116.61609, -20.618734], [116.712066, -20.61892],
+        [116.711896, -20.709279], [116.615863, -20.709092]]], "type": "Polygon"},
+        "id": "460000 7710000 50 K", "properties": {"center": {"coordinates": [116.663979,
+        -20.664013], "type": "Point"}, "intensity": 3.6, "intensityFine": 3.5534,
+        "location": "460000 7710000 50 K", "nresp": 7}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[119.739539, -23.395843], [119.737687, -23.305616], [119.83537,
+        -23.303879], [119.837289, -23.394098], [119.739539, -23.395843]]], "type":
+        "Polygon"}, "id": "780000 7410000 50 K", "properties": {"center": {"coordinates":
+        [119.787471, -23.349867], "type": "Point"}, "intensity": 3.6, "intensityFine":
+        3.5612, "location": "780000 7410000 50 K", "nresp": 3}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[128.719843, -15.828634], [128.719967, -15.738229],
+        [128.813311, -15.738329], [128.813228, -15.828735], [128.719843, -15.828634]]],
+        "type": "Polygon"}, "id": "470000 8250000 52 L", "properties": {"center":
+        {"coordinates": [128.766587, -15.783487], "type": "Point"}, "intensity": 3.1,
+        "intensityFine": 3.0767, "location": "470000 8250000 52 L", "nresp": 8}, "type":
+        "Feature"}, {"geometry": {"coordinates": [[[119.64178, -23.397527], [119.639994,
+        -23.307293], [119.737687, -23.305616], [119.739539, -23.395843], [119.64178,
+        -23.397527]]], "type": "Polygon"}, "id": "770000 7410000 50 K", "properties":
+        {"center": {"coordinates": [119.68975, -23.351577], "type": "Point"}, "intensity":
+        3.1, "intensityFine": 3.0805, "location": "770000 7410000 50 K", "nresp":
+        17}, "type": "Feature"}, {"geometry": {"coordinates": [[[122.244335, -17.99685],
+        [122.244719, -17.906471], [122.339124, -17.906814], [122.338788, -17.997195],
+        [122.244335, -17.99685]]], "type": "Polygon"}, "id": "420000 8010000 51 K",
+        "properties": {"center": {"coordinates": [122.291741, -17.951838], "type":
+        "Point"}, "intensity": 3.5, "intensityFine": 3.5171, "location": "420000 8010000
+        51 K", "nresp": 5}, "type": "Feature"}, {"geometry": {"coordinates": [[[121.431896,
+        -30.813636], [121.433358, -30.723434], [121.537771, -30.724652], [121.536406,
+        -30.814858], [121.431896, -30.813636]]], "type": "Polygon"}, "id": "350000
+        6590000 51 J", "properties": {"center": {"coordinates": [121.484858, -30.769156],
+        "type": "Point"}, "intensity": 2.2, "intensityFine": 2.1718, "location": "350000
+        6590000 51 J", "nresp": 3}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[117.586498, -23.23811], [117.586104, -23.147782], [117.683783, -23.147389],
+        [117.684243, -23.237714], [117.586498, -23.23811]]], "type": "Polygon"}, "id":
+        "560000 7430000 50 K", "properties": {"center": {"coordinates": [117.635157,
+        -23.192756], "type": "Point"}, "intensity": 2.7, "intensityFine": 2.6912,
+        "location": "560000 7430000 50 K", "nresp": 5}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[119.793829, -21.228516], [119.792132, -21.138269], [119.888322,
+        -21.136655], [119.890077, -21.226894], [119.793829, -21.228516]]], "type":
+        "Polygon"}, "id": "790000 7650000 50 K", "properties": {"center": {"coordinates":
+        [119.84109, -21.18259], "type": "Point"}, "intensity": 3.2, "intensityFine":
+        3.2152, "location": "790000 7650000 50 K", "nresp": 3}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[118.264107, -31.538714], [118.262894, -31.448511],
+        [118.368111, -31.44743], [118.369425, -31.53763], [118.264107, -31.538714]]],
+        "type": "Polygon"}, "id": "620000 6510000 50 J", "properties": {"center":
+        {"coordinates": [118.316134, -31.493082], "type": "Point"}, "intensity": 2.8,
+        "intensityFine": 2.8299, "location": "620000 6510000 50 J", "nresp": 3}, "type":
+        "Feature"}, {"geometry": {"coordinates": [[[115.62793, -31.718025], [115.629255,
+        -31.627828], [115.734674, -31.628916], [115.733451, -31.719117], [115.62793,
+        -31.718025]]], "type": "Polygon"}, "id": "370000 6490000 50 J", "properties":
+        {"center": {"coordinates": [115.681328, -31.673482], "type": "Point"}, "intensity":
+        3.3, "intensityFine": 3.2754, "location": "370000 6490000 50 J", "nresp":
+        2}, "type": "Feature"}, {"geometry": {"coordinates": [[[115.729746, -31.989711],
+        [115.730986, -31.899514], [115.836718, -31.900526], [115.835581, -31.990726],
+        [115.729746, -31.989711]]], "type": "Polygon"}, "id": "380000 6460000 50 J",
+        "properties": {"center": {"coordinates": [115.783258, -31.945131], "type":
+        "Point"}, "intensity": 3.2, "intensityFine": 3.1974, "location": "380000 6460000
+        50 J", "nresp": 30}, "type": "Feature"}, {"geometry": {"coordinates": [[[117.19207,
+        -20.709413], [117.191956, -20.619054], [117.287934, -20.61892], [117.288104,
+        -20.709279], [117.19207, -20.709413]]], "type": "Polygon"}, "id": "520000
+        7710000 50 K", "properties": {"center": {"coordinates": [117.240016, -20.664173],
+        "type": "Point"}, "intensity": 3.5, "intensityFine": 3.5254, "location": "520000
+        7710000 50 K", "nresp": 10}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[121.16344, -21.693245], [121.164582, -21.602942], [121.261148, -21.60398],
+        [121.260066, -21.694287], [121.16344, -21.693245]]], "type": "Polygon"}, "id":
+        "310000 7600000 51 K", "properties": {"center": {"coordinates": [121.212309,
+        -21.648621], "type": "Point"}, "intensity": 3.3, "intensityFine": 3.2754,
+        "location": "310000 7600000 51 K", "nresp": 2}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[120.48091, -22.045415], [120.482505, -21.955157], [120.579264,
+        -21.956612], [120.577731, -22.046876], [120.48091, -22.045415]]], "type":
+        "Polygon"}, "id": "240000 7560000 51 K", "properties": {"center": {"coordinates":
+        [120.530102, -22.001022], "type": "Point"}, "intensity": 3.0, "intensityFine":
+        2.9997, "location": "240000 7560000 51 K", "nresp": 5}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[122.150316, -17.906081], [122.150745, -17.815704],
+        [122.2451, -17.816091], [122.244719, -17.906471], [122.150316, -17.906081]]],
+        "type": "Polygon"}, "id": "410000 8020000 51 K", "properties": {"center":
+        {"coordinates": [122.19772, -17.861093], "type": "Point"}, "intensity": 3.8,
+        "intensityFine": 3.7738, "location": "410000 8020000 51 K", "nresp": 2}, "type":
+        "Feature"}, {"geometry": {"coordinates": [[[119.697572, -21.230083], [119.695934,
+        -21.139829], [119.792132, -21.138269], [119.793829, -21.228516], [119.697572,
+        -21.230083]]], "type": "Polygon"}, "id": "780000 7650000 50 K", "properties":
+        {"center": {"coordinates": [119.744867, -21.184181], "type": "Point"}, "intensity":
+        3.2, "intensityFine": 3.2454, "location": "780000 7650000 50 K", "nresp":
+        4}, "type": "Feature"}, {"geometry": {"coordinates": [[[123.659553, -17.545283],
+        [123.659227, -17.454898], [123.753396, -17.454563], [123.753769, -17.544946],
+        [123.659553, -17.545283]]], "type": "Polygon"}, "id": "570000 8060000 51 K",
+        "properties": {"center": {"coordinates": [123.706486, -17.499928], "type":
+        "Point"}, "intensity": 3.7, "intensityFine": 3.6752, "location": "570000 8060000
+        51 K", "nresp": 7}, "type": "Feature"}, {"geometry": {"coordinates": [[[123.385998,
+        -21.431921], [123.385761, -21.341571], [123.482199, -21.341322], [123.482495,
+        -21.431671], [123.385998, -21.431921]]], "type": "Polygon"}, "id": "540000
+        7630000 51 K", "properties": {"center": {"coordinates": [123.434113, -21.386628],
+        "type": "Point"}, "intensity": 3.5, "intensityFine": 3.4884, "location": "540000
+        7630000 51 K", "nresp": 7}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[120.095551, -21.948767], [120.09738, -21.858536], [120.194045, -21.860212],
+        [120.192276, -21.950449], [120.095551, -21.948767]]], "type": "Polygon"},
+        "id": "200000 7570000 51 K", "properties": {"center": {"coordinates": [120.144813,
+        -21.904498], "type": "Point"}, "intensity": 3.5, "intensityFine": 3.5086,
+        "location": "200000 7570000 51 K", "nresp": 9}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[115.066819, -21.692147], [115.068021, -21.601849], [115.164582,
+        -21.602942], [115.16344, -21.693245], [115.066819, -21.692147]]], "type":
+        "Polygon"}, "id": "300000 7600000 50 K", "properties": {"center": {"coordinates":
+        [115.115715, -21.647553], "type": "Point"}, "intensity": 3.1, "intensityFine":
+        3.1286, "location": "300000 7600000 50 K", "nresp": 12}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[116.134691, -20.888048], [116.135207, -20.7977],
+        [116.231288, -20.798157], [116.230829, -20.888507], [116.134691, -20.888048]]],
+        "type": "Polygon"}, "id": "410000 7690000 50 K", "properties": {"center":
+        {"coordinates": [116.183004, -20.84311], "type": "Point"}, "intensity": 2.7,
+        "intensityFine": 2.6912, "location": "410000 7690000 50 K", "nresp": 4}, "type":
+        "Feature"}, {"geometry": {"coordinates": [[[125.553453, -18.252439], [125.552137,
+        -18.162144], [125.646588, -18.160867], [125.647953, -18.251154], [125.553453,
+        -18.252439]]], "type": "Polygon"}, "id": "770000 7980000 51 K", "properties":
+        {"center": {"coordinates": [125.600033, -18.206657], "type": "Point"}, "intensity":
+        3.0, "intensityFine": 2.9633, "location": "770000 7980000 51 K", "nresp":
+        3}, "type": "Feature"}, {"geometry": {"coordinates": [[[115.830981, -32.351514],
+        [115.832139, -32.261319], [115.938292, -32.262256], [115.937239, -32.352454],
+        [115.830981, -32.351514]]], "type": "Polygon"}, "id": "390000 6420000 50 H",
+        "properties": {"center": {"coordinates": [115.884663, -32.306897], "type":
+        "Point"}, "intensity": 2.2, "intensityFine": 2.2372, "location": "390000 6420000
+        50 H", "nresp": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[115.942455,
+        -31.90145], [115.943484, -31.811245], [116.049123, -31.812078], [116.048196,
+        -31.902286], [115.942455, -31.90145]]], "type": "Polygon"}, "id": "400000
+        6470000 50 J", "properties": {"center": {"coordinates": [115.995814, -31.856776],
+        "type": "Point"}, "intensity": 2, "intensityFine": 2, "location": "400000
+        6470000 50 J", "nresp": 4}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[115.051785, -33.965132], [115.053836, -33.874994], [115.161906, -33.876654],
+        [115.159969, -33.966797], [115.051785, -33.965132]]], "type": "Polygon"},
+        "id": "320000 6240000 50 H", "properties": {"center": {"coordinates": [115.106874,
+        -33.920906], "type": "Point"}, "intensity": 2.9, "intensityFine": 2.8973,
+        "location": "320000 6240000 50 H", "nresp": 2}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[118.534544, -20.522011], [118.533646, -20.431681], [118.629471,
+        -20.430811], [118.630425, -20.521136], [118.534544, -20.522011]]], "type":
+        "Polygon"}, "id": "660000 7730000 50 K", "properties": {"center": {"coordinates":
+        [118.582021, -20.476416], "type": "Point"}, "intensity": 3.8, "intensityFine":
+        3.7738, "location": "660000 7730000 50 K", "nresp": 2}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[118.638244, -21.243702], [118.637249, -21.153385],
+        [118.733525, -21.152426], [118.734579, -21.242739], [118.638244, -21.243702]]],
+        "type": "Polygon"}, "id": "670000 7650000 50 K", "properties": {"center":
+        {"coordinates": [118.685899, -21.19807], "type": "Point"}, "intensity": 4.1,
+        "intensityFine": 4.0696, "location": "670000 7650000 50 K", "nresp": 2}, "type":
+        "Feature"}, {"geometry": {"coordinates": [[[124.930783, -21.51155], [124.929593,
+        -21.42125], [125.026028, -21.420111], [125.027277, -21.510406], [124.930783,
+        -21.51155]]], "type": "Polygon"}, "id": "700000 7620000 51 K", "properties":
+        {"center": {"coordinates": [124.97842, -21.465836], "type": "Point"}, "intensity":
+        2.9, "intensityFine": 2.8973, "location": "700000 7620000 51 K", "nresp":
+        2}, "type": "Feature"}, {"geometry": {"coordinates": [[[119.721425, -22.493523],
+        [119.719663, -22.403284], [119.816706, -22.401621], [119.81853, -22.491852],
+        [119.721425, -22.493523]]], "type": "Polygon"}, "id": "780000 7510000 50 K",
+        "properties": {"center": {"coordinates": [119.769081, -22.447578], "type":
+        "Point"}, "intensity": 2.9, "intensityFine": 2.857, "location": "780000 7510000
+        50 K", "nresp": 4}, "type": "Feature"}, {"geometry": {"coordinates": [[[128.719967,
+        -15.738229], [128.72009, -15.647824], [128.813393, -15.647923], [128.813311,
+        -15.738329], [128.719967, -15.738229]]], "type": "Polygon"}, "id": "470000
+        8260000 52 L", "properties": {"center": {"coordinates": [128.76669, -15.693081],
+        "type": "Point"}, "intensity": 3.1, "intensityFine": 3.0916, "location": "470000
+        8260000 52 L", "nresp": 3}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[123.482793, -21.522019], [123.482495, -21.431671], [123.578991, -21.431365],
+        [123.579348, -21.521712], [123.482793, -21.522019]]], "type": "Polygon"},
+        "id": "550000 7620000 51 K", "properties": {"center": {"coordinates": [123.530907,
+        -21.476699], "type": "Point"}, "intensity": 3.4, "intensityFine": 3.4498,
+        "location": "550000 7620000 51 K", "nresp": 3}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[117.681969, -22.786075], [117.681521, -22.695744], [117.778874,
+        -22.6953], [117.779386, -22.785629], [117.681969, -22.786075]]], "type": "Polygon"},
+        "id": "570000 7480000 50 K", "properties": {"center": {"coordinates": [117.730438,
+        -22.740695], "type": "Point"}, "intensity": 2.6, "intensityFine": 2.634, "location":
+        "570000 7480000 50 K", "nresp": 3}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[117.779386, -22.785629], [117.778874, -22.6953], [117.876225, -22.694796],
+        [117.876801, -22.785123], [117.779386, -22.785629]]], "type": "Polygon"},
+        "id": "580000 7480000 50 K", "properties": {"center": {"coordinates": [117.827822,
+        -22.74022], "type": "Point"}, "intensity": 3.4, "intensityFine": 3.4261, "location":
+        "580000 7480000 50 K", "nresp": 8}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[118.639245, -21.334018], [118.638244, -21.243702], [118.734579, -21.242739],
+        [118.735639, -21.333051], [118.639245, -21.334018]]], "type": "Polygon"},
+        "id": "670000 7640000 50 K", "properties": {"center": {"coordinates": [118.686927,
+        -21.288385], "type": "Point"}, "intensity": 3.3, "intensityFine": 3.2754,
+        "location": "670000 7640000 50 K", "nresp": 2}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[117.681521, -22.695744], [117.681075, -22.605412], [117.778365,
+        -22.60497], [117.778874, -22.6953], [117.681521, -22.695744]]], "type": "Polygon"},
+        "id": "570000 7490000 50 K", "properties": {"center": {"coordinates": [117.729959,
+        -22.650364], "type": "Point"}, "intensity": 2.5, "intensityFine": 2.4718,
+        "location": "570000 7490000 50 K", "nresp": 2}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[115.724728, -32.350484], [115.725991, -32.260293], [115.832139,
+        -32.261319], [115.830981, -32.351514], [115.724728, -32.350484]]], "type":
+        "Polygon"}, "id": "380000 6420000 50 H", "properties": {"center": {"coordinates":
+        [115.77846, -32.305914], "type": "Point"}, "intensity": 3.0, "intensityFine":
+        2.9633, "location": "380000 6420000 50 H", "nresp": 3}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[117.684243, -23.237714], [117.683783, -23.147389],
+        [117.78146, -23.146935], [117.781985, -23.237258], [117.684243, -23.237714]]],
+        "type": "Polygon"}, "id": "570000 7430000 50 K", "properties": {"center":
+        {"coordinates": [117.732868, -23.192332], "type": "Point"}, "intensity": 3.4,
+        "intensityFine": 3.4498, "location": "570000 7430000 50 K", "nresp": 2}, "type":
+        "Feature"}, {"geometry": {"coordinates": [[[118.853186, -22.957375], [118.851959,
+        -22.867087], [118.949388, -22.865923], [118.95068, -22.956206], [118.853186,
+        -22.957375]]], "type": "Polygon"}, "id": "690000 7460000 50 K", "properties":
+        {"center": {"coordinates": [118.901303, -22.911655], "type": "Point"}, "intensity":
+        2.9, "intensityFine": 2.8973, "location": "690000 7460000 50 K", "nresp":
+        2}, "type": "Feature"}, {"geometry": {"coordinates": [[[122.129919, -21.701134],
+        [122.13046, -21.610795], [122.227069, -21.611272], [122.226587, -21.701613],
+        [122.129919, -21.701134]]], "type": "Polygon"}, "id": "410000 7600000 51 K",
+        "properties": {"center": {"coordinates": [122.178509, -21.656211], "type":
+        "Point"}, "intensity": 3.1, "intensityFine": 3.0916, "location": "410000 7600000
+        51 K", "nresp": 3}, "type": "Feature"}, {"geometry": {"coordinates": [[[122.339124,
+        -17.906814], [122.339458, -17.816432], [122.433817, -17.816729], [122.433531,
+        -17.907112], [122.339124, -17.906814]]], "type": "Polygon"}, "id": "430000
+        8020000 51 K", "properties": {"center": {"coordinates": [122.386482, -17.861778],
+        "type": "Point"}, "intensity": 4.8, "intensityFine": 4.8092, "location": "430000
+        8020000 51 K", "nresp": 4}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[118.651673, -22.417733], [118.650608, -22.32743], [118.747669, -22.326412],
+        [118.748797, -22.416711], [118.651673, -22.417733]]], "type": "Polygon"},
+        "id": "670000 7520000 50 K", "properties": {"center": {"coordinates": [118.699687,
+        -22.372079], "type": "Point"}, "intensity": 3.2, "intensityFine": 3.2152,
+        "location": "670000 7520000 50 K", "nresp": 3}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[121.766987, -18.71733], [121.76764, -18.626971], [121.862423,
+        -18.627568], [121.86182, -18.71793], [121.766987, -18.71733]]], "type": "Polygon"},
+        "id": "370000 7930000 51 K", "properties": {"center": {"coordinates": [121.814718,
+        -18.672455], "type": "Point"}, "intensity": 5.1, "intensityFine": 5.1177,
+        "location": "370000 7930000 51 K", "nresp": 3}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[114.540699, -28.815243], [114.542814, -28.725064], [114.645124,
+        -28.726885], [114.643097, -28.817071], [114.540699, -28.815243]]], "type":
+        "Polygon"}, "id": "260000 6810000 50 J", "properties": {"center": {"coordinates":
+        [114.592933, -28.771076], "type": "Point"}, "intensity": 2.8, "intensityFine":
+        2.8026, "location": "260000 6810000 50 J", "nresp": 3}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[118.95068, -22.956206], [118.949388, -22.865923],
+        [119.046811, -22.864699], [119.048167, -22.954977], [118.95068, -22.956206]]],
+        "type": "Polygon"}, "id": "700000 7460000 50 K", "properties": {"center":
+        {"coordinates": [118.998761, -22.910459], "type": "Point"}, "intensity": 2.7,
+        "intensityFine": 2.6912, "location": "700000 7460000 50 K", "nresp": 3}, "type":
+        "Feature"}, {"geometry": {"coordinates": [[[122.420652, -21.521712], [122.421009,
+        -21.431365], [122.517505, -21.431671], [122.517207, -21.522019], [122.420652,
+        -21.521712]]], "type": "Polygon"}, "id": "440000 7620000 51 K", "properties":
+        {"center": {"coordinates": [122.469093, -21.476699], "type": "Point"}, "intensity":
+        2.8, "intensityFine": 2.7958, "location": "440000 7620000 51 K", "nresp":
+        4}, "type": "Feature"}, {"geometry": {"coordinates": [[[123.658903, -17.364512],
+        [123.65858, -17.274125], [123.752658, -17.273795], [123.753026, -17.364179],
+        [123.658903, -17.364512]]], "type": "Polygon"}, "id": "570000 8080000 51 K",
+        "properties": {"center": {"coordinates": [123.705792, -17.319158], "type":
+        "Point"}, "intensity": 3.8, "intensityFine": 3.7738, "location": "570000 8080000
+        51 K", "nresp": 4}, "type": "Feature"}, {"geometry": {"coordinates": [[[120.160783,
+        -23.484316], [120.162711, -23.394098], [120.260461, -23.395843], [120.258599,
+        -23.486069], [120.160783, -23.484316]]], "type": "Polygon"}, "id": "210000
+        7400000 51 K", "properties": {"center": {"coordinates": [120.210638, -23.440089],
+        "type": "Point"}, "intensity": 2.8, "intensityFine": 2.8163, "location": "210000
+        7400000 51 K", "nresp": 2}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[118.746547, -22.236112], [118.74543, -22.14581], [118.842362, -22.144744],
+        [118.84354, -22.235041], [118.746547, -22.236112]]], "type": "Polygon"}, "id":
+        "680000 7540000 50 K", "properties": {"center": {"coordinates": [118.79447,
+        -22.190434], "type": "Point"}, "intensity": 3.6, "intensityFine": 3.6156,
+        "location": "680000 7540000 50 K", "nresp": 2}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[115.943484, -31.811245], [115.944509, -31.721039], [116.050045,
+        -31.721869], [116.049123, -31.812078], [115.943484, -31.811245]]], "type":
+        "Polygon"}, "id": "400000 6480000 50 J", "properties": {"center": {"coordinates":
+        [115.99679, -31.766569], "type": "Point"}, "intensity": 3.9, "intensityFine":
+        3.8753, "location": "400000 6480000 50 J", "nresp": 3}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[130.9329, -12.566787], [130.932227, -12.476408],
+        [131.024198, -12.475734], [131.024903, -12.566107], [130.9329, -12.566787]]],
+        "type": "Polygon"}, "id": "710000 8610000 52 L", "properties": {"center":
+        {"coordinates": [130.978557, -12.521263], "type": "Point"}, "intensity": 3.6,
+        "intensityFine": 3.5503, "location": "710000 8610000 52 L", "nresp": 2}, "type":
+        "Feature"}, {"geometry": {"coordinates": [[[119.584383, -20.238667], [119.582894,
+        -20.148394], [119.67848, -20.146965], [119.680024, -20.237231], [119.584383,
+        -20.238667]]], "type": "Polygon"}, "id": "770000 7760000 50 K", "properties":
+        {"center": {"coordinates": [119.631446, -20.192821], "type": "Point"}, "intensity":
+        3.5, "intensityFine": 3.5337, "location": "770000 7760000 50 K", "nresp":
+        4}, "type": "Feature"}, {"geometry": {"coordinates": [[[116.046331, -32.082697],
+        [116.047266, -31.992492], [116.153115, -31.993243], [116.152284, -32.083451],
+        [116.046331, -32.082697]]], "type": "Polygon"}, "id": "410000 6450000 50 H",
+        "properties": {"center": {"coordinates": [116.099749, -32.037982], "type":
+        "Point"}, "intensity": 2.3, "intensityFine": 2.2854, "location": "410000 6450000
+        50 H", "nresp": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[122.10452,
+        -25.494431], [122.105187, -25.404137], [122.204603, -25.404708], [122.204009,
+        -25.495005], [122.10452, -25.494431]]], "type": "Polygon"}, "id": "410000
+        7180000 51 J", "properties": {"center": {"coordinates": [122.15458, -25.449579],
+        "type": "Point"}, "intensity": 2.4, "intensityFine": 2.4261, "location": "410000
+        7180000 51 J", "nresp": 2}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[116.047266, -31.992492], [116.048196, -31.902286], [116.153942, -31.903034],
+        [116.153115, -31.993243], [116.047266, -31.992492]]], "type": "Polygon"},
+        "id": "410000 6460000 50 J", "properties": {"center": {"coordinates": [116.10063,
+        -31.947775], "type": "Point"}, "intensity": 2.6, "intensityFine": 2.5539,
+        "location": "410000 6460000 50 J", "nresp": 3}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[116.323258, -21.702036], [116.32368, -21.611693], [116.420293,
+        -21.612058], [116.419932, -21.702403], [116.323258, -21.702036]]], "type":
+        "Polygon"}, "id": "430000 7600000 50 K", "properties": {"center": {"coordinates":
+        [116.371791, -21.657055], "type": "Point"}, "intensity": 3.7, "intensityFine":
+        3.6692, "location": "430000 7600000 50 K", "nresp": 3}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[119.142813, -22.773142], [119.141407, -22.682868],
+        [119.238688, -22.681537], [119.240158, -22.771805], [119.142813, -22.773142]]],
+        "type": "Polygon"}, "id": "720000 7480000 50 K", "properties": {"center":
+        {"coordinates": [119.190766, -22.727346], "type": "Point"}, "intensity": 3.6,
+        "intensityFine": 3.6156, "location": "720000 7480000 50 K", "nresp": 2}, "type":
+        "Feature"}, {"geometry": {"coordinates": [[[118.349209, -21.246263], [118.348389,
+        -21.155933], [118.44468, -21.155139], [118.445559, -21.245464], [118.349209,
+        -21.246263]]], "type": "Polygon"}, "id": "640000 7650000 50 K", "properties":
+        {"center": {"coordinates": [118.39696, -21.200707], "type": "Point"}, "intensity":
+        3.6, "intensityFine": 3.6156, "location": "640000 7650000 50 K", "nresp":
+        2}, "type": "Feature"}, {"geometry": {"coordinates": [[[122.053488, -18.35751],
+        [122.053979, -18.267139], [122.148573, -18.267584], [122.148131, -18.357957],
+        [122.053488, -18.35751]]], "type": "Polygon"}, "id": "400000 7970000 51 K",
+        "properties": {"center": {"coordinates": [122.101043, -18.312554], "type":
+        "Point"}, "intensity": 5.6, "intensityFine": 5.6318, "location": "400000 7970000
+        51 K", "nresp": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[117.972304,
+        -22.513582], [117.971673, -22.423255], [118.068828, -22.422641], [118.069522,
+        -22.512966], [117.972304, -22.513582]]], "type": "Polygon"}, "id": "600000
+        7510000 50 K", "properties": {"center": {"coordinates": [118.020582, -22.468118],
+        "type": "Point"}, "intensity": 2.9, "intensityFine": 2.8772, "location": "600000
+        7510000 50 K", "nresp": 4}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[116.153942, -31.903034], [116.154765, -31.812824], [116.260411, -31.813481],
+        [116.259691, -31.903694], [116.153942, -31.903034]]], "type": "Polygon"},
+        "id": "420000 6470000 50 J", "properties": {"center": {"coordinates": [116.207202,
+        -31.858269], "type": "Point"}, "intensity": 2, "intensityFine": 2, "location":
+        "420000 6470000 50 J", "nresp": 4}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[120.613745, -19.789943], [120.615087, -19.699652], [120.710426, -19.700895],
+        [120.709137, -19.791191], [120.613745, -19.789943]]], "type": "Polygon"},
+        "id": "250000 7810000 51 K", "properties": {"center": {"coordinates": [120.662099,
+        -19.745427], "type": "Point"}, "intensity": 3.9, "intensityFine": 3.9249,
+        "location": "250000 7810000 51 K", "nresp": 2}, "type": "Feature"}], "type":
+        "FeatureCollection"}'
+    headers:
+      Accept-Ranges:
+      - bytes
+      Connection:
+      - close
+      Content-Length:
+      - '32158'
+      Content-Type:
+      - application/vnd.geo+json
+      Date:
+      - Thu, 10 Oct 2019 17:32:56 GMT
+      ETag:
+      - '"4ddcdb26eae91ac7bd71cf1ef193e894"'
+      Last-Modified:
+      - Thu, 10 Oct 2019 00:19:14 GMT
+      Server:
+      - AmazonS3
+      Via:
+      - 1.1 a11e362db748447dfc49a75beeab9a6f.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - o46f0P2CdOEhXyyn49-D7q1NJo-ayPq3hBF4lgImYW5OuV-gOd4qcg==
+      X-Amz-Cf-Pop:
+      - LAX3-C2
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Connection:
+      - close
+      Host:
+      - cdn.gagempa.net
+      User-Agent:
+      - Python-urllib/3.6
+    method: GET
+    uri: https://cdn.gagempa.net/skip/events/ga2019nsodfc/felt_reports_1km_filtered.geojson
+  response:
+    body:
+      string: '{"features": [{"geometry": {"coordinates": [[[117.134433, -20.691396],
+        [117.134425, -20.68236], [117.144027, -20.682352], [117.144035, -20.691388],
+        [117.134433, -20.691396]]], "type": "Polygon"}, "id": "514000 7712000 50 K",
+        "properties": {"center": {"coordinates": [117.13923, -20.686874], "type":
+        "Point"}, "intensity": 4.3, "intensityFine": 4.3286, "location": "514000 7712000
+        50 K", "nresp": 6}, "type": "Feature"}, {"geometry": {"coordinates": [[[122.225563,
+        -17.969662], [122.225602, -17.960624], [122.235045, -17.960661], [122.235006,
+        -17.969699], [122.225563, -17.969662]]], "type": "Polygon"}, "id": "418000
+        8013000 51 K", "properties": {"center": {"coordinates": [122.230304, -17.965161],
+        "type": "Point"}, "intensity": 4.9, "intensityFine": 4.9359, "location": "418000
+        8013000 51 K", "nresp": 29}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[118.628144, -20.304354], [118.628049, -20.295321], [118.637623, -20.295232],
+        [118.637718, -20.304264], [118.628144, -20.304354]]], "type": "Polygon"},
+        "id": "670000 7754000 50 K", "properties": {"center": {"coordinates": [118.632883,
+        -20.299793], "type": "Point"}, "intensity": 4.5, "intensityFine": 4.4605,
+        "location": "670000 7754000 50 K", "nresp": 9}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[115.867776, -31.954933], [115.867886, -31.945913], [115.878465,
+        -31.946007], [115.878355, -31.955027], [115.867776, -31.954933]]], "type":
+        "Polygon"}, "id": "393000 6464000 50 J", "properties": {"center": {"coordinates":
+        [115.87312, -31.95047], "type": "Point"}, "intensity": 3.2, "intensityFine":
+        3.1663, "location": "393000 6464000 50 J", "nresp": 6}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[122.225602, -17.960624], [122.225641, -17.951586],
+        [122.235084, -17.951623], [122.235045, -17.960661], [122.225602, -17.960624]]],
+        "type": "Polygon"}, "id": "418000 8014000 51 K", "properties": {"center":
+        {"coordinates": [122.230343, -17.956124], "type": "Point"}, "intensity": 5.0,
+        "intensityFine": 5.0458, "location": "418000 8014000 51 K", "nresp": 19},
+        "type": "Feature"}, {"geometry": {"coordinates": [[[122.22572, -17.93351],
+        [122.225759, -17.924472], [122.235201, -17.92451], [122.235162, -17.933548],
+        [122.22572, -17.93351]]], "type": "Polygon"}, "id": "418000 8017000 51 K",
+        "properties": {"center": {"coordinates": [122.23046, -17.92901], "type": "Point"},
+        "intensity": 4.6, "intensityFine": 4.6341, "location": "418000 8017000 51
+        K", "nresp": 19}, "type": "Feature"}, {"geometry": {"coordinates": [[[119.41025,
+        -23.031137], [119.410089, -23.022112], [119.41984, -23.021963], [119.420001,
+        -23.030988], [119.41025, -23.031137]]], "type": "Polygon"}, "id": "747000
+        7451000 50 K", "properties": {"center": {"coordinates": [119.415045, -23.02655],
+        "type": "Point"}, "intensity": 3.3, "intensityFine": 3.3249, "location": "747000
+        7451000 50 K", "nresp": 22}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[122.206716, -17.960547], [122.206756, -17.95151], [122.216199, -17.951548],
+        [122.216159, -17.960586], [122.206716, -17.960547]]], "type": "Polygon"},
+        "id": "416000 8014000 51 K", "properties": {"center": {"coordinates": [122.211457,
+        -17.956048], "type": "Point"}, "intensity": 5.1, "intensityFine": 5.1138,
+        "location": "416000 8014000 51 K", "nresp": 34}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[122.216079, -17.978661], [122.216119, -17.969624], [122.225563,
+        -17.969662], [122.225523, -17.978699], [122.216079, -17.978661]]], "type":
+        "Polygon"}, "id": "417000 8012000 51 K", "properties": {"center": {"coordinates":
+        [122.220821, -17.974162], "type": "Point"}, "intensity": 4.7, "intensityFine":
+        4.7316, "location": "417000 8012000 51 K", "nresp": 42}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[122.216278, -17.933472], [122.216318, -17.924434],
+        [122.225759, -17.924472], [122.22572, -17.93351], [122.216278, -17.933472]]],
+        "type": "Polygon"}, "id": "417000 8017000 51 K", "properties": {"center":
+        {"coordinates": [122.221019, -17.928972], "type": "Point"}, "intensity": 4.7,
+        "intensityFine": 4.7495, "location": "417000 8017000 51 K", "nresp": 24},
+        "type": "Feature"}, {"geometry": {"coordinates": [[[122.225681, -17.942548],
+        [122.22572, -17.93351], [122.235162, -17.933548], [122.235123, -17.942585],
+        [122.225681, -17.942548]]], "type": "Polygon"}, "id": "418000 8016000 51 K",
+        "properties": {"center": {"coordinates": [122.230421, -17.938048], "type":
+        "Point"}, "intensity": 5.4, "intensityFine": 5.4456, "location": "418000 8016000
+        51 K", "nresp": 21}, "type": "Feature"}, {"geometry": {"coordinates": [[[116.779133,
+        -20.700343], [116.779146, -20.691307], [116.788748, -20.691319], [116.788736,
+        -20.700355], [116.779133, -20.700343]]], "type": "Polygon"}, "id": "477000
+        7711000 50 K", "properties": {"center": {"coordinates": [116.783941, -20.695831],
+        "type": "Point"}, "intensity": 3.3, "intensityFine": 3.2754, "location": "477000
+        7711000 50 K", "nresp": 2}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[115.846503, -31.963763], [115.846616, -31.954743], [115.857196, -31.954839],
+        [115.857084, -31.963859], [115.846503, -31.963763]]], "type": "Polygon"},
+        "id": "391000 6463000 50 J", "properties": {"center": {"coordinates": [115.85185,
+        -31.959301], "type": "Point"}, "intensity": 2.8, "intensityFine": 2.7958,
+        "location": "391000 6463000 50 J", "nresp": 4}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[118.600164, -20.376881], [118.600071, -20.367848], [118.609649,
+        -20.36776], [118.609743, -20.376793], [118.600164, -20.376881]]], "type":
+        "Polygon"}, "id": "667000 7746000 50 K", "properties": {"center": {"coordinates":
+        [118.604907, -20.372321], "type": "Point"}, "intensity": 4.1, "intensityFine":
+        4.1207, "location": "667000 7746000 50 K", "nresp": 21}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[118.590863, -20.404067], [118.59077, -20.395034],
+        [118.60035, -20.394947], [118.600444, -20.403979], [118.590863, -20.404067]]],
+        "type": "Polygon"}, "id": "666000 7743000 50 K", "properties": {"center":
+        {"coordinates": [118.595607, -20.399507], "type": "Point"}, "intensity": 4.1,
+        "intensityFine": 4.0746, "location": "666000 7743000 50 K", "nresp": 8}, "type":
+        "Feature"}, {"geometry": {"coordinates": [[[116.798267, -20.754582], [116.798279,
+        -20.745546], [116.807885, -20.745557], [116.807873, -20.754593], [116.798267,
+        -20.754582]]], "type": "Polygon"}, "id": "479000 7705000 50 K", "properties":
+        {"center": {"coordinates": [116.803076, -20.750069], "type": "Point"}, "intensity":
+        3.4, "intensityFine": 3.4491, "location": "479000 7705000 50 K", "nresp":
+        40}, "type": "Feature"}, {"geometry": {"coordinates": [[[116.798279, -20.745546],
+        [116.798291, -20.73651], [116.807896, -20.736521], [116.807885, -20.745557],
+        [116.798279, -20.745546]]], "type": "Polygon"}, "id": "479000 7706000 50 K",
+        "properties": {"center": {"coordinates": [116.803088, -20.741033], "type":
+        "Point"}, "intensity": 3.8, "intensityFine": 3.7757, "location": "479000 7706000
+        50 K", "nresp": 20}, "type": "Feature"}, {"geometry": {"coordinates": [[[130.840186,
+        -12.468013], [130.840122, -12.458974], [130.84932, -12.458911], [130.849384,
+        -12.46795], [130.840186, -12.468013]]], "type": "Polygon"}, "id": "700000
+        8621000 52 L", "properties": {"center": {"coordinates": [130.844753, -12.463462],
+        "type": "Point"}, "intensity": 2.7, "intensityFine": 2.7194, "location": "700000
+        8621000 52 L", "nresp": 9}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[118.610024, -20.403891], [118.60993, -20.394858], [118.61951, -20.39477],
+        [118.619605, -20.403802], [118.610024, -20.403891]]], "type": "Polygon"},
+        "id": "668000 7743000 50 K", "properties": {"center": {"coordinates": [118.614768,
+        -20.39933], "type": "Point"}, "intensity": 4.6, "intensityFine": 4.5782, "location":
+        "668000 7743000 50 K", "nresp": 11}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[117.778823, -22.686267], [117.778772, -22.677234], [117.788506, -22.677186],
+        [117.788558, -22.686219], [117.778823, -22.686267]]], "type": "Polygon"},
+        "id": "580000 7491000 50 K", "properties": {"center": {"coordinates": [117.783665,
+        -22.681727], "type": "Point"}, "intensity": 3.8, "intensityFine": 3.7866,
+        "location": "580000 7491000 50 K", "nresp": 12}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[115.857196, -31.954839], [115.857307, -31.945819], [115.867886,
+        -31.945913], [115.867776, -31.954933], [115.857196, -31.954839]]], "type":
+        "Polygon"}, "id": "392000 6464000 50 J", "properties": {"center": {"coordinates":
+        [115.862541, -31.950376], "type": "Point"}, "intensity": 3.0, "intensityFine":
+        2.9784, "location": "392000 6464000 50 J", "nresp": 20}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[118.619699, -20.412835], [118.619605, -20.403802],
+        [118.629185, -20.403713], [118.62928, -20.412746], [118.619699, -20.412835]]],
+        "type": "Polygon"}, "id": "669000 7742000 50 K", "properties": {"center":
+        {"coordinates": [118.624443, -20.408274], "type": "Point"}, "intensity": 3.7,
+        "intensityFine": 3.6954, "location": "669000 7742000 50 K", "nresp": 19},
+        "type": "Feature"}, {"geometry": {"coordinates": [[[118.600444, -20.403979],
+        [118.60035, -20.394947], [118.60993, -20.394858], [118.610024, -20.403891],
+        [118.600444, -20.403979]]], "type": "Polygon"}, "id": "667000 7743000 50 K",
+        "properties": {"center": {"coordinates": [118.605187, -20.399419], "type":
+        "Point"}, "intensity": 3.7, "intensityFine": 3.7499, "location": "667000 7743000
+        50 K", "nresp": 15}, "type": "Feature"}, {"geometry": {"coordinates": [[[122.235045,
+        -17.960661], [122.235084, -17.951623], [122.244527, -17.95166], [122.244489,
+        -17.960698], [122.235045, -17.960661]]], "type": "Polygon"}, "id": "419000
+        8014000 51 K", "properties": {"center": {"coordinates": [122.239786, -17.956161],
+        "type": "Point"}, "intensity": 5.0, "intensityFine": 5.0481, "location": "419000
+        8014000 51 K", "nresp": 58}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[122.206836, -17.933434], [122.206877, -17.924396], [122.216318, -17.924434],
+        [122.216278, -17.933472], [122.206836, -17.933434]]], "type": "Polygon"},
+        "id": "416000 8017000 51 K", "properties": {"center": {"coordinates": [122.211577,
+        -17.928934], "type": "Point"}, "intensity": 4.2, "intensityFine": 4.2251,
+        "location": "416000 8017000 51 K", "nresp": 14}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[118.637908, -20.32233], [118.637813, -20.313297], [118.647388,
+        -20.313207], [118.647484, -20.32224], [118.637908, -20.32233]]], "type": "Polygon"},
+        "id": "671000 7752000 50 K", "properties": {"center": {"coordinates": [118.642648,
+        -20.317769], "type": "Point"}, "intensity": 4.2, "intensityFine": 4.1913,
+        "location": "671000 7752000 50 K", "nresp": 8}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[117.134425, -20.68236], [117.134417, -20.673324], [117.144018,
+        -20.673316], [117.144027, -20.682352], [117.134425, -20.68236]]], "type":
+        "Polygon"}, "id": "514000 7713000 50 K", "properties": {"center": {"coordinates":
+        [117.139222, -20.677838], "type": "Point"}, "intensity": 3.9, "intensityFine":
+        3.9152, "location": "514000 7713000 50 K", "nresp": 19}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[113.642905, -24.886745], [113.642713, -24.877724],
+        [113.652603, -24.877548], [113.652795, -24.88657], [113.642905, -24.886745]]],
+        "type": "Polygon"}, "id": "767000 7245000 49 J", "properties": {"center":
+        {"coordinates": [113.647754, -24.882147], "type": "Point"}, "intensity": 2,
+        "intensityFine": 2, "location": "767000 7245000 49 J", "nresp": 2}, "type":
+        "Feature"}, {"geometry": {"coordinates": [[[122.197191, -17.978584], [122.197232,
+        -17.969546], [122.206675, -17.969585], [122.206635, -17.978623], [122.197191,
+        -17.978584]]], "type": "Polygon"}, "id": "415000 8012000 51 K", "properties":
+        {"center": {"coordinates": [122.201933, -17.974085], "type": "Point"}, "intensity":
+        3.9, "intensityFine": 3.8753, "location": "415000 8012000 51 K", "nresp":
+        3}, "type": "Feature"}, {"geometry": {"coordinates": [[[116.855922, -20.736568],
+        [116.85593, -20.727532], [116.865535, -20.72754], [116.865527, -20.736576],
+        [116.855922, -20.736568]]], "type": "Polygon"}, "id": "485000 7707000 50 K",
+        "properties": {"center": {"coordinates": [116.860729, -20.732054], "type":
+        "Point"}, "intensity": 3.1, "intensityFine": 3.1431, "location": "485000 7707000
+        50 K", "nresp": 14}, "type": "Feature"}, {"geometry": {"coordinates": [[[118.610212,
+        -20.421956], [118.610118, -20.412924], [118.619699, -20.412835], [118.619794,
+        -20.421868], [118.610212, -20.421956]]], "type": "Polygon"}, "id": "668000
+        7741000 50 K", "properties": {"center": {"coordinates": [118.614956, -20.417396],
+        "type": "Point"}, "intensity": 3.7, "intensityFine": 3.6742, "location": "668000
+        7741000 50 K", "nresp": 15}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[130.858003, -12.386542], [130.857939, -12.377503], [130.867134, -12.37744],
+        [130.867198, -12.386479], [130.858003, -12.386542]]], "type": "Polygon"},
+        "id": "702000 8630000 52 L", "properties": {"center": {"coordinates": [130.862569,
+        -12.381991], "type": "Point"}, "intensity": 2.7, "intensityFine": 2.6912,
+        "location": "702000 8630000 52 L", "nresp": 2}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[118.570787, -20.313912], [118.570696, -20.304879], [118.580271,
+        -20.304793], [118.580363, -20.313826], [118.570787, -20.313912]]], "type":
+        "Polygon"}, "id": "664000 7753000 50 K", "properties": {"center": {"coordinates":
+        [118.575529, -20.309352], "type": "Point"}, "intensity": 3.7, "intensityFine":
+        3.7217, "location": "664000 7753000 50 K", "nresp": 19}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[130.830925, -12.459037], [130.830862, -12.449998],
+        [130.840059, -12.449936], [130.840122, -12.458974], [130.830925, -12.459037]]],
+        "type": "Polygon"}, "id": "699000 8622000 52 L", "properties": {"center":
+        {"coordinates": [130.835492, -12.454486], "type": "Point"}, "intensity": 2.5,
+        "intensityFine": 2.4989, "location": "699000 8622000 52 L", "nresp": 5}, "type":
+        "Feature"}, {"geometry": {"coordinates": [[[118.60063, -20.422045], [118.600537,
+        -20.413012], [118.610118, -20.412924], [118.610212, -20.421956], [118.60063,
+        -20.422045]]], "type": "Polygon"}, "id": "667000 7741000 50 K", "properties":
+        {"center": {"coordinates": [118.605374, -20.417484], "type": "Point"}, "intensity":
+        3.5, "intensityFine": 3.5461, "location": "667000 7741000 50 K", "nresp":
+        16}, "type": "Feature"}, {"geometry": {"coordinates": [[[122.216119, -17.969624],
+        [122.216159, -17.960586], [122.225602, -17.960624], [122.225563, -17.969662],
+        [122.216119, -17.969624]]], "type": "Polygon"}, "id": "417000 8013000 51 K",
+        "properties": {"center": {"coordinates": [122.220861, -17.965124], "type":
+        "Point"}, "intensity": 4.8, "intensityFine": 4.8335, "location": "417000 8013000
+        51 K", "nresp": 17}, "type": "Feature"}, {"geometry": {"coordinates": [[[116.702363,
+        -20.67312], [116.702381, -20.664084], [116.711981, -20.6641], [116.711964,
+        -20.673136], [116.702363, -20.67312]]], "type": "Polygon"}, "id": "469000
+        7714000 50 K", "properties": {"center": {"coordinates": [116.707172, -20.66861],
+        "type": "Point"}, "intensity": 3.9, "intensityFine": 3.9249, "location": "469000
+        7714000 50 K", "nresp": 2}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[116.81749, -20.745567], [116.817501, -20.736531], [116.827106, -20.736541],
+        [116.827096, -20.745577], [116.81749, -20.745567]]], "type": "Polygon"}, "id":
+        "481000 7706000 50 K", "properties": {"center": {"coordinates": [116.822298,
+        -20.741054], "type": "Point"}, "intensity": 3.4, "intensityFine": 3.3997,
+        "location": "481000 7706000 50 K", "nresp": 13}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[118.610118, -20.412924], [118.610024, -20.403891], [118.619605,
+        -20.403802], [118.619699, -20.412835], [118.610118, -20.412924]]], "type":
+        "Polygon"}, "id": "668000 7742000 50 K", "properties": {"center": {"coordinates":
+        [118.614862, -20.408363], "type": "Point"}, "intensity": 4.0, "intensityFine":
+        4.0446, "location": "668000 7742000 50 K", "nresp": 14}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[118.600537, -20.413012], [118.600444, -20.403979],
+        [118.610024, -20.403891], [118.610118, -20.412924], [118.600537, -20.413012]]],
+        "type": "Polygon"}, "id": "667000 7742000 50 K", "properties": {"center":
+        {"coordinates": [118.605281, -20.408452], "type": "Point"}, "intensity": 3.8,
+        "intensityFine": 3.7883, "location": "667000 7742000 50 K", "nresp": 18},
+        "type": "Feature"}, {"geometry": {"coordinates": [[[113.652603, -24.877548],
+        [113.65241, -24.868527], [113.662299, -24.868351], [113.662492, -24.877372],
+        [113.652603, -24.877548]]], "type": "Polygon"}, "id": "768000 7246000 49 J",
+        "properties": {"center": {"coordinates": [113.657451, -24.872949], "type":
+        "Point"}, "intensity": 2.1, "intensityFine": 2.1387, "location": "768000 7246000
+        49 J", "nresp": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[116.798291,
+        -20.73651], [116.798303, -20.727474], [116.807907, -20.727485], [116.807896,
+        -20.736521], [116.798291, -20.73651]]], "type": "Polygon"}, "id": "479000
+        7707000 50 K", "properties": {"center": {"coordinates": [116.803099, -20.731997],
+        "type": "Point"}, "intensity": 3.1, "intensityFine": 3.1138, "location": "479000
+        7707000 50 K", "nresp": 13}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[117.78861, -22.695252], [117.788558, -22.686219], [117.798292, -22.686171],
+        [117.798345, -22.695204], [117.78861, -22.695252]]], "type": "Polygon"}, "id":
+        "581000 7490000 50 K", "properties": {"center": {"coordinates": [117.793451,
+        -22.690712], "type": "Point"}, "intensity": 3.3, "intensityFine": 3.2751,
+        "location": "581000 7490000 50 K", "nresp": 24}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[122.216159, -17.960586], [122.216199, -17.951548], [122.225641,
+        -17.951586], [122.225602, -17.960624], [122.216159, -17.960586]]], "type":
+        "Polygon"}, "id": "417000 8014000 51 K", "properties": {"center": {"coordinates":
+        [122.2209, -17.956086], "type": "Point"}, "intensity": 5.1, "intensityFine":
+        5.0787, "location": "417000 8014000 51 K", "nresp": 18}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[116.788673, -20.745534], [116.788686, -20.736498],
+        [116.798291, -20.73651], [116.798279, -20.745546], [116.788673, -20.745534]]],
+        "type": "Polygon"}, "id": "478000 7706000 50 K", "properties": {"center":
+        {"coordinates": [116.793482, -20.741022], "type": "Point"}, "intensity": 3.7,
+        "intensityFine": 3.6855, "location": "478000 7706000 50 K", "nresp": 13},
+        "type": "Feature"}, {"geometry": {"coordinates": [[[118.599513, -20.313652],
+        [118.59942, -20.304619], [118.608995, -20.304531], [118.609088, -20.313564],
+        [118.599513, -20.313652]]], "type": "Polygon"}, "id": "667000 7753000 50 K",
+        "properties": {"center": {"coordinates": [118.604254, -20.309091], "type":
+        "Point"}, "intensity": 4.5, "intensityFine": 4.52, "location": "667000 7753000
+        50 K", "nresp": 5}, "type": "Feature"}, {"geometry": {"coordinates": [[[117.144027,
+        -20.682352], [117.144018, -20.673316], [117.15362, -20.673308], [117.153629,
+        -20.682344], [117.144027, -20.682352]]], "type": "Polygon"}, "id": "515000
+        7713000 50 K", "properties": {"center": {"coordinates": [117.148823, -20.67783],
+        "type": "Point"}, "intensity": 3.4, "intensityFine": 3.4498, "location": "515000
+        7713000 50 K", "nresp": 3}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[116.788661, -20.75457], [116.788673, -20.745534], [116.798279, -20.745546],
+        [116.798267, -20.754582], [116.788661, -20.75457]]], "type": "Polygon"}, "id":
+        "478000 7705000 50 K", "properties": {"center": {"coordinates": [116.79347,
+        -20.750058], "type": "Point"}, "intensity": 3.5, "intensityFine": 3.4542,
+        "location": "478000 7705000 50 K", "nresp": 14}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[122.206796, -17.942472], [122.206836, -17.933434], [122.216278,
+        -17.933472], [122.216238, -17.94251], [122.206796, -17.942472]]], "type":
+        "Polygon"}, "id": "416000 8016000 51 K", "properties": {"center": {"coordinates":
+        [122.211537, -17.937972], "type": "Point"}, "intensity": 3.8, "intensityFine":
+        3.8215, "location": "416000 8016000 51 K", "nresp": 10}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[122.235201, -17.92451], [122.235239, -17.915472],
+        [122.24468, -17.915509], [122.244642, -17.924547], [122.235201, -17.92451]]],
+        "type": "Polygon"}, "id": "419000 8018000 51 K", "properties": {"center":
+        {"coordinates": [122.239941, -17.920009], "type": "Point"}, "intensity": 3.9,
+        "intensityFine": 3.9249, "location": "419000 8018000 51 K", "nresp": 2}, "type":
+        "Feature"}, {"geometry": {"coordinates": [[[122.225641, -17.951586], [122.225681,
+        -17.942548], [122.235123, -17.942585], [122.235084, -17.951623], [122.225641,
+        -17.951586]]], "type": "Polygon"}, "id": "418000 8015000 51 K", "properties":
+        {"center": {"coordinates": [122.230382, -17.947086], "type": "Point"}, "intensity":
+        5.6, "intensityFine": 5.6219, "location": "418000 8015000 51 K", "nresp":
+        15}, "type": "Feature"}, {"geometry": {"coordinates": [[[115.836036, -31.954646],
+        [115.83615, -31.945626], [115.846729, -31.945723], [115.846616, -31.954743],
+        [115.836036, -31.954646]]], "type": "Polygon"}, "id": "390000 6464000 50 J",
+        "properties": {"center": {"coordinates": [115.841383, -31.950185], "type":
+        "Point"}, "intensity": 3.6, "intensityFine": 3.5503, "location": "390000 6464000
+        50 J", "nresp": 8}, "type": "Feature"}, {"geometry": {"coordinates": [[[122.24468,
+        -17.915509], [122.244719, -17.906471], [122.254159, -17.906507], [122.254121,
+        -17.915545], [122.24468, -17.915509]]], "type": "Polygon"}, "id": "420000
+        8019000 51 K", "properties": {"center": {"coordinates": [122.24942, -17.911008],
+        "type": "Point"}, "intensity": 3.4, "intensityFine": 3.4498, "location": "420000
+        8019000 51 K", "nresp": 4}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[128.738589, -15.774415], [128.738601, -15.765374], [128.747936, -15.765385],
+        [128.747925, -15.774426], [128.738589, -15.774415]]], "type": "Polygon"},
+        "id": "472000 8256000 52 L", "properties": {"center": {"coordinates": [128.743263,
+        -15.7699], "type": "Point"}, "intensity": 3.1, "intensityFine": 3.0663, "location":
+        "472000 8256000 52 L", "nresp": 3}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[117.654743, -23.201709], [117.654699, -23.192676], [117.664471, -23.192635],
+        [117.664515, -23.201668], [117.654743, -23.201709]]], "type": "Polygon"},
+        "id": "567000 7434000 50 K", "properties": {"center": {"coordinates": [117.659607,
+        -23.197172], "type": "Point"}, "intensity": 2.9, "intensityFine": 2.8973,
+        "location": "567000 7434000 50 K", "nresp": 4}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[116.798255, -20.763617], [116.798267, -20.754582], [116.807873,
+        -20.754593], [116.807862, -20.763628], [116.798255, -20.763617]]], "type":
+        "Polygon"}, "id": "479000 7704000 50 K", "properties": {"center": {"coordinates":
+        [116.803064, -20.759105], "type": "Point"}, "intensity": 3.6, "intensityFine":
+        3.5612, "location": "479000 7704000 50 K", "nresp": 3}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[115.867665, -31.963954], [115.867776, -31.954933],
+        [115.878355, -31.955027], [115.878246, -31.964047], [115.867665, -31.963954]]],
+        "type": "Polygon"}, "id": "393000 6463000 50 J", "properties": {"center":
+        {"coordinates": [115.87301, -31.959491], "type": "Point"}, "intensity": 3.1,
+        "intensityFine": 3.0916, "location": "393000 6463000 50 J", "nresp": 14},
+        "type": "Feature"}, {"geometry": {"coordinates": [[[130.848872, -12.395643],
+        [130.848809, -12.386604], [130.858003, -12.386542], [130.858067, -12.39558],
+        [130.848872, -12.395643]]], "type": "Polygon"}, "id": "701000 8629000 52 L",
+        "properties": {"center": {"coordinates": [130.853438, -12.391092], "type":
+        "Point"}, "intensity": 2.5, "intensityFine": 2.4718, "location": "701000 8629000
+        52 L", "nresp": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[117.153601,
+        -20.655236], [117.153592, -20.6462], [117.163192, -20.646191], [117.163202,
+        -20.655227], [117.153601, -20.655236]]], "type": "Polygon"}, "id": "516000
+        7716000 50 K", "properties": {"center": {"coordinates": [117.158397, -20.650714],
+        "type": "Point"}, "intensity": 5.6, "intensityFine": 5.6318, "location": "516000
+        7716000 50 K", "nresp": 2}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[117.788558, -22.686219], [117.788506, -22.677186], [117.79824, -22.677138],
+        [117.798292, -22.686171], [117.788558, -22.686219]]], "type": "Polygon"},
+        "id": "581000 7491000 50 K", "properties": {"center": {"coordinates": [117.793399,
+        -22.681679], "type": "Point"}, "intensity": 3.6, "intensityFine": 3.6156,
+        "location": "581000 7491000 50 K", "nresp": 6}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[116.85593, -20.727532], [116.855939, -20.718496], [116.865543,
+        -20.718504], [116.865535, -20.72754], [116.85593, -20.727532]]], "type": "Polygon"},
+        "id": "485000 7708000 50 K", "properties": {"center": {"coordinates": [116.860737,
+        -20.723018], "type": "Point"}, "intensity": 3.8, "intensityFine": 3.8437,
+        "location": "485000 7708000 50 K", "nresp": 7}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[116.807885, -20.745557], [116.807896, -20.736521], [116.817501,
+        -20.736531], [116.81749, -20.745567], [116.807885, -20.745557]]], "type":
+        "Polygon"}, "id": "480000 7706000 50 K", "properties": {"center": {"coordinates":
+        [116.812693, -20.741044], "type": "Point"}, "intensity": 3.9, "intensityFine":
+        3.8951, "location": "480000 7706000 50 K", "nresp": 17}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[116.711981, -20.6641], [116.711998, -20.655064],
+        [116.721598, -20.65508], [116.721582, -20.664116], [116.711981, -20.6641]]],
+        "type": "Polygon"}, "id": "470000 7715000 50 K", "properties": {"center":
+        {"coordinates": [116.71679, -20.65959], "type": "Point"}, "intensity": 2.7,
+        "intensityFine": 2.6912, "location": "470000 7715000 50 K", "nresp": 2}, "type":
+        "Feature"}, {"geometry": {"coordinates": [[[119.821675, -21.173888], [119.821504,
+        -21.164864], [119.831124, -21.164703], [119.831296, -21.173728], [119.821675,
+        -21.173888]]], "type": "Polygon"}, "id": "793000 7656000 50 K", "properties":
+        {"center": {"coordinates": [119.8264, -21.169296], "type": "Point"}, "intensity":
+        3.2, "intensityFine": 3.2152, "location": "793000 7656000 50 K", "nresp":
+        3}, "type": "Feature"}, {"geometry": {"coordinates": [[[118.273905, -31.484488],
+        [118.273782, -31.475468], [118.284307, -31.475363], [118.284431, -31.484383],
+        [118.273905, -31.484488]]], "type": "Polygon"}, "id": "621000 6516000 50 J",
+        "properties": {"center": {"coordinates": [118.279106, -31.479925], "type":
+        "Point"}, "intensity": 2.8, "intensityFine": 2.8299, "location": "621000 6516000
+        50 J", "nresp": 3}, "type": "Feature"}, {"geometry": {"coordinates": [[[122.206675,
+        -17.969585], [122.206716, -17.960547], [122.216159, -17.960586], [122.216119,
+        -17.969624], [122.206675, -17.969585]]], "type": "Polygon"}, "id": "416000
+        8013000 51 K", "properties": {"center": {"coordinates": [122.211417, -17.965086],
+        "type": "Point"}, "intensity": 4.8, "intensityFine": 4.8109, "location": "416000
+        8013000 51 K", "nresp": 16}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[118.589938, -20.313739], [118.589845, -20.304706], [118.59942, -20.304619],
+        [118.599513, -20.313652], [118.589938, -20.313739]]], "type": "Polygon"},
+        "id": "666000 7753000 50 K", "properties": {"center": {"coordinates": [118.594679,
+        -20.309179], "type": "Point"}, "intensity": 3.9, "intensityFine": 3.9249,
+        "location": "666000 7753000 50 K", "nresp": 3}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[116.807862, -20.763628], [116.807873, -20.754593], [116.817479,
+        -20.754603], [116.817469, -20.763639], [116.807862, -20.763628]]], "type":
+        "Polygon"}, "id": "480000 7704000 50 K", "properties": {"center": {"coordinates":
+        [116.812671, -20.759116], "type": "Point"}, "intensity": 2.9, "intensityFine":
+        2.8973, "location": "480000 7704000 50 K", "nresp": 2}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[118.60035, -20.394947], [118.600257, -20.385914],
+        [118.609837, -20.385826], [118.60993, -20.394858], [118.60035, -20.394947]]],
+        "type": "Polygon"}, "id": "667000 7744000 50 K", "properties": {"center":
+        {"coordinates": [118.605094, -20.390386], "type": "Point"}, "intensity": 3.8,
+        "intensityFine": 3.7866, "location": "667000 7744000 50 K", "nresp": 4}, "type":
+        "Feature"}, {"geometry": {"coordinates": [[[123.63048, -17.310371], [123.630449,
+        -17.301332], [123.639858, -17.301302], [123.63989, -17.310341], [123.63048,
+        -17.310371]]], "type": "Polygon"}, "id": "567000 8086000 51 K", "properties":
+        {"center": {"coordinates": [123.635169, -17.305836], "type": "Point"}, "intensity":
+        4.0, "intensityFine": 3.9738, "location": "567000 8086000 51 K", "nresp":
+        4}, "type": "Feature"}, {"geometry": {"coordinates": [[[118.638003, -20.331362],
+        [118.637908, -20.32233], [118.647484, -20.32224], [118.647579, -20.331272],
+        [118.638003, -20.331362]]], "type": "Polygon"}, "id": "671000 7751000 50 K",
+        "properties": {"center": {"coordinates": [118.642743, -20.326801], "type":
+        "Point"}, "intensity": 3.9, "intensityFine": 3.9249, "location": "671000 7751000
+        50 K", "nresp": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[118.618569,
+        -20.304443], [118.618475, -20.29541], [118.628049, -20.295321], [118.628144,
+        -20.304354], [118.618569, -20.304443]]], "type": "Polygon"}, "id": "669000
+        7754000 50 K", "properties": {"center": {"coordinates": [118.623309, -20.299882],
+        "type": "Point"}, "intensity": 3.8, "intensityFine": 3.7738, "location": "669000
+        7754000 50 K", "nresp": 4}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[117.191979, -20.637126], [117.191968, -20.62809], [117.201566, -20.628079],
+        [117.201578, -20.637115], [117.191979, -20.637126]]], "type": "Polygon"},
+        "id": "520000 7718000 50 K", "properties": {"center": {"coordinates": [117.196773,
+        -20.632602], "type": "Point"}, "intensity": 3.6, "intensityFine": 3.6489,
+        "location": "520000 7718000 50 K", "nresp": 9}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[115.814993, -31.945431], [115.815109, -31.936411], [115.825686,
+        -31.936509], [115.825572, -31.945529], [115.814993, -31.945431]]], "type":
+        "Polygon"}, "id": "388000 6465000 50 J", "properties": {"center": {"coordinates":
+        [115.82034, -31.94097], "type": "Point"}, "intensity": 2.5, "intensityFine":
+        2.4808, "location": "388000 6465000 50 J", "nresp": 5}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[121.231848, -21.630766], [121.231958, -21.621736],
+        [121.241616, -21.621838], [121.241507, -21.630869], [121.231848, -21.630766]]],
+        "type": "Polygon"}, "id": "317000 7607000 51 K", "properties": {"center":
+        {"coordinates": [121.236732, -21.626302], "type": "Point"}, "intensity": 3.3,
+        "intensityFine": 3.2754, "location": "317000 7607000 51 K", "nresp": 2}, "type":
+        "Feature"}, {"geometry": {"coordinates": [[[116.865527, -20.736576], [116.865535,
+        -20.72754], [116.87514, -20.727547], [116.875132, -20.736583], [116.865527,
+        -20.736576]]], "type": "Polygon"}, "id": "486000 7707000 50 K", "properties":
+        {"center": {"coordinates": [116.870333, -20.732061], "type": "Point"}, "intensity":
+        3.0, "intensityFine": 2.9958, "location": "486000 7707000 50 K", "nresp":
+        4}, "type": "Feature"}, {"geometry": {"coordinates": [[[120.550081, -21.965208],
+        [120.550235, -21.956181], [120.559912, -21.956325], [120.559757, -21.965352],
+        [120.550081, -21.965208]]], "type": "Polygon"}, "id": "247000 7569000 51 K",
+        "properties": {"center": {"coordinates": [120.554996, -21.960767], "type":
+        "Point"}, "intensity": 3.0, "intensityFine": 2.9997, "location": "247000 7569000
+        51 K", "nresp": 5}, "type": "Feature"}, {"geometry": {"coordinates": [[[122.235006,
+        -17.969699], [122.235045, -17.960661], [122.244489, -17.960698], [122.24445,
+        -17.969736], [122.235006, -17.969699]]], "type": "Polygon"}, "id": "419000
+        8013000 51 K", "properties": {"center": {"coordinates": [122.239748, -17.965199],
+        "type": "Point"}, "intensity": 5.0, "intensityFine": 5.0113, "location": "419000
+        8013000 51 K", "nresp": 16}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[118.581006, -20.377056], [118.580914, -20.368023], [118.590492, -20.367936],
+        [118.590585, -20.376969], [118.581006, -20.377056]]], "type": "Polygon"},
+        "id": "665000 7746000 50 K", "properties": {"center": {"coordinates": [118.585749,
+        -20.372496], "type": "Point"}, "intensity": 3.6, "intensityFine": 3.6156,
+        "location": "665000 7746000 50 K", "nresp": 2}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[119.735078, -21.175312], [119.734912, -21.166287], [119.744534,
+        -21.166131], [119.7447, -21.175156], [119.735078, -21.175312]]], "type": "Polygon"},
+        "id": "784000 7656000 50 K", "properties": {"center": {"coordinates": [119.739806,
+        -21.170722], "type": "Point"}, "intensity": 3.3, "intensityFine": 3.2754,
+        "location": "784000 7656000 50 K", "nresp": 2}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[122.206756, -17.95151], [122.206796, -17.942472], [122.216238,
+        -17.94251], [122.216199, -17.951548], [122.206756, -17.95151]]], "type": "Polygon"},
+        "id": "416000 8015000 51 K", "properties": {"center": {"coordinates": [122.211497,
+        -17.94701], "type": "Point"}, "intensity": 5.4, "intensityFine": 5.3522, "location":
+        "416000 8015000 51 K", "nresp": 13}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[123.715905, -17.499894], [123.71587, -17.490856], [123.725289, -17.490822],
+        [123.725325, -17.49986], [123.715905, -17.499894]]], "type": "Polygon"}, "id":
+        "576000 8065000 51 K", "properties": {"center": {"coordinates": [123.720597,
+        -17.495358], "type": "Point"}, "intensity": 3.7, "intensityFine": 3.6752,
+        "location": "576000 8065000 51 K", "nresp": 7}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[122.235162, -17.933548], [122.235201, -17.92451], [122.244642,
+        -17.924547], [122.244604, -17.933584], [122.235162, -17.933548]]], "type":
+        "Polygon"}, "id": "419000 8017000 51 K", "properties": {"center": {"coordinates":
+        [122.239902, -17.929047], "type": "Point"}, "intensity": 5.2, "intensityFine":
+        5.2106, "location": "419000 8017000 51 K", "nresp": 7}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[119.729024, -23.359923], [119.72884, -23.3509],
+        [119.738612, -23.35073], [119.738797, -23.359752], [119.729024, -23.359923]]],
+        "type": "Polygon"}, "id": "779000 7414000 50 K", "properties": {"center":
+        {"coordinates": [119.733818, -23.355326], "type": "Point"}, "intensity": 3.2,
+        "intensityFine": 3.1764, "location": "779000 7414000 50 K", "nresp": 11},
+        "type": "Feature"}, {"geometry": {"coordinates": [[[123.434113, -21.386628],
+        [123.434087, -21.377593], [123.443733, -21.377568], [123.44376, -21.386603],
+        [123.434113, -21.386628]]], "type": "Polygon"}, "id": "545000 7635000 51 K",
+        "properties": {"center": {"coordinates": [123.438923, -21.382098], "type":
+        "Point"}, "intensity": 3.5, "intensityFine": 3.4884, "location": "545000 7635000
+        51 K", "nresp": 7}, "type": "Feature"}, {"geometry": {"coordinates": [[[120.106318,
+        -21.894799], [120.1065, -21.885776], [120.116168, -21.885946], [120.115987,
+        -21.894969], [120.106318, -21.894799]]], "type": "Polygon"}, "id": "201000
+        7576000 51 K", "properties": {"center": {"coordinates": [120.111243, -21.890372],
+        "type": "Point"}, "intensity": 3.5, "intensityFine": 3.5086, "location": "201000
+        7576000 51 K", "nresp": 9}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[116.827096, -20.745577], [116.827106, -20.736541], [116.836711, -20.736551],
+        [116.836702, -20.745587], [116.827096, -20.745577]]], "type": "Polygon"},
+        "id": "482000 7706000 50 K", "properties": {"center": {"coordinates": [116.831904,
+        -20.741064], "type": "Point"}, "intensity": 3.1, "intensityFine": 3.0916,
+        "location": "482000 7706000 50 K", "nresp": 3}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[115.105703, -21.674533], [115.105821, -21.665503], [115.115481,
+        -21.665613], [115.115364, -21.674643], [115.105703, -21.674533]]], "type":
+        "Polygon"}, "id": "304000 7602000 50 K", "properties": {"center": {"coordinates":
+        [115.110592, -21.670073], "type": "Point"}, "intensity": 2.7, "intensityFine":
+        2.6912, "location": "304000 7602000 50 K", "nresp": 6}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[116.192567, -20.852191], [116.192615, -20.843156],
+        [116.202226, -20.843201], [116.202178, -20.852236], [116.192567, -20.852191]]],
+        "type": "Polygon"}, "id": "416000 7694000 50 K", "properties": {"center":
+        {"coordinates": [116.197396, -20.847696], "type": "Point"}, "intensity": 2.7,
+        "intensityFine": 2.6912, "location": "416000 7694000 50 K", "nresp": 4}, "type":
+        "Feature"}, {"geometry": {"coordinates": [[[122.178303, -17.978505], [122.178344,
+        -17.969467], [122.187788, -17.969507], [122.187747, -17.978545], [122.178303,
+        -17.978505]]], "type": "Polygon"}, "id": "413000 8012000 51 K", "properties":
+        {"center": {"coordinates": [122.183045, -17.974006], "type": "Point"}, "intensity":
+        4.3, "intensityFine": 4.3417, "location": "413000 8012000 51 K", "nresp":
+        3}, "type": "Feature"}, {"geometry": {"coordinates": [[[122.235123, -17.942585],
+        [122.235162, -17.933548], [122.244604, -17.933584], [122.244565, -17.942622],
+        [122.235123, -17.942585]]], "type": "Polygon"}, "id": "419000 8016000 51 K",
+        "properties": {"center": {"coordinates": [122.239863, -17.938085], "type":
+        "Point"}, "intensity": 4.8, "intensityFine": 4.8282, "location": "419000 8016000
+        51 K", "nresp": 5}, "type": "Feature"}, {"geometry": {"coordinates": [[[116.865535,
+        -20.72754], [116.865543, -20.718504], [116.875147, -20.718511], [116.87514,
+        -20.727547], [116.865535, -20.72754]]], "type": "Polygon"}, "id": "486000
+        7708000 50 K", "properties": {"center": {"coordinates": [116.870341, -20.723025],
+        "type": "Point"}, "intensity": 3.3, "intensityFine": 3.2754, "location": "486000
+        7708000 50 K", "nresp": 4}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[122.225759, -17.924472], [122.225799, -17.915434], [122.235239, -17.915472],
+        [122.235201, -17.92451], [122.225759, -17.924472]]], "type": "Polygon"}, "id":
+        "418000 8018000 51 K", "properties": {"center": {"coordinates": [122.230499,
+        -17.919972], "type": "Point"}, "intensity": 5.2, "intensityFine": 5.2223,
+        "location": "418000 8018000 51 K", "nresp": 13}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[115.910095, -31.955304], [115.910201, -31.946284], [115.92078,
+        -31.946374], [115.920675, -31.955394], [115.910095, -31.955304]]], "type":
+        "Polygon"}, "id": "397000 6464000 50 J", "properties": {"center": {"coordinates":
+        [115.915438, -31.950839], "type": "Point"}, "intensity": 3.4, "intensityFine":
+        3.3869, "location": "397000 6464000 50 J", "nresp": 4}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[122.206595, -17.987661], [122.206635, -17.978623],
+        [122.216079, -17.978661], [122.216039, -17.987699], [122.206595, -17.987661]]],
+        "type": "Polygon"}, "id": "416000 8011000 51 K", "properties": {"center":
+        {"coordinates": [122.211337, -17.983161], "type": "Point"}, "intensity": 4.4,
+        "intensityFine": 4.4065, "location": "416000 8011000 51 K", "nresp": 4}, "type":
+        "Feature"}, {"geometry": {"coordinates": [[[116.846317, -20.736559], [116.846326,
+        -20.727524], [116.85593, -20.727532], [116.855922, -20.736568], [116.846317,
+        -20.736559]]], "type": "Polygon"}, "id": "484000 7707000 50 K", "properties":
+        {"center": {"coordinates": [116.851124, -20.732046], "type": "Point"}, "intensity":
+        3.5, "intensityFine": 3.486, "location": "484000 7707000 50 K", "nresp": 17},
+        "type": "Feature"}, {"geometry": {"coordinates": [[[116.807873, -20.754593],
+        [116.807885, -20.745557], [116.81749, -20.745567], [116.817479, -20.754603],
+        [116.807873, -20.754593]]], "type": "Polygon"}, "id": "480000 7705000 50 K",
+        "properties": {"center": {"coordinates": [116.812682, -20.75008], "type":
+        "Point"}, "intensity": 3.8, "intensityFine": 3.7655, "location": "480000 7705000
+        50 K", "nresp": 8}, "type": "Feature"}, {"geometry": {"coordinates": [[[116.711964,
+        -20.673136], [116.711981, -20.6641], [116.721582, -20.664116], [116.721565,
+        -20.673152], [116.711964, -20.673136]]], "type": "Polygon"}, "id": "470000
+        7714000 50 K", "properties": {"center": {"coordinates": [116.716773, -20.668626],
+        "type": "Point"}, "intensity": 2.6, "intensityFine": 2.5832, "location": "470000
+        7714000 50 K", "nresp": 4}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[116.827106, -20.736541], [116.827117, -20.727505], [116.836721, -20.727515],
+        [116.836711, -20.736551], [116.827106, -20.736541]]], "type": "Polygon"},
+        "id": "482000 7707000 50 K", "properties": {"center": {"coordinates": [116.831914,
+        -20.732028], "type": "Point"}, "intensity": 3.4, "intensityFine": 3.4498,
+        "location": "482000 7707000 50 K", "nresp": 2}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[115.889261, -31.92806], [115.889369, -31.91904], [115.899945,
+        -31.919132], [115.899838, -31.928152], [115.889261, -31.92806]]], "type":
+        "Polygon"}, "id": "395000 6467000 50 J", "properties": {"center": {"coordinates":
+        [115.894603, -31.923596], "type": "Point"}, "intensity": 2.2, "intensityFine":
+        2.2372, "location": "395000 6467000 50 J", "nresp": 2}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[115.125375, -21.647662], [115.125491, -21.638632],
+        [115.13515, -21.638741], [115.135034, -21.647771], [115.125375, -21.647662]]],
+        "type": "Polygon"}, "id": "306000 7605000 50 K", "properties": {"center":
+        {"coordinates": [115.130262, -21.643202], "type": "Point"}, "intensity": 3.4,
+        "intensityFine": 3.4498, "location": "306000 7605000 50 K", "nresp": 2}, "type":
+        "Feature"}, {"geometry": {"coordinates": [[[116.836711, -20.736551], [116.836721,
+        -20.727515], [116.846326, -20.727524], [116.846317, -20.736559], [116.836711,
+        -20.736551]]], "type": "Polygon"}, "id": "483000 7707000 50 K", "properties":
+        {"center": {"coordinates": [116.841519, -20.732037], "type": "Point"}, "intensity":
+        3.2, "intensityFine": 3.1507, "location": "483000 7707000 50 K", "nresp":
+        19}, "type": "Feature"}, {"geometry": {"coordinates": [[[116.702381, -20.664084],
+        [116.702398, -20.655048], [116.711998, -20.655064], [116.711981, -20.6641],
+        [116.702381, -20.664084]]], "type": "Polygon"}, "id": "469000 7715000 50 K",
+        "properties": {"center": {"coordinates": [116.70719, -20.659574], "type":
+        "Point"}, "intensity": 3.6, "intensityFine": 3.5612, "location": "469000 7715000
+        50 K", "nresp": 3}, "type": "Feature"}, {"geometry": {"coordinates": [[[122.216238,
+        -17.94251], [122.216278, -17.933472], [122.22572, -17.93351], [122.225681,
+        -17.942548], [122.216238, -17.94251]]], "type": "Polygon"}, "id": "417000
+        8016000 51 K", "properties": {"center": {"coordinates": [122.220979, -17.93801],
+        "type": "Point"}, "intensity": 4.3, "intensityFine": 4.3417, "location": "417000
+        8016000 51 K", "nresp": 2}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[118.580363, -20.313826], [118.580271, -20.304793], [118.589845, -20.304706],
+        [118.589938, -20.313739], [118.580363, -20.313826]]], "type": "Polygon"},
+        "id": "665000 7753000 50 K", "properties": {"center": {"coordinates": [118.585104,
+        -20.309266], "type": "Point"}, "intensity": 3.9, "intensityFine": 3.8753,
+        "location": "665000 7753000 50 K", "nresp": 6}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[123.649363, -17.328388], [123.649331, -17.319349], [123.658741,
+        -17.319319], [123.658774, -17.328357], [123.649363, -17.328388]]], "type":
+        "Polygon"}, "id": "569000 8084000 51 K", "properties": {"center": {"coordinates":
+        [123.654052, -17.323853], "type": "Point"}, "intensity": 3.4, "intensityFine":
+        3.4498, "location": "569000 8084000 51 K", "nresp": 2}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[115.857084, -31.963859], [115.857196, -31.954839],
+        [115.867776, -31.954933], [115.867665, -31.963954], [115.857084, -31.963859]]],
+        "type": "Polygon"}, "id": "392000 6463000 50 J", "properties": {"center":
+        {"coordinates": [115.86243, -31.959396], "type": "Point"}, "intensity": 3.8,
+        "intensityFine": 3.7738, "location": "392000 6463000 50 J", "nresp": 3}, "type":
+        "Feature"}, {"geometry": {"coordinates": [[[118.666537, -21.189229], [118.666436,
+        -21.180198], [118.676065, -21.180103], [118.676167, -21.189134], [118.666537,
+        -21.189229]]], "type": "Polygon"}, "id": "673000 7656000 50 K", "properties":
+        {"center": {"coordinates": [118.671301, -21.184666], "type": "Point"}, "intensity":
+        4.1, "intensityFine": 4.0696, "location": "673000 7656000 50 K", "nresp":
+        2}, "type": "Feature"}, {"geometry": {"coordinates": [[[124.998206, -21.501725],
+        [124.998083, -21.492696], [125.007731, -21.49258], [125.007855, -21.50161],
+        [124.998206, -21.501725]]], "type": "Polygon"}, "id": "707000 7621000 51 K",
+        "properties": {"center": {"coordinates": [125.002969, -21.497153], "type":
+        "Point"}, "intensity": 2.9, "intensityFine": 2.8973, "location": "707000 7621000
+        51 K", "nresp": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[123.630511,
+        -17.319409], [123.63048, -17.310371], [123.63989, -17.310341], [123.639921,
+        -17.31938], [123.630511, -17.319409]]], "type": "Polygon"}, "id": "567000
+        8085000 51 K", "properties": {"center": {"coordinates": [123.6352, -17.314875],
+        "type": "Point"}, "intensity": 4.5, "intensityFine": 4.47, "location": "567000
+        8085000 51 K", "nresp": 2}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[115.846729, -31.945723], [115.846841, -31.936703], [115.857419, -31.936798],
+        [115.857307, -31.945819], [115.846729, -31.945723]]], "type": "Polygon"},
+        "id": "391000 6465000 50 J", "properties": {"center": {"coordinates": [115.852074,
+        -31.941261], "type": "Point"}, "intensity": 2, "intensityFine": 2, "location":
+        "391000 6465000 50 J", "nresp": 2}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[115.867332, -31.991014], [115.867443, -31.981994], [115.878026, -31.982088],
+        [115.877916, -31.991108], [115.867332, -31.991014]]], "type": "Polygon"},
+        "id": "393000 6460000 50 J", "properties": {"center": {"coordinates": [115.87268,
+        -31.986551], "type": "Point"}, "intensity": 2.7, "intensityFine": 2.6912,
+        "location": "393000 6460000 50 J", "nresp": 2}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[119.729721, -22.421168], [119.729544, -22.412144], [119.739249,
+        -22.41198], [119.739427, -22.421004], [119.729721, -22.421168]]], "type":
+        "Polygon"}, "id": "781000 7518000 50 K", "properties": {"center": {"coordinates":
+        [119.734485, -22.416574], "type": "Point"}, "intensity": 2.9, "intensityFine":
+        2.857, "location": "781000 7518000 50 K", "nresp": 4}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[118.590956, -20.4131], [118.590863, -20.404067],
+        [118.600444, -20.403979], [118.600537, -20.413012], [118.590956, -20.4131]]],
+        "type": "Polygon"}, "id": "666000 7742000 50 K", "properties": {"center":
+        {"coordinates": [118.5957, -20.40854], "type": "Point"}, "intensity": 4.1,
+        "intensityFine": 4.1165, "location": "666000 7742000 50 K", "nresp": 6}, "type":
+        "Feature"}, {"geometry": {"coordinates": [[[128.766711, -15.675], [128.766721,
+        -15.66596], [128.776052, -15.665969], [128.776042, -15.67501], [128.766711,
+        -15.675]]], "type": "Polygon"}, "id": "475000 8267000 52 L", "properties":
+        {"center": {"coordinates": [128.771381, -15.670485], "type": "Point"}, "intensity":
+        3.1, "intensityFine": 3.0916, "location": "475000 8267000 52 L", "nresp":
+        3}, "type": "Feature"}, {"geometry": {"coordinates": [[[130.848745, -12.377566],
+        [130.848681, -12.368528], [130.857876, -12.368465], [130.857939, -12.377503],
+        [130.848745, -12.377566]]], "type": "Polygon"}, "id": "701000 8631000 52 L",
+        "properties": {"center": {"coordinates": [130.85331, -12.373016], "type":
+        "Point"}, "intensity": 2.6, "intensityFine": 2.6051, "location": "701000 8631000
+        52 L", "nresp": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[123.521383,
+        -21.512868], [123.521351, -21.503834], [123.531005, -21.503803], [123.531038,
+        -21.512838], [123.521383, -21.512868]]], "type": "Polygon"}, "id": "554000
+        7621000 51 K", "properties": {"center": {"coordinates": [123.526194, -21.508336],
+        "type": "Point"}, "intensity": 3.4, "intensityFine": 3.4498, "location": "554000
+        7621000 51 K", "nresp": 3}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[115.84639, -31.972783], [115.846503, -31.963763], [115.857084, -31.963859],
+        [115.856972, -31.972879], [115.84639, -31.972783]]], "type": "Polygon"}, "id":
+        "391000 6462000 50 J", "properties": {"center": {"coordinates": [115.851738,
+        -31.968321], "type": "Point"}, "intensity": 3.9, "intensityFine": 3.8653,
+        "location": "391000 6462000 50 J", "nresp": 2}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[117.711147, -22.776914], [117.711101, -22.767881], [117.720841,
+        -22.767838], [117.720889, -22.776871], [117.711147, -22.776914]]], "type":
+        "Polygon"}, "id": "573000 7481000 50 K", "properties": {"center": {"coordinates":
+        [117.715994, -22.772376], "type": "Point"}, "intensity": 3.1, "intensityFine":
+        3.0916, "location": "573000 7481000 50 K", "nresp": 2}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[115.106056, -21.647443], [115.106174, -21.638413],
+        [115.115833, -21.638523], [115.115715, -21.647553], [115.106056, -21.647443]]],
+        "type": "Polygon"}, "id": "304000 7605000 50 K", "properties": {"center":
+        {"coordinates": [115.110945, -21.642983], "type": "Point"}, "intensity": 3.7,
+        "intensityFine": 3.6692, "location": "304000 7605000 50 K", "nresp": 3}, "type":
+        "Feature"}, {"geometry": {"coordinates": [[[117.788661, -22.704285], [117.78861,
+        -22.695252], [117.798345, -22.695204], [117.798397, -22.704237], [117.788661,
+        -22.704285]]], "type": "Polygon"}, "id": "581000 7489000 50 K", "properties":
+        {"center": {"coordinates": [117.793503, -22.699745], "type": "Point"}, "intensity":
+        3.6, "intensityFine": 3.5948, "location": "581000 7489000 50 K", "nresp":
+        7}, "type": "Feature"}, {"geometry": {"coordinates": [[[116.865487, -20.781755],
+        [116.865495, -20.772719], [116.875103, -20.772726], [116.875095, -20.781762],
+        [116.865487, -20.781755]]], "type": "Polygon"}, "id": "486000 7702000 50 K",
+        "properties": {"center": {"coordinates": [116.870295, -20.777241], "type":
+        "Point"}, "intensity": 3.3, "intensityFine": 3.2754, "location": "486000 7702000
+        50 K", "nresp": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[123.639952,
+        -17.328418], [123.639921, -17.31938], [123.649331, -17.319349], [123.649363,
+        -17.328388], [123.639952, -17.328418]]], "type": "Polygon"}, "id": "568000
+        8084000 51 K", "properties": {"center": {"coordinates": [123.644642, -17.323884],
+        "type": "Point"}, "intensity": 4.3, "intensityFine": 4.2757, "location": "568000
+        8084000 51 K", "nresp": 2}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[115.888827, -31.964141], [115.888935, -31.95512], [115.899515, -31.955213],
+        [115.899407, -31.964233], [115.888827, -31.964141]]], "type": "Polygon"},
+        "id": "395000 6463000 50 J", "properties": {"center": {"coordinates": [115.894171,
+        -31.959677], "type": "Point"}, "intensity": 4.1, "intensityFine": 4.1118,
+        "location": "395000 6463000 50 J", "nresp": 4}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[118.66745, -21.270514], [118.667349, -21.261482], [118.676983,
+        -21.261386], [118.677086, -21.270418], [118.66745, -21.270514]]], "type":
+        "Polygon"}, "id": "673000 7647000 50 K", "properties": {"center": {"coordinates":
+        [118.672217, -21.26595], "type": "Point"}, "intensity": 3.3, "intensityFine":
+        3.2754, "location": "673000 7647000 50 K", "nresp": 2}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[118.609088, -20.313564], [118.608995, -20.304531],
+        [118.618569, -20.304443], [118.618663, -20.313475], [118.609088, -20.313564]]],
+        "type": "Polygon"}, "id": "668000 7753000 50 K", "properties": {"center":
+        {"coordinates": [118.613829, -20.309003], "type": "Point"}, "intensity": 3.7,
+        "intensityFine": 3.7349, "location": "668000 7753000 50 K", "nresp": 4}, "type":
+        "Feature"}, {"geometry": {"coordinates": [[[122.225523, -17.978699], [122.225563,
+        -17.969662], [122.235006, -17.969699], [122.234967, -17.978737], [122.225523,
+        -17.978699]]], "type": "Polygon"}, "id": "418000 8012000 51 K", "properties":
+        {"center": {"coordinates": [122.230265, -17.974199], "type": "Point"}, "intensity":
+        4.2, "intensityFine": 4.2084, "location": "418000 8012000 51 K", "nresp":
+        2}, "type": "Feature"}, {"geometry": {"coordinates": [[[117.684059, -23.201584],
+        [117.684013, -23.192552], [117.693784, -23.192509], [117.69383, -23.201541],
+        [117.684059, -23.201584]]], "type": "Polygon"}, "id": "570000 7434000 50 K",
+        "properties": {"center": {"coordinates": [117.688921, -23.197047], "type":
+        "Point"}, "intensity": 3.4, "intensityFine": 3.4498, "location": "570000 7434000
+        50 K", "nresp": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[118.901555,
+        -22.929712], [118.901429, -22.920684], [118.911176, -22.920567], [118.911303,
+        -22.929595], [118.901555, -22.929712]]], "type": "Polygon"}, "id": "695000
+        7463000 50 K", "properties": {"center": {"coordinates": [118.906366, -22.92514],
+        "type": "Point"}, "intensity": 2.9, "intensityFine": 2.8973, "location": "695000
+        7463000 50 K", "nresp": 2}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[118.618663, -20.313475], [118.618569, -20.304443], [118.628144, -20.304354],
+        [118.628238, -20.313386], [118.618663, -20.313475]]], "type": "Polygon"},
+        "id": "669000 7753000 50 K", "properties": {"center": {"coordinates": [118.623403,
+        -20.308915], "type": "Point"}, "intensity": 4.5, "intensityFine": 4.4951,
+        "location": "669000 7753000 50 K", "nresp": 5}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[122.139586, -21.701185], [122.139639, -21.692151], [122.149305,
+        -21.692201], [122.149252, -21.701235], [122.139586, -21.701185]]], "type":
+        "Polygon"}, "id": "411000 7600000 51 K", "properties": {"center": {"coordinates":
+        [122.144446, -21.696693], "type": "Point"}, "intensity": 3.1, "intensityFine":
+        3.0916, "location": "411000 7600000 51 K", "nresp": 3}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[123.62107, -17.3104], [123.62104, -17.301361],
+        [123.630449, -17.301332], [123.63048, -17.310371], [123.62107, -17.3104]]],
+        "type": "Polygon"}, "id": "566000 8086000 51 K", "properties": {"center":
+        {"coordinates": [123.62576, -17.305866], "type": "Point"}, "intensity": 3.6,
+        "intensityFine": 3.6156, "location": "566000 8086000 51 K", "nresp": 2}, "type":
+        "Feature"}, {"geometry": {"coordinates": [[[130.84025, -12.477051], [130.840186,
+        -12.468013], [130.849384, -12.46795], [130.849448, -12.476988], [130.84025,
+        -12.477051]]], "type": "Polygon"}, "id": "700000 8620000 52 L", "properties":
+        {"center": {"coordinates": [130.844817, -12.4725], "type": "Point"}, "intensity":
+        3.1, "intensityFine": 3.0916, "location": "700000 8620000 52 L", "nresp":
+        2}, "type": "Feature"}, {"geometry": {"coordinates": [[[130.876328, -12.377377],
+        [130.876263, -12.368339], [130.885457, -12.368275], [130.885522, -12.377313],
+        [130.876328, -12.377377]]], "type": "Polygon"}, "id": "704000 8631000 52 L",
+        "properties": {"center": {"coordinates": [130.880893, -12.372826], "type":
+        "Point"}, "intensity": 2.7, "intensityFine": 2.6912, "location": "704000 8631000
+        52 L", "nresp": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[115.846278,
+        -31.981803], [115.84639, -31.972783], [115.856972, -31.972879], [115.85686,
+        -31.981899], [115.846278, -31.981803]]], "type": "Polygon"}, "id": "391000
+        6461000 50 J", "properties": {"center": {"coordinates": [115.851625, -31.977341],
+        "type": "Point"}, "intensity": 2.8, "intensityFine": 2.7543, "location": "391000
+        6461000 50 J", "nresp": 4}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[115.846616, -31.954743], [115.846729, -31.945723], [115.857307, -31.945819],
+        [115.857196, -31.954839], [115.846616, -31.954743]]], "type": "Polygon"},
+        "id": "391000 6464000 50 J", "properties": {"center": {"coordinates": [115.851962,
+        -31.950281], "type": "Point"}, "intensity": 2.7, "intensityFine": 2.7394,
+        "location": "391000 6464000 50 J", "nresp": 7}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[115.899407, -31.964233], [115.899515, -31.955213], [115.910095,
+        -31.955304], [115.909988, -31.964324], [115.899407, -31.964233]]], "type":
+        "Polygon"}, "id": "396000 6463000 50 J", "properties": {"center": {"coordinates":
+        [115.904751, -31.959768], "type": "Point"}, "intensity": 2.9, "intensityFine":
+        2.8801, "location": "396000 6463000 50 J", "nresp": 7}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[115.814645, -31.972491], [115.814761, -31.963471],
+        [115.825342, -31.963569], [115.825227, -31.972589], [115.814645, -31.972491]]],
+        "type": "Polygon"}, "id": "388000 6462000 50 J", "properties": {"center":
+        {"coordinates": [115.819994, -31.96803], "type": "Point"}, "intensity": 3.5,
+        "intensityFine": 3.5139, "location": "388000 6462000 50 J", "nresp": 7}, "type":
+        "Feature"}, {"geometry": {"coordinates": [[[121.776665, -18.690284], [121.77673,
+        -18.681248], [121.786211, -18.68131], [121.786147, -18.690346], [121.776665,
+        -18.690284]]], "type": "Polygon"}, "id": "371000 7933000 51 K", "properties":
+        {"center": {"coordinates": [121.781438, -18.685797], "type": "Point"}, "intensity":
+        4.9, "intensityFine": 4.9397, "location": "371000 7933000 51 K", "nresp":
+        2}, "type": "Feature"}, {"geometry": {"coordinates": [[[128.747903, -15.792507],
+        [128.747914, -15.783466], [128.757251, -15.783477], [128.75724, -15.792517],
+        [128.747903, -15.792507]]], "type": "Polygon"}, "id": "473000 8254000 52 L",
+        "properties": {"center": {"coordinates": [128.752577, -15.787992], "type":
+        "Point"}, "intensity": 2.1, "intensityFine": 2.1387, "location": "473000 8254000
+        52 L", "nresp": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[115.804765,
+        -31.918272], [115.804881, -31.909252], [115.815456, -31.909351], [115.81534,
+        -31.918371], [115.804765, -31.918272]]], "type": "Polygon"}, "id": "387000
+        6468000 50 J", "properties": {"center": {"coordinates": [115.810111, -31.913811],
+        "type": "Point"}, "intensity": 3.6, "intensityFine": 3.6156, "location": "387000
+        6468000 50 J", "nresp": 2}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[115.814877, -31.954451], [115.814993, -31.945431], [115.825572, -31.945529],
+        [115.825457, -31.954549], [115.814877, -31.954451]]], "type": "Polygon"},
+        "id": "388000 6464000 50 J", "properties": {"center": {"coordinates": [115.820225,
+        -31.94999], "type": "Point"}, "intensity": 3.1, "intensityFine": 3.0916, "location":
+        "388000 6464000 50 J", "nresp": 2}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[119.729209, -23.368946], [119.729024, -23.359923], [119.738797, -23.359752],
+        [119.738982, -23.368775], [119.729209, -23.368946]]], "type": "Polygon"},
+        "id": "779000 7413000 50 K", "properties": {"center": {"coordinates": [119.734003,
+        -23.364349], "type": "Point"}, "intensity": 3.1, "intensityFine": 3.0916,
+        "location": "779000 7413000 50 K", "nresp": 2}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[118.959909, -22.919973], [118.959779, -22.910944], [118.969525,
+        -22.910824], [118.969655, -22.919852], [118.959909, -22.919973]]], "type":
+        "Polygon"}, "id": "701000 7464000 50 K", "properties": {"center": {"coordinates":
+        [118.964717, -22.915398], "type": "Point"}, "intensity": 2.7, "intensityFine":
+        2.6912, "location": "701000 7464000 50 K", "nresp": 3}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[123.63989, -17.310341], [123.639858, -17.301302],
+        [123.649268, -17.301272], [123.649299, -17.310311], [123.63989, -17.310341]]],
+        "type": "Polygon"}, "id": "568000 8086000 51 K", "properties": {"center":
+        {"coordinates": [123.644579, -17.305806], "type": "Point"}, "intensity": 3.0,
+        "intensityFine": 2.9633, "location": "568000 8086000 51 K", "nresp": 3}, "type":
+        "Feature"}, {"geometry": {"coordinates": [[[122.216318, -17.924434], [122.216358,
+        -17.915397], [122.225799, -17.915434], [122.225759, -17.924472], [122.216318,
+        -17.924434]]], "type": "Polygon"}, "id": "417000 8018000 51 K", "properties":
+        {"center": {"coordinates": [122.221058, -17.919934], "type": "Point"}, "intensity":
+        5.4, "intensityFine": 5.3684, "location": "417000 8018000 51 K", "nresp":
+        5}, "type": "Feature"}, {"geometry": {"coordinates": [[[122.507794, -21.449713],
+        [122.507825, -21.440678], [122.517475, -21.440706], [122.517445, -21.449741],
+        [122.507794, -21.449713]]], "type": "Polygon"}, "id": "449000 7628000 51 K",
+        "properties": {"center": {"coordinates": [122.512635, -21.445209], "type":
+        "Point"}, "intensity": 2.8, "intensityFine": 2.7958, "location": "449000 7628000
+        51 K", "nresp": 4}, "type": "Feature"}, {"geometry": {"coordinates": [[[122.206635,
+        -17.978623], [122.206675, -17.969585], [122.216119, -17.969624], [122.216079,
+        -17.978661], [122.206635, -17.978623]]], "type": "Polygon"}, "id": "416000
+        8012000 51 K", "properties": {"center": {"coordinates": [122.211377, -17.974123],
+        "type": "Point"}, "intensity": 4.2, "intensityFine": 4.1627, "location": "416000
+        8012000 51 K", "nresp": 3}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[123.639921, -17.31938], [123.63989, -17.310341], [123.649299, -17.310311],
+        [123.649331, -17.319349], [123.639921, -17.31938]]], "type": "Polygon"}, "id":
+        "568000 8085000 51 K", "properties": {"center": {"coordinates": [123.64461,
+        -17.314845], "type": "Point"}, "intensity": 2.9, "intensityFine": 2.8973,
+        "location": "568000 8085000 51 K", "nresp": 2}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[118.581098, -20.386089], [118.581006, -20.377056], [118.590585,
+        -20.376969], [118.590677, -20.386001], [118.581098, -20.386089]]], "type":
+        "Polygon"}, "id": "665000 7745000 50 K", "properties": {"center": {"coordinates":
+        [118.585841, -20.381529], "type": "Point"}, "intensity": 4.5, "intensityFine":
+        4.47, "location": "665000 7745000 50 K", "nresp": 2}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[115.825227, -31.972589], [115.825342, -31.963569],
+        [115.835923, -31.963666], [115.835809, -31.972686], [115.825227, -31.972589]]],
+        "type": "Polygon"}, "id": "389000 6462000 50 J", "properties": {"center":
+        {"coordinates": [115.830575, -31.968128], "type": "Point"}, "intensity": 4.1,
+        "intensityFine": 4.0696, "location": "389000 6462000 50 J", "nresp": 2}, "type":
+        "Feature"}, {"geometry": {"coordinates": [[[123.677661, -17.346372], [123.677628,
+        -17.337333], [123.687039, -17.337301], [123.687072, -17.34634], [123.677661,
+        -17.346372]]], "type": "Polygon"}, "id": "572000 8082000 51 K", "properties":
+        {"center": {"coordinates": [123.68235, -17.341836], "type": "Point"}, "intensity":
+        4.0, "intensityFine": 3.9738, "location": "572000 8082000 51 K", "nresp":
+        3}, "type": "Feature"}, {"geometry": {"coordinates": [[[120.180729, -23.466628],
+        [120.180921, -23.457606], [120.1907, -23.457782], [120.190509, -23.466804],
+        [120.180729, -23.466628]]], "type": "Polygon"}, "id": "212000 7402000 51 K",
+        "properties": {"center": {"coordinates": [120.185715, -23.462205], "type":
+        "Point"}, "intensity": 2.8, "intensityFine": 2.8163, "location": "212000 7402000
+        51 K", "nresp": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[117.144001,
+        -20.655244], [117.143993, -20.646208], [117.153592, -20.6462], [117.153601,
+        -20.655236], [117.144001, -20.655244]]], "type": "Polygon"}, "id": "515000
+        7716000 50 K", "properties": {"center": {"coordinates": [117.148797, -20.650722],
+        "type": "Point"}, "intensity": 3.9, "intensityFine": 3.9249, "location": "515000
+        7716000 50 K", "nresp": 2}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[115.81453, -31.98151], [115.814645, -31.972491], [115.825227, -31.972589],
+        [115.825112, -31.981609], [115.81453, -31.98151]]], "type": "Polygon"}, "id":
+        "388000 6461000 50 J", "properties": {"center": {"coordinates": [115.819879,
+        -31.97705], "type": "Point"}, "intensity": 3.1, "intensityFine": 3.0916, "location":
+        "388000 6461000 50 J", "nresp": 3}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[118.775532, -22.226766], [118.775418, -22.217737], [118.785116, -22.21763],
+        [118.78523, -22.22666], [118.775532, -22.226766]]], "type": "Polygon"}, "id":
+        "683000 7541000 50 K", "properties": {"center": {"coordinates": [118.780324,
+        -22.222198], "type": "Point"}, "intensity": 3.6, "intensityFine": 3.6156,
+        "location": "683000 7541000 50 K", "nresp": 2}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[118.628238, -20.313386], [118.628144, -20.304354], [118.637718,
+        -20.304264], [118.637813, -20.313297], [118.628238, -20.313386]]], "type":
+        "Polygon"}, "id": "670000 7753000 50 K", "properties": {"center": {"coordinates":
+        [118.632978, -20.308826], "type": "Point"}, "intensity": 3.9, "intensityFine":
+        3.8502, "location": "670000 7753000 50 K", "nresp": 4}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[119.58334, -20.175476], [119.583191, -20.166449],
+        [119.592751, -20.166308], [119.592901, -20.175335], [119.58334, -20.175476]]],
+        "type": "Polygon"}, "id": "770000 7767000 50 K", "properties": {"center":
+        {"coordinates": [119.588046, -20.170892], "type": "Point"}, "intensity": 3.3,
+        "intensityFine": 3.3345, "location": "770000 7767000 50 K", "nresp": 3}, "type":
+        "Feature"}, {"geometry": {"coordinates": [[[116.057666, -32.010613], [116.057758,
+        -32.001592], [116.068344, -32.00167], [116.068253, -32.010691], [116.057666,
+        -32.010613]]], "type": "Polygon"}, "id": "411000 6458000 50 H", "properties":
+        {"center": {"coordinates": [116.063005, -32.006142], "type": "Point"}, "intensity":
+        2.3, "intensityFine": 2.2854, "location": "411000 6458000 50 H", "nresp":
+        2}, "type": "Feature"}, {"geometry": {"coordinates": [[[122.19715, -17.987622],
+        [122.197191, -17.978584], [122.206635, -17.978623], [122.206595, -17.987661],
+        [122.19715, -17.987622]]], "type": "Polygon"}, "id": "415000 8011000 51 K",
+        "properties": {"center": {"coordinates": [122.201893, -17.983123], "type":
+        "Point"}, "intensity": 5.4, "intensityFine": 5.448, "location": "415000 8011000
+        51 K", "nresp": 3}, "type": "Feature"}, {"geometry": {"coordinates": [[[118.571701,
+        -20.404241], [118.57161, -20.395208], [118.58119, -20.395121], [118.581282,
+        -20.404154], [118.571701, -20.404241]]], "type": "Polygon"}, "id": "664000
+        7743000 50 K", "properties": {"center": {"coordinates": [118.576446, -20.399681],
+        "type": "Point"}, "intensity": 4.3, "intensityFine": 4.3417, "location": "664000
+        7743000 50 K", "nresp": 2}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[122.174286, -25.476781], [122.174347, -25.467751], [122.184294, -25.467807],
+        [122.184233, -25.476837], [122.174286, -25.476781]]], "type": "Polygon"},
+        "id": "417000 7182000 51 J", "properties": {"center": {"coordinates": [122.17929,
+        -25.472294], "type": "Point"}, "intensity": 2.4, "intensityFine": 2.4261,
+        "location": "417000 7182000 51 J", "nresp": 2}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[115.845146, -32.072002], [115.84526, -32.062983], [115.855852,
+        -32.063079], [115.855739, -32.072099], [115.845146, -32.072002]]], "type":
+        "Polygon"}, "id": "391000 6451000 50 H", "properties": {"center": {"coordinates":
+        [115.850499, -32.067541], "type": "Point"}, "intensity": 2.8, "intensityFine":
+        2.7751, "location": "391000 6451000 50 H", "nresp": 3}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[115.825342, -31.963569], [115.825457, -31.954549],
+        [115.836036, -31.954646], [115.835923, -31.963666], [115.825342, -31.963569]]],
+        "type": "Polygon"}, "id": "389000 6463000 50 J", "properties": {"center":
+        {"coordinates": [115.830689, -31.959108], "type": "Point"}, "intensity": 3.2,
+        "intensityFine": 3.154, "location": "389000 6463000 50 J", "nresp": 3}, "type":
+        "Feature"}, {"geometry": {"coordinates": [[[116.100805, -31.929733], [116.100893,
+        -31.920713], [116.11147, -31.920787], [116.111383, -31.929808], [116.100805,
+        -31.929733]]], "type": "Polygon"}, "id": "415000 6467000 50 J", "properties":
+        {"center": {"coordinates": [116.106138, -31.92526], "type": "Point"}, "intensity":
+        2, "intensityFine": 2, "location": "415000 6467000 50 J", "nresp": 2}, "type":
+        "Feature"}, {"geometry": {"coordinates": [[[130.840122, -12.458974], [130.840059,
+        -12.449936], [130.849256, -12.449873], [130.84932, -12.458911], [130.840122,
+        -12.458974]]], "type": "Polygon"}, "id": "700000 8622000 52 L", "properties":
+        {"center": {"coordinates": [130.844689, -12.454424], "type": "Point"}, "intensity":
+        2.2, "intensityFine": 2.2372, "location": "700000 8622000 52 L", "nresp":
+        2}, "type": "Feature"}, {"geometry": {"coordinates": [[[122.235084, -17.951623],
+        [122.235123, -17.942585], [122.244565, -17.942622], [122.244527, -17.95166],
+        [122.235084, -17.951623]]], "type": "Polygon"}, "id": "419000 8015000 51 K",
+        "properties": {"center": {"coordinates": [122.239825, -17.947123], "type":
+        "Point"}, "intensity": 4.1, "intensityFine": 4.0696, "location": "419000 8015000
+        51 K", "nresp": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[116.323511,
+        -21.64783], [116.323554, -21.638796], [116.333217, -21.638835], [116.333175,
+        -21.647869], [116.323511, -21.64783]]], "type": "Polygon"}, "id": "430000
+        7606000 50 K", "properties": {"center": {"coordinates": [116.328364, -21.643333],
+        "type": "Point"}, "intensity": 3.7, "intensityFine": 3.6692, "location": "430000
+        7606000 50 K", "nresp": 3}, "type": "Feature"}, {"geometry": {"coordinates":
+        [[[115.80973, -32.351315], [115.809848, -32.342296], [115.820473, -32.342396],
+        [115.820356, -32.351415], [115.80973, -32.351315]]], "type": "Polygon"}, "id":
+        "388000 6420000 50 H", "properties": {"center": {"coordinates": [115.815102,
+        -32.346856], "type": "Point"}, "intensity": 3.3, "intensityFine": 3.2754,
+        "location": "388000 6420000 50 H", "nresp": 2}, "type": "Feature"}, {"geometry":
+        {"coordinates": [[[118.416568, -21.236677], [118.416482, -21.227644], [118.426116,
+        -21.227563], [118.426203, -21.236596], [118.416568, -21.236677]]], "type":
+        "Polygon"}, "id": "647000 7651000 50 K", "properties": {"center": {"coordinates":
+        [118.421342, -21.23212], "type": "Point"}, "intensity": 3.6, "intensityFine":
+        3.6156, "location": "647000 7651000 50 K", "nresp": 2}, "type": "Feature"},
+        {"geometry": {"coordinates": [[[122.129338, -18.33076], [122.129384, -18.321722],
+        [122.138846, -18.321765], [122.138801, -18.330803], [122.129338, -18.33076]]],
+        "type": "Polygon"}, "id": "408000 7973000 51 K", "properties": {"center":
+        {"coordinates": [122.134092, -18.326263], "type": "Point"}, "intensity": 5.6,
+        "intensityFine": 5.6318, "location": "408000 7973000 51 K", "nresp": 2}, "type":
+        "Feature"}, {"geometry": {"coordinates": [[[118.049942, -22.495029], [118.049874,
+        -22.485996], [118.059593, -22.485933], [118.059662, -22.494965], [118.049942,
+        -22.495029]]], "type": "Polygon"}, "id": "608000 7512000 50 K", "properties":
+        {"center": {"coordinates": [118.054768, -22.490481], "type": "Point"}, "intensity":
+        2.9, "intensityFine": 2.8772, "location": "608000 7512000 50 K", "nresp":
+        4}, "type": "Feature"}, {"geometry": {"coordinates": [[[118.680485, -22.390342],
+        [118.680377, -22.381312], [118.690086, -22.381211], [118.690196, -22.390241],
+        [118.680485, -22.390342]]], "type": "Polygon"}, "id": "673000 7523000 50 K",
+        "properties": {"center": {"coordinates": [118.685286, -22.385777], "type":
+        "Point"}, "intensity": 2.7, "intensityFine": 2.6912, "location": "673000 7523000
+        50 K", "nresp": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[120.661835,
+        -19.763485], [120.661967, -19.754456], [120.671504, -19.75458], [120.671373,
+        -19.76361], [120.661835, -19.763485]]], "type": "Polygon"}, "id": "255000
+        7813000 51 K", "properties": {"center": {"coordinates": [120.66667, -19.759033],
+        "type": "Point"}, "intensity": 3.9, "intensityFine": 3.9249, "location": "255000
+        7813000 51 K", "nresp": 2}, "type": "Feature"}], "type": "FeatureCollection"}'
+    headers:
+      Accept-Ranges:
+      - bytes
+      Connection:
+      - close
+      Content-Length:
+      - '70797'
+      Content-Type:
+      - application/vnd.geo+json
+      Date:
+      - Thu, 10 Oct 2019 17:32:56 GMT
+      ETag:
+      - '"1befee78fa5ef2cb73e47d70ca72a9d0"'
+      Last-Modified:
+      - Thu, 10 Oct 2019 00:17:11 GMT
+      Server:
+      - AmazonS3
+      Via:
+      - 1.1 43212819cc3a9a484732ccf0a1968dd8.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - X9-JdGn0YmEwKKBTmlo6pSxw1C2xeT0WJK278G4V1RSTqXk0MA9L3w==
+      X-Amz-Cf-Pop:
+      - LAX3-C2
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+version: 1
