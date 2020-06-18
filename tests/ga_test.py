@@ -3,6 +3,7 @@
 import os.path
 import configparser
 import numpy as np
+import vcr
 
 from getintensity.tools import IntensityParser
 
@@ -22,7 +23,7 @@ def get_config():
     config = configparser.ConfigParser()
 
     with open(configfile, 'r') as f:
-        config = config.read_file(f)
+        config.read_file(f)
 
     return config
 
@@ -31,6 +32,7 @@ def test_ga_file():
     eventid = 'unknown'
     datadir = get_datadir()
     config = get_config()
+
     iparser = IntensityParser(eventid=eventid, config=config, network='ga')
 
     # Test reading a dyfi format file
@@ -46,6 +48,28 @@ def test_ga_file():
     assert len(df) == 62
     np.testing.assert_equal(df['INTENSITY'].sum(), 201.3)
     np.testing.assert_equal(df['NRESP'].sum(), 1525)
+
+    return
+
+
+def test_ga():
+    # Test output from GA feed
+
+    eventid = 'us70004jxe'
+    extid = 'ga2019nsodfc'
+    datadir = get_datadir()
+    config = get_config()
+    config['directories']['data_path'] = datadir
+    print('config.directories.data_path is now', datadir)
+
+    tape_file1 = os.path.join(datadir, 'vcr_ga.yaml')
+
+    iparser = IntensityParser(eventid=eventid, config=config, network='ga')
+    with vcr.use_cassette(tape_file1):
+        df, msg = iparser.get_dyfi_dataframe_from_network(extid)
+
+    np.testing.assert_almost_equal(df['INTENSITY'].sum(), 434.8, decimal=1)
+    np.testing.assert_equal(df['NRESP'].sum(), 1174)
 
     return
 
