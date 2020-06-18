@@ -48,6 +48,10 @@ def get_dyfi_dataframe_from_emsc(self, extid):
         msg = 'Could not unzip raw data'
         return None, msg
 
+    rawfile = 'raw/rawdata.emsc.%s.csv' % extid
+    with open(rawfile, 'w') as f:
+        f.write(csvdata.decode('utf-8'))
+
     df = process_emsc_csv(csvdata)
     if df is None:
         msg = 'Could not decode EMSC data'
@@ -81,6 +85,10 @@ def get_extid_from_emsc(self, inputid):
         print('Unable to unpack EMSC Eventid server.')
         return
 
+    rawfile = 'raw/rawid.emsc.%s.json' % extid
+    with open(rawfile, 'w') as f:
+        f.write(json.dumps(jsondata))
+    print('Saving raw data in', rawfile)
     print('Retrieved', extid, 'from EMSC Eventid server.')
     return extid
 
