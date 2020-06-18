@@ -5,4 +5,4 @@ dyfi_dat.xml
 tests/data/tmp*
 *test-output.xml
 *_dat.xml
-
+raw/
