@@ -149,7 +149,6 @@ def main(args):
         print(df.columns)
     if 'NRESP' not in df.columns:
         print('WARNING: Datafile has no column NRESP.')
-
     print('Saved DYFI data to %s.' % outfile)
     sys.exit(0)
 

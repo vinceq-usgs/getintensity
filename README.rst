@@ -51,9 +51,9 @@ For example::
 
 Supported networks:
   
-- neic    National Earthquake Information Center (USA) (default)
-- ga      Geosciences Australia
-- emsc    European-Mediterranean Seismic Center
+- neic:    National Earthquake Information Center (USA) (default)
+- ga:      Geosciences Australia
+- emsc:    European-Mediterranean Seismic Center
 
 If --network is missing, this will attempt to guess it from extid or 
 input filename. If neither is provided, 'neic' is assumed.
@@ -75,7 +75,8 @@ Impactutils (https://github.com/hearne/shakemap) is automatically installed.
 
       The current conda 'impactutils' package (as of 2019/09/19) does not support
       output files with 'nresponses' and 'intensity_stddev'; these columns
-      will be missing from the output files.
+      will be missing from the output files unless the latest impactutils is
+      installed.
 
       To support this functionality:
 
