@@ -10,7 +10,7 @@ from io import BytesIO, StringIO
 
 from getintensity.aggregate import aggregate
 
-netid = 'EMSC'
+netid = 'INTENSITY'
 source = 'European-Mediterranean Seismic Center'
 reference = 'EMSC (aggregated)'
 default_outfile = 'emsc_ii_dat.xml'
@@ -118,7 +118,6 @@ def process_emsc_csv(rawdata):
     df = _parse_emsc_raw(rawdata)
     df_10km = aggregate(df, producttype='geo_10km', minresps=MIN_RESPONSES)
     df_1km = aggregate(df, producttype='geo_1km', minresps=MIN_RESPONSES)
-
     if len(df_10km) > len(df_1km):
         df = df_10km
         print('Using 10km aggregation.')
